@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <role display_value="x_1607167_pet_shop.Pet Shop Manager" name="x_1607167_pet_shop.Pet Shop Manager">4e6e6037c3703210c7e81d12b4013176</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-31 18:48:24</sys_created_on>
+        <sys_id>017e2c37c3703210c7e81d12b4013143</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>4e6e6037c3703210c7e81d12b4013176</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_embedded_help_role_017e2c37c3703210c7e81d12b4013143</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-31 18:48:24</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

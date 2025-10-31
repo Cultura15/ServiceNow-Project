@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="32cc68b3c3703210c7e81d12b4013123" label="Pet Shop Item" max_length="40" name="x_1607167_pet_shop_pet_shop_item" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Expiry" max_length="40" name="expiry" type="glide_date"/>
+        <element label="Stocks" max_length="40" name="stocks" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Category" max_length="40" name="category" type="choice">
+            <choice/>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Short Description" max_length="50" name="short_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Name" max_length="50" name="name" type="string"/>
+        <element label="Image" max_length="40" name="image" type="user_image"/>
+    </element>
+</database>

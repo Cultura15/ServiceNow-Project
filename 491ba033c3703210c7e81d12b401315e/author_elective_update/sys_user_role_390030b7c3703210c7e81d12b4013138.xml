@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_1607167_pet_shop.pet_user</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>pet_user</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-31 18:55:50</sys_created_on>
+        <sys_id>390030b7c3703210c7e81d12b4013138</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1607167_pet_shop.pet_user</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_user_role_390030b7c3703210c7e81d12b4013138</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-31 18:55:50</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</application>
+        <file_path/>
+        <instance_id>97197bfedbca025002022a5913961906</instance_id>
+        <instance_name>dev269232</instance_name>
+        <name>sys_user_role_390030b7c3703210c7e81d12b4013138</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>x_1607167_pet_shop.pet_user</name><scoped_admin>false</scoped_admin><suffix>pet_user</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-10-31 18:55:50</sys_created_on><sys_id>390030b7c3703210c7e81d12b4013138</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1607167_pet_shop.pet_user</sys_name><sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package><sys_policy/><sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope><sys_update_name>sys_user_role_390030b7c3703210c7e81d12b4013138</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-10-31 18:55:50</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>183421756</payload_hash>
+        <record_name>x_1607167_pet_shop.pet_user</record_name>
+        <reverted_from/>
+        <source>811b6833c3703210c7e81d12b401317b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-31 18:55:50</sys_created_on>
+        <sys_id>752078b7c3703210c7e81d12b40131d8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a3ba043780000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-31 18:55:50</sys_updated_on>
+        <type>Role</type>
+        <update_guid>792078b7477032102bd05194508bdbd7</update_guid>
+        <update_guid_history>792078b7477032102bd05194508bdbd7:183421756</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_1607167_pet_shop.pet_user">5140fcb7c3703210c7e81d12b40131e0</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-31 18:56:20</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>6185f5a02fea45ac96f3d7b9b76dbb44</sys_id>
+        <sys_metadata>390030b7c3703210c7e81d12b4013138</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1607167_pet_shop.pet_user</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_scope_delete display_value="">6345f443edcf4520bbffdf937b8ec400</sys_scope_delete>
+        <sys_update_name>sys_user_role_390030b7c3703210c7e81d12b4013138</sys_update_name>
+        <sys_update_version display_value="sys_user_role_390030b7c3703210c7e81d12b4013138">752078b7c3703210c7e81d12b40131d8</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-31 18:56:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
