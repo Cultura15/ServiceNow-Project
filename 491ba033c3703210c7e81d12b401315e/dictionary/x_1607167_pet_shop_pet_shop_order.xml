@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="8956f04cc3013210c7e81d12b40131f8" extends="task" label="Pet Shop Order" max_length="40" name="x_1607167_pet_shop_pet_shop_order" type="collection">
+        <element attributes="omit_sys_original=true" label="Total amount" max_length="20" name="total_amount" type="currency"/>
+        <element attributes="u_ref_qual_condition=rolesLIKEpet_user" default="javascript:gs.getUserID()" dynamic_default_value="90d1921e5f510100a9ad2572f2b477fe" label="Order for" max_length="32" name="order_for" reference="sys_user" type="reference" use_dynamic_default="true"/>
+    </element>
+</database>
