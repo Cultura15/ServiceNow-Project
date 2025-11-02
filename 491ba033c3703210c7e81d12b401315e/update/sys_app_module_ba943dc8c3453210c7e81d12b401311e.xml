@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Pet Shop Users">2e42bd08c3453210c7e81d12b40131fd</application>
+        <assessment/>
+        <device_type/>
+        <filter table="x_1607167_pet_shop_pet_shop_order">order_forDYNAMIC90d1921e5f510100a9ad2572f2b477fe^state=3^EQ<item endquery="false" field="order_for" goto="false" newquery="false" operator="DYNAMIC" or="false" value="90d1921e5f510100a9ad2572f2b477fe"/>
+            <item display_value="Closed Complete" endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="3"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>My Transactions</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_1607167_pet_shop_pet_shop_order</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles>x_1607167_pet_shop.Pet Shop User</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-01 18:34:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ba943dc8c3453210c7e81d12b401311e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Transactions</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_app_module_ba943dc8c3453210c7e81d12b401311e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-01 18:34:21</sys_updated_on>
+        <timeline_page/>
+        <title>My Transactions</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

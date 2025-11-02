@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="stocks" table="x_1607167_pet_shop_pet_shop_item">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="order_for" table="x_1607167_pet_shop_pet_shop_order">
         <active>true</active>
         <array>false</array>
-        <attributes/>
+        <attributes>u_ref_qual_condition=rolesLIKEpet_user</attributes>
         <audit>false</audit>
-        <calculation/>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Stocks</column_label>
+        <column_label>Order for</column_label>
         <comments/>
         <create_roles/>
-        <default_value/>
+        <default_value>javascript:gs.getUserID()</default_value>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -19,23 +24,23 @@
         <display>false</display>
         <dynamic_creation>false</dynamic_creation>
         <dynamic_creation_script/>
-        <dynamic_default_value/>
+        <dynamic_default_value display_value="Me">90d1921e5f510100a9ad2572f2b477fe</dynamic_default_value>
         <dynamic_ref_qual/>
-        <element>stocks</element>
+        <element>order_for</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Integer">integer</internal_type>
+        <internal_type display_value="Reference">reference</internal_type>
         <mandatory>false</mandatory>
-        <max_length>40</max_length>
-        <name>x_1607167_pet_shop_pet_shop_item</name>
+        <max_length>32</max_length>
+        <name>x_1607167_pet_shop_pet_shop_order</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference/>
+        <reference display_value="" name="sys_user">sys_user</reference>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -46,19 +51,19 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-10-31 18:41:10</sys_created_on>
-        <sys_name>Stocks</sys_name>
+        <sys_created_on>2025-11-01 14:07:05</sys_created_on>
+        <sys_name>Order for</sys_name>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
-        <sys_update_name>sys_dictionary_x_1607167_pet_shop_pet_shop_item_stocks</sys_update_name>
+        <sys_update_name>sys_dictionary_x_1607167_pet_shop_pet_shop_order_order_for</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-02 07:52:36</sys_updated_on>
+        <sys_updated_on>2025-11-01 14:14:40</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
-        <use_dynamic_default>false</use_dynamic_default>
+        <use_dynamic_default>true</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
         <virtual_type>script</virtual_type>
