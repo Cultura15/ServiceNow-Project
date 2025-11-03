@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.pet-care-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 6px solid #6bc36b; /* light green pet vibe */
+}
+
+.pet-care-card h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.pet-care-card p {
+  font-size: 15px;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.pet-btn {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #6bc36b;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
+.pet-btn:hover {
+  background: #57a957;
+  transform: translateY(-2px);
+}
+
+.mt-top{
+ margin-top: 22px; 
+}
+
+.mb-down{
+  margin-bottom: 32px;
+}
+
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>homepage_text-box-widget</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>homepage_text-box-widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>johngabriel.canal</sys_created_by>
+        <sys_created_on>2025-11-03 13:55:25</sys_created_on>
+        <sys_id>e81887a8c381f210c7e81d12b40131ef</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>homepage_text-box-widget</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sp_widget_e81887a8c381f210c7e81d12b40131ef</sys_update_name>
+        <sys_updated_by>johngabriel.canal</sys_updated_by>
+        <sys_updated_on>2025-11-03 14:16:45</sys_updated_on>
+        <template><![CDATA[<div class="pet-care-card mb-down mt-top">
+  <h2>Take better care of your pets</h2>
+  <p>
+    Shop essentials for a healthier, happier furry friend ]]>🐾
+<![CDATA[  </p>
+  <a class="pet-btn" href="#">
+    Shop Now
+  </a>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e81887a8c381f210c7e81d12b40131ef</id>
+        <sys_created_by>johngabriel.canal</sys_created_by>
+        <sys_created_on>2025-11-03 13:55:25</sys_created_on>
+        <sys_id>56288ba8c381f210c7e81d12b401312d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>johngabriel.canal</sys_updated_by>
+        <sys_updated_on>2025-11-03 13:55:25</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

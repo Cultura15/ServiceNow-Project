@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $location, $window, spUtil, $log) {
+  var c = this;
+
+  // Initialize
+  c.quantity = 1;
+  c.selectedBrand = '';
+  c.specialInstructions = '';
+  c.isSubmitting = false;
+
+  // Set item details from server
+  c.itemDetails = c.data.itemDetails || {};
+
+  // Auto-select brand if only one exists or if item has a specific brand
+  if (c.itemDetails.brand) {
+    c.selectedBrand = c.itemDetails.brand;
+  }
+
+  // Quantity controls
+  c.increaseQty = function() {
+    if (c.quantity < c.itemDetails.stocks) c.quantity++;
+  };
+
+  c.decreaseQty = function() {
+    if (c.quantity > 1) c.quantity--;
+  };
+
+  // Go back to shop
+  c.goBack = function() {
+    $window.history.back();
+  };
+
+  // Submit Order
+  c.submitOrder = function() {
+    if (!c.itemDetails.sys_id || !c.quantity) {
+      spUtil.addErrorMessage("Please complete all required fields.");
+      return;
+    }
+
+    if (c.quantity > c.itemDetails.stocks) {
+      spUtil.addErrorMessage("Quantity exceeds available stock.");
+      return;
+    }
+
+    c.isSubmitting = true;
+
+    // ✅ Make sure action is attached directly to data
+    c.data.action = 'submit_order';
+    c.data.item_sys_id = c.itemDetails.sys_id;
+    c.data.item_name = c.itemDetails.name;
+    c.data.brand = c.selectedBrand || c.itemDetails.brand;
+    c.data.quantity = c.quantity;
+    c.data.special_instructions = c.specialInstructions;
+
+    $log.info("]]>🧩<![CDATA[ Sending payload:", c.data);
+
+    // Send to server
+    c.server.update(c.data).then(function(response) {
+      c.isSubmitting = false;
+      $log.info("]]>🧩<![CDATA[ Server response:", response);
+
+      if (response.success) {
+        spUtil.addInfoMessage("✅ Order placed successfully! Order #" + (response.orderNumber || ''));
+        setTimeout(function() {
+          $window.location.href = '/psmp?id=psmp';
+        }, 2000);
+      } else {
+        spUtil.addErrorMessage("❌ Failed to place order: " + (response.error || 'Please try again.'));
+      }
+    }).catch(function(error) {
+      c.isSubmitting = false;
+      $log.error("❌ Error in submitOrder:", error);
+      spUtil.addErrorMessage("❌ An error occurred. Please try again.");
+    });
+  };
+
+  // Clear form
+  c.clearForm = function() {
+    c.quantity = 1;
+    c.selectedBrand = c.itemDetails.brand || '';
+    c.specialInstructions = '';
+  };
+};
+
+// ✅ AngularJS dependency injection (required for $log)
+api.controller.$inject = ['$scope', '$location', '$window', 'spUtil', '$log'];
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* Import Poppins Font */&#13;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap');&#13;
+&#13;
+.order-page-container {&#13;
+  max-width: 1400px;&#13;
+  margin: 0 auto;&#13;
+  padding: 24px;&#13;
+  font-family: 'Poppins', sans-serif;&#13;
+  background: linear-gradient(135deg, #f8f9ff 0%, #fff5f7 100%);&#13;
+  min-height: 100vh;&#13;
+}&#13;
+&#13;
+/* Back Button */&#13;
+.back-btn {&#13;
+  display: inline-flex;&#13;
+  align-items: center;&#13;
+  gap: 8px;&#13;
+  padding: 10px 20px;&#13;
+  background: white;&#13;
+  border: 2px solid #e2e8f0;&#13;
+  border-radius: 12px;&#13;
+  font-size: 14px;&#13;
+  font-weight: 500;&#13;
+  font-family: 'Poppins', sans-serif;&#13;
+  color: #64748b;&#13;
+  cursor: pointer;&#13;
+  transition: all 0.3s ease;&#13;
+  margin-bottom: 24px;&#13;
+}&#13;
+&#13;
+.back-btn:hover {&#13;
+  border-color: #8b5cf6;&#13;
+  color: #8b5cf6;&#13;
+  transform: translateX(-4px);&#13;
+}&#13;
+&#13;
+/* Main Content Layout */&#13;
+.order-content {&#13;
+  display: grid;&#13;
+  grid-template-columns: 1fr 1fr;&#13;
+  gap: 32px;&#13;
+  align-items: start;&#13;
+}&#13;
+&#13;
+/* Item Preview Section */&#13;
+.item-preview-section {&#13;
+  position: sticky;&#13;
+  top: 24px;&#13;
+}&#13;
+&#13;
+.preview-card {&#13;
+  background: white;&#13;
+  border-radius: 24px;&#13;
+  padding: 32px;&#13;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);&#13;
+}&#13;
+&#13;
+.preview-header {&#13;
+  display: flex;&#13;
+  justify-content: space-between;&#13;
+  align-items: center;&#13;
+  margin-bottom: 24px;&#13;
+}&#13;
+&#13;
+.preview-header h2 {&#13;
+  font-size: 24px;&#13;
+  font-weight: 700;&#13;
+  color: #1e293b;&#13;
+  margin: 0;&#13;
+}&#13;
+&#13;
+.stock-indicator {&#13;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);&#13;
+  color: white;&#13;
+  padding: 8px 16px;&#13;
+  border-radius: 20px;&#13;
+  font-size: 13px;&#13;
+  font-weight: 600;&#13;
+}&#13;
+&#13;
+.stock-indicator.low-stock {&#13;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);&#13;
+}&#13;
+&#13;
+.item-image-container {&#13;
+  width: 100%;&#13;
+  height: 400px;&#13;
+  border-radius: 20px;&#13;
+  overflow: hidden;&#13;
+  margin-bottom: 24px;&#13;
+  background: linear-gradient(135deg, #f8f9ff 0%, #fff5f7 100%);&#13;
+}&#13;
+&#13;
+.preview-image {&#13;
+  width: 100%;&#13;
+  height: 100%;&#13;
+  object-fit: cover;&#13;
+  transition: transform 0.4s ease;&#13;
+}&#13;
+&#13;
+.preview-card:hover .preview-image {&#13;
+  transform: scale(1.05);&#13;
+}&#13;
+&#13;
+.item-details {&#13;
+  margin-top: 24px;&#13;
+}&#13;
+&#13;
+.item-title {&#13;
+  font-size: 28px;&#13;
+  font-weight: 700;&#13;
+  color: #1e293b;&#13;
+  margin: 0 0 24px 0;&#13;
+  line-height: 1.3;&#13;
+}&#13;
+&#13;
+.detail-row {&#13;
+  display: flex;&#13;
+  justify-content: space-between;&#13;
+  align-items: center;&#13;
+  padding: 16px 0;&#13;
+  border-bottom: 1px solid #e2e8f0;&#13;
+}&#13;
+&#13;
+.detail-label {&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  gap: 8px;&#13;
+  font-size: 14px;&#13;
+  font-weight: 500;&#13;
+  color: #64748b;&#13;
+}&#13;
+&#13;
+.detail-label svg {&#13;
+  color: #8b5cf6;&#13;
+}&#13;
+&#13;
+.detail-value {&#13;
+  font-size: 15px;&#13;
+  font-weight: 600;&#13;
+  color: #1e293b;&#13;
+}&#13;
+&#13;
+.description-section {&#13;
+  padding: 20px 0;&#13;
+  border-bottom: 1px solid #e2e8f0;&#13;
+}&#13;
+&#13;
+.description-section .detail-label {&#13;
+  margin-bottom: 12px;&#13;
+}&#13;
+&#13;
+.description-text {&#13;
+  font-size: 15px;&#13;
+  color: #475569;&#13;
+  line-height: 1.7;&#13;
+  margin: 0;&#13;
+}&#13;
+&#13;
+/* Order Form Section */&#13;
+.form-card {&#13;
+  background: white;&#13;
+  border-radius: 24px;&#13;
+  padding: 32px;&#13;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);&#13;
+}&#13;
+&#13;
+.form-header {&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  gap: 16px;&#13;
+  margin-bottom: 32px;&#13;
+  padding-bottom: 24px;&#13;
+  border-bottom: 2px solid #e2e8f0;&#13;
+}&#13;
+&#13;
+.form-header svg {&#13;
+  color: #8b5cf6;&#13;
+}&#13;
+&#13;
+.form-header h2 {&#13;
+  font-size: 26px;&#13;
+  font-weight: 700;&#13;
+  color: #1e293b;&#13;
+  margin: 0;&#13;
+}&#13;
+&#13;
+.order-form {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  gap: 24px;&#13;
+}&#13;
+&#13;
+.form-group {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  gap: 10px;&#13;
+}&#13;
+&#13;
+.form-label {&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  gap: 8px;&#13;
+  font-size: 15px;&#13;
+  font-weight: 600;&#13;
+  color: #1e293b;&#13;
+}&#13;
+&#13;
+.form-label svg {&#13;
+  color: #8b5cf6;&#13;
+}&#13;
+&#13;
+.required {&#13;
+  color: #ef4444;&#13;
+  font-weight: 700;&#13;
+}&#13;
+&#13;
+.optional {&#13;
+  font-size: 13px;&#13;
+  font-weight: 400;&#13;
+  color: #94a3b8;&#13;
+  margin-left: 4px;&#13;
+}&#13;
+&#13;
+/* Quantity Control */&#13;
+.quantity-control {&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  gap: 12px;&#13;
+  background: #f8fafc;&#13;
+  padding: 8px;&#13;
+  border-radius: 12px;&#13;
+  border: 2px solid #e2e8f0;&#13;
+}&#13;
+&#13;
+.qty-btn {&#13;
+  width: 40px;&#13;
+  height: 40px;&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  justify-content: center;&#13;
+  background: white;&#13;
+  border: 2px solid #e2e8f0;&#13;
+  border-radius: 10px;&#13;
+  cursor: pointer;&#13;
+  transition: all 0.3s ease;&#13;
+  color: #64748b;&#13;
+}&#13;
+&#13;
+.qty-btn:hover:not(:disabled) {&#13;
+  border-color: #8b5cf6;&#13;
+  color: #8b5cf6;&#13;
+  transform: scale(1.05);&#13;
+}&#13;
+&#13;
+.qty-btn:disabled {&#13;
+  opacity: 0.4;&#13;
+  cursor: not-allowed;&#13;
+}&#13;
+&#13;
+.qty-input {&#13;
+  flex: 1;&#13;
+  text-align: center;&#13;
+  font-size: 18px;&#13;
+  font-weight: 600;&#13;
+  font-family: 'Poppins', sans-serif;&#13;
+  color: #1e293b;&#13;
+  border: none;&#13;
+  background: transparent;&#13;
+  outline: none;&#13;
+}&#13;
+&#13;
+/* Remove number input spinners */&#13;
+.qty-input::-webkit-inner-spin-button,&#13;
+.qty-input::-webkit-outer-spin-button {&#13;
+  -webkit-appearance: none;&#13;
+  margin: 0;&#13;
+}&#13;
+&#13;
+.field-hint {&#13;
+  font-size: 13px;&#13;
+  color: #64748b;&#13;
+  margin: 0;&#13;
+}&#13;
+&#13;
+.form-select {&#13;
+  width: 100%;&#13;
+  padding: 14px 16px;&#13;
+  border: 2px solid #e2e8f0;&#13;
+  border-radius: 12px;&#13;
+  font-size: 15px;&#13;
+  font-family: 'Poppins', sans-serif;&#13;
+  font-weight: 500;&#13;
+  background: white;&#13;
+  color: #1e293b;&#13;
+  cursor: pointer;&#13;
+  transition: all 0.3s ease;&#13;
+}&#13;
+&#13;
+.form-select:focus {&#13;
+  outline: none;&#13;
+  border-color: #8b5cf6;&#13;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);&#13;
+}&#13;
+&#13;
+.form-textarea {&#13;
+  width: 100%;&#13;
+  padding: 14px 16px;&#13;
+  border: 2px solid #e2e8f0;&#13;
+  border-radius: 12px;&#13;
+  font-size: 14px;&#13;
+  font-family: 'Poppins', sans-serif;&#13;
+  color: #1e293b;&#13;
+  resize: vertical;&#13;
+  transition: all 0.3s ease;&#13;
+}&#13;
+&#13;
+.form-textarea:focus {&#13;
+  outline: none;&#13;
+  border-color: #8b5cf6;&#13;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);&#13;
+}&#13;
+&#13;
+.form-textarea::placeholder {&#13;
+  color: #94a3b8;&#13;
+}&#13;
+&#13;
+/* Order Summary */&#13;
+.order-summary {&#13;
+  background: linear-gradient(135deg, #f8f9ff 0%, #fff5f7 100%);&#13;
+  padding: 20px;&#13;
+  border-radius: 16px;&#13;
+  border: 2px solid #e2e8f0;&#13;
+}&#13;
+&#13;
+.order-summary h3 {&#13;
+  font-size: 18px;&#13;
+  font-weight: 700;&#13;
+  color: #1e293b;&#13;
+  margin: 0 0 16px 0;&#13;
+}&#13;
+&#13;
+.summary-row {&#13;
+  display: flex;&#13;
+  justify-content: space-between;&#13;
+  padding: 10px 0;&#13;
+  font-size: 14px;&#13;
+}&#13;
+&#13;
+.summary-row span:first-child {&#13;
+  color: #64748b;&#13;
+  font-weight: 500;&#13;
+}&#13;
+&#13;
+.summary-row span:last-child {&#13;
+  color: #1e293b;&#13;
+  font-weight: 600;&#13;
+}&#13;
+&#13;
+/* Form Actions */&#13;
+.form-actions {&#13;
+  display: flex;&#13;
+  gap: 12px;&#13;
+  margin-top: 8px;&#13;
+}&#13;
+&#13;
+.submit-btn {&#13;
+  flex: 2;&#13;
+  padding: 16px 32px;&#13;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);&#13;
+  color: white;&#13;
+  border: none;&#13;
+  border-radius: 12px;&#13;
+  font-size: 16px;&#13;
+  font-weight: 600;&#13;
+  font-family: 'Poppins', sans-serif;&#13;
+  cursor: pointer;&#13;
+  transition: all 0.3s ease;&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  justify-content: center;&#13;
+  gap: 10px;&#13;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);&#13;
+}&#13;
+&#13;
+.submit-btn:hover:not(:disabled) {&#13;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);&#13;
+  transform: translateY(-2px);&#13;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);&#13;
+}&#13;
+&#13;
+.submit-btn:active:not(:disabled) {&#13;
+  transform: translateY(0);&#13;
+}&#13;
+&#13;
+.submit-btn:disabled {&#13;
+  background: #e2e8f0;&#13;
+  color: #94a3b8;&#13;
+  cursor: not-allowed;&#13;
+  box-shadow: none;&#13;
+}&#13;
+&#13;
+.clear-btn {&#13;
+  flex: 1;&#13;
+  padding: 16px 24px;&#13;
+  background: white;&#13;
+  color: #64748b;&#13;
+  border: 2px solid #e2e8f0;&#13;
+  border-radius: 12px;&#13;
+  font-size: 16px;&#13;
+  font-weight: 600;&#13;
+  font-family: 'Poppins', sans-serif;&#13;
+  cursor: pointer;&#13;
+  transition: all 0.3s ease;&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  justify-content: center;&#13;
+  gap: 8px;&#13;
+}&#13;
+&#13;
+.clear-btn:hover:not(:disabled) {&#13;
+  border-color: #ef4444;&#13;
+  color: #ef4444;&#13;
+}&#13;
+&#13;
+.clear-btn:disabled {&#13;
+  opacity: 0.5;&#13;
+  cursor: not-allowed;&#13;
+}&#13;
+&#13;
+/* Responsive Design */&#13;
+@media (max-width: 1024px) {&#13;
+  .order-content {&#13;
+    grid-template-columns: 1fr;&#13;
+  }&#13;
+  &#13;
+  .item-preview-section {&#13;
+    position: static;&#13;
+  }&#13;
+}&#13;
+&#13;
+@media (max-width: 768px) {&#13;
+  .order-page-container {&#13;
+    padding: 16px;&#13;
+  }&#13;
+  &#13;
+  .preview-card,&#13;
+  .form-card {&#13;
+    padding: 20px;&#13;
+  }&#13;
+  &#13;
+  .item-image-container {&#13;
+    height: 300px;&#13;
+  }&#13;
+  &#13;
+  .form-actions {&#13;
+    flex-direction: column;&#13;
+  }&#13;
+  &#13;
+  .submit-btn,&#13;
+  .clear-btn {&#13;
+    flex: 1;&#13;
+  }&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Place an Order Widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_1607167_pet_shop.Pet Shop User</roles>
+        <script><![CDATA[(function() {
+    data.items = [];
+    data.brands = [];
+    data.itemDetails = null;
+
+    // --- PHASE 0: Handle Order Submission ---
+    gs.info("]]>🧩<![CDATA[ Debug Order: Checking for submit_order...");
+
+    if (input && input.action === "submit_order") {
+        gs.info("]]>🧩<![CDATA[ Debug Order: Processing payload → " + JSON.stringify(input));
+
+        try {
+            var order = new GlideRecord("x_1607167_pet_shop_pet_shop_order");
+            if (!order.isValid()) {
+                gs.error("❌ Invalid table: x_1607167_pet_shop_pet_shop_order");
+                data.success = false;
+                data.error = "Invalid order table name.";
+                return;
+            }
+
+            order.initialize();
+            order.short_description = "Order for " + input.item_name;
+            order.item = input.item_sys_id;
+            order.brand = input.brand;
+            order.quantity = input.quantity;
+            order.special_instructions = input.special_instructions || "";
+            order.order_for = gs.getUserID();
+            order.state = "1"; // maybe Pending
+            order.total_amount = 0; // optional
+
+            var orderSysId = order.insert();
+            gs.info("]]>🧩<![CDATA[ Order inserted successfully: " + orderSysId);
+
+            data.success = true;
+            data.orderNumber = order.getDisplayValue("number") || orderSysId;
+            data.message = "✅ Order successfully placed for " + input.item_name;
+        } catch (e) {
+            gs.error("❌ Order submission failed: " + e.message);
+            data.success = false;
+            data.error = e.message;
+        }
+
+        // Stop further execution after submitting
+        return;
+    }
+
+    // --- PHASE 1: Fetch all Pet Shop items ---
+    gs.info("]]>🧩<![CDATA[ Fetching Pet Shop items...");
+    var gr = new GlideRecord("x_1607167_pet_shop_pet_shop_item");
+    if (gr.isValid()) {
+        gr.query();
+        while (gr.next()) {
+            data.items.push({
+                sys_id: gr.getUniqueValue(),
+                name: gr.getValue("name"),
+                brand: gr.getValue("brand")
+            });
+
+            var brand = gr.getValue("brand");
+            if (brand && data.brands.indexOf(brand) === -1) {
+                data.brands.push(brand);
+            }
+        }
+    }
+    gs.info("]]>🧩<![CDATA[ Loaded " + data.items.length + " items, " + data.brands.length + " brands.");
+
+    // --- PHASE 2: Load item details if given ---
+    var itemSysId = $sp.getParameter("item_sys_id");
+    if (itemSysId) {
+        gs.info("]]>🧩<![CDATA[ Loading item details for sys_id: " + itemSysId);
+        var itemGr = new GlideRecord("x_1607167_pet_shop_pet_shop_item");
+        if (itemGr.get(itemSysId)) {
+            gs.info("]]>🧩<![CDATA[ Loaded item: " + itemGr.getValue("name"));
+            data.itemDetails = {
+                sys_id: itemGr.getUniqueValue(),
+                name: itemGr.getValue("name"),
+                short_description: itemGr.getValue("short_description"),
+                category: itemGr.getDisplayValue("category"),
+                brand: itemGr.getDisplayValue("brand"),
+                stocks: parseInt(itemGr.getValue("stocks"), 10),
+                expiry: itemGr.getDisplayValue("expiry"),
+                image: itemGr.getValue("image")
+            };
+        }
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-03 13:08:16</sys_created_on>
+        <sys_id>2b5c7228c341f210c7e81d12b4013188</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>Place an Order Widget</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sp_widget_2b5c7228c341f210c7e81d12b4013188</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-03 20:07:47</sys_updated_on>
+        <template><![CDATA[<div class="order-page-container">
+  <!-- Back Button -->
+  <button class="back-btn" ng-click="c.goBack()">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    Back to Shop
+  </button>
+
+  <div class="order-content">
+    <!-- Left Side: Item Preview -->
+    <div class="item-preview-section">
+      <div class="preview-card">
+        <div class="preview-header">
+          <h2>Selected Item</h2>
+          <span class="stock-indicator" ng-class="{'low-stock': c.itemDetails.stocks < 10}">
+            {{c.itemDetails.stocks}} Available
+          </span>
+        </div>
+        
+        <div class="item-image-container">
+          <img ng-src="/sys_attachment.do?sys_id={{c.itemDetails.image}}" 
+               alt="{{c.itemDetails.name}}"
+               class="preview-image"
+               onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22400%22 height=%22400%22/%3E%3Ctext fill=%22%23999%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2228%22%3ENo Image%3C/text%3E%3C/svg%3E'">
+        </div>
+
+        <div class="item-details">
+          <h3 class="item-title">{{c.itemDetails.name}}</h3>
+          
+          <div class="detail-row">
+            <span class="detail-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                <line x1="7" y1="7" x2="7.01" y2="7"/>
+              </svg>
+              Category
+            </span>
+            <span class="detail-value">{{c.itemDetails.category}}</span>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              Brand
+            </span>
+            <span class="detail-value">{{c.itemDetails.brand}}</span>
+          </div>
+
+          <div class="description-section">
+            <p class="detail-label">Description</p>
+            <p class="description-text">{{c.itemDetails.short_description || 'No description available'}}</p>
+          </div>
+
+          <div class="detail-row" ng-if="c.itemDetails.expiry">
+            <span class="detail-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              Expiry Date
+            </span>
+            <span class="detail-value">{{c.itemDetails.expiry}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Order Form -->
+    <div class="order-form-section">
+      <div class="form-card">
+        <div class="form-header">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <h2>Place Your Order</h2>
+        </div>
+
+        <form ng-submit="c.submitOrder()" class="order-form">
+          <!-- Quantity Input -->
+          <div class="form-group">
+            <label class="form-label">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              Quantity <span class="required">*</span>
+            </label>
+            <div class="quantity-control">
+              <button type="button" class="qty-btn" ng-click="c.decreaseQty()" ng-disabled="c.quantity <= 1">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+              <input type="number" 
+                     class="qty-input" 
+                     ng-model="c.quantity" 
+                     min="1" 
+                     max="{{c.itemDetails.stocks}}"
+                     required>
+              <button type="button" class="qty-btn" ng-click="c.increaseQty()" ng-disabled="c.quantity >= c.itemDetails.stocks">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+              </button>
+            </div>
+            <p class="field-hint">Maximum: {{c.itemDetails.stocks}} units</p>
+          </div>
+
+          <!-- Brand Selection (if multiple brands exist) -->
+          <div class="form-group" ng-if="c.data.brands && c.data.brands.length > 1">
+            <label class="form-label">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              Preferred Brand <span class="required">*</span>
+            </label>
+            <select class="form-select" ng-model="c.selectedBrand" required>
+              <option value="">-- Select Brand --</option>
+              <option ng-repeat="brand in c.data.brands" value="{{brand}}">{{brand}}</option>
+            </select>
+          </div>
+
+          <!-- Special Instructions -->
+          <div class="form-group">
+            <label class="form-label">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              Special Instructions
+              <span class="optional">(Optional)</span>
+            </label>
+            <textarea class="form-textarea" 
+                      ng-model="c.specialInstructions" 
+                      placeholder="Any special requests or delivery instructions..."
+                      rows="4"></textarea>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div class="summary-row">
+              <span>Item:</span>
+              <span>{{c.itemDetails.name}}</span>
+            </div>
+            <div class="summary-row">
+              <span>Quantity:</span>
+              <span>{{c.quantity || 0}} unit(s)</span>
+            </div>
+            <div class="summary-row" ng-if="c.selectedBrand">
+              <span>Brand:</span>
+              <span>{{c.selectedBrand}}</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="form-actions">
+            <button type="submit" class="submit-btn" ng-disabled="c.isSubmitting">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ng-if="!c.isSubmitting">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span ng-if="!c.isSubmitting">Place Order</span>
+              <span ng-if="c.isSubmitting">Processing...</span>
+            </button>
+            <button type="button" class="clear-btn" ng-click="c.clearForm()" ng-disabled="c.isSubmitting">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+              </svg>
+              Clear Form
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>2b5c7228c341f210c7e81d12b4013188</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-03 13:05:01</sys_created_on>
+        <sys_id>1cacf628c341f210c7e81d12b4013102</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-03 13:05:01</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

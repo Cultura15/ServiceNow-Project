@@ -4,13 +4,13 @@
             <element>image</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-01 13:41:39</sys_created_on>
-            <sys_id>d1d13488c3013210c7e81d12b4013161</sys_id>
+            <sys_created_on>2025-11-03 18:28:05</sys_created_on>
+            <sys_id>289680f4c3c5f210c7e81d12b4013178</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1607167_pet_shop_pet_shop_item" sys_domain="global" view="Default view">d89bbe7bc3f83210c7e81d12b40131d5</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-01 13:41:39</sys_updated_on>
+            <sys_updated_on>2025-11-03 18:28:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>name</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-01 13:41:39</sys_created_on>
-            <sys_id>59d13488c3013210c7e81d12b4013161</sys_id>
+            <sys_created_on>2025-11-03 18:28:05</sys_created_on>
+            <sys_id>649680f4c3c5f210c7e81d12b4013179</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1607167_pet_shop_pet_shop_item" sys_domain="global" view="Default view">d89bbe7bc3f83210c7e81d12b40131d5</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-01 13:41:39</sys_updated_on>
+            <sys_updated_on>2025-11-03 18:28:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,55 +32,69 @@
             <element>category</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-01 13:41:39</sys_created_on>
-            <sys_id>ddd13488c3013210c7e81d12b4013161</sys_id>
+            <sys_created_on>2025-11-03 18:28:05</sys_created_on>
+            <sys_id>6c9680f4c3c5f210c7e81d12b4013179</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1607167_pet_shop_pet_shop_item" sys_domain="global" view="Default view">d89bbe7bc3f83210c7e81d12b40131d5</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-01 13:41:39</sys_updated_on>
+            <sys_updated_on>2025-11-03 18:28:05</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>brand</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-03 18:28:05</sys_created_on>
+            <sys_id>649680f4c3c5f210c7e81d12b401317a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_1607167_pet_shop_pet_shop_item" sys_domain="global" view="Default view">d89bbe7bc3f83210c7e81d12b40131d5</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-03 18:28:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>3</position>
+            <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-01 13:41:39</sys_created_on>
-            <sys_id>55d13488c3013210c7e81d12b4013162</sys_id>
+            <sys_created_on>2025-11-03 18:28:05</sys_created_on>
+            <sys_id>6c9680f4c3c5f210c7e81d12b401317a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1607167_pet_shop_pet_shop_item" sys_domain="global" view="Default view">d89bbe7bc3f83210c7e81d12b40131d5</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-01 13:41:39</sys_updated_on>
+            <sys_updated_on>2025-11-03 18:28:05</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>stocks</element>
-            <position>4</position>
+            <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-01 13:41:39</sys_created_on>
-            <sys_id>d9d13488c3013210c7e81d12b4013162</sys_id>
+            <sys_created_on>2025-11-03 18:28:05</sys_created_on>
+            <sys_id>649680f4c3c5f210c7e81d12b401317b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1607167_pet_shop_pet_shop_item" sys_domain="global" view="Default view">d89bbe7bc3f83210c7e81d12b40131d5</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-01 13:41:39</sys_updated_on>
+            <sys_updated_on>2025-11-03 18:28:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>expiry</element>
-            <position>5</position>
+            <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-01 13:41:39</sys_created_on>
-            <sys_id>51d13488c3013210c7e81d12b4013163</sys_id>
+            <sys_created_on>2025-11-03 18:28:05</sys_created_on>
+            <sys_id>6c9680f4c3c5f210c7e81d12b401317b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_1607167_pet_shop_pet_shop_item" sys_domain="global" view="Default view">d89bbe7bc3f83210c7e81d12b40131d5</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-01 13:41:39</sys_updated_on>
+            <sys_updated_on>2025-11-03 18:28:05</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

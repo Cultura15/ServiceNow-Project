@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">c219faa0c341f210c7e81d12b401315d</sp_column>
+        <sp_widget display_value="shop_cat_banner">460afae0c341f210c7e81d12b40131a5</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>johngabriel.canal</sys_created_by>
+        <sys_created_on>2025-11-03 12:59:34</sys_created_on>
+        <sys_id>1c6b36a4c341f210c7e81d12b401317f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sp_instance_1c6b36a4c341f210c7e81d12b401317f</sys_update_name>
+        <sys_updated_by>johngabriel.canal</sys_updated_by>
+        <sys_updated_on>2025-11-03 12:59:34</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=1c6b36a4c341f210c7e81d12b401317f"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</application>
+        <file_path/>
+        <instance_id>97197bfedbca025002022a5913961906</instance_id>
+        <instance_name>dev269232</instance_name>
+        <name>sp_instance_1c6b36a4c341f210c7e81d12b401317f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="1">c219faa0c341f210c7e81d12b401315d</sp_column><sp_widget display_value="shop_cat_banner">460afae0c341f210c7e81d12b40131a5</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>johngabriel.canal</sys_created_by><sys_created_on>2025-11-03 12:59:34</sys_created_on><sys_id>1c6b36a4c341f210c7e81d12b401317f</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package><sys_policy/><sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope><sys_update_name>sp_instance_1c6b36a4c341f210c7e81d12b401317f</sys_update_name><sys_updated_by>johngabriel.canal</sys_updated_by><sys_updated_on>2025-11-03 12:59:34</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=1c6b36a4c341f210c7e81d12b401317f"/></record_update>]]></payload>
+        <payload_hash>6163941</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>36424573c3b03210c7e81d12b4013173</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>johngabriel.canal</sys_created_by>
+        <sys_created_on>2025-11-03 12:59:34</sys_created_on>
+        <sys_id>d06b36a4c341f210c7e81d12b4013182</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a49cd2c260000001</sys_recorded_at>
+        <sys_updated_by>johngabriel.canal</sys_updated_by>
+        <sys_updated_on>2025-11-03 12:59:34</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>d46b36a4cd41f210bcb3e21ccc720981</update_guid>
+        <update_guid_history>d46b36a4cd41f210bcb3e21ccc720981:6163941</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">6abb3ea4c341f210c7e81d12b401318e</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>johngabriel.canal</sys_created_by>
+        <sys_created_on>2025-11-03 13:01:05</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>57f2ea68b85c41b4b5c1313a2c31c961</sys_id>
+        <sys_metadata>1c6b36a4c341f210c7e81d12b401317f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_scope_delete display_value="">6345f443edcf4520bbffdf937b8ec400</sys_scope_delete>
+        <sys_update_name>sp_instance_1c6b36a4c341f210c7e81d12b401317f</sys_update_name>
+        <sys_update_version display_value="sp_instance_1c6b36a4c341f210c7e81d12b401317f">d06b36a4c341f210c7e81d12b4013182</sys_update_version>
+        <sys_updated_by>johngabriel.canal</sys_updated_by>
+        <sys_updated_on>2025-11-03 13:01:05</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

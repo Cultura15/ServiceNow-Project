@@ -13,6 +13,23 @@
         </element>
         <element attributes="edge_encryption_enabled=true" label="Short Description" max_length="50" name="short_description" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Name" max_length="50" name="name" type="string"/>
+        <element choice="1" label="Brand" max_length="40" name="brand" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Lafeber" value="lafeber"/>
+                <element inactive_on_update="false" label="Fluval" value="fluval"/>
+                <element inactive_on_update="false" label="Pedigree Petfoods" value="pedigree"/>
+                <element inactive_on_update="false" label="Sunseed" value="sunseed"/>
+                <element inactive_on_update="false" label="ZuPreem" value="zupreem"/>
+                <element inactive_on_update="false" label="API" value="api"/>
+                <element inactive_on_update="false" label="Purina" value="purina"/>
+                <element inactive_on_update="false" label="Accessories" value="accessories"/>
+                <element inactive_on_update="false" label="Orijen" value="orijen"/>
+                <element inactive_on_update="false" label="Hikari" value="hikari"/>
+                <element inactive_on_update="false" label="Royal Canin" value="royal_canin"/>
+                <element inactive_on_update="false" label="Marine Land" value="marine_land"/>
+                <element inactive_on_update="false" label="Hill's Science Diet" value="hills_science_diet"/>
+            </choice>
+        </element>
         <element label="Image" max_length="40" name="image" type="user_image"/>
     </element>
 </database>

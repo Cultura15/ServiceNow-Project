@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>&lt;style&gt;&#13;
+.hero-section {&#13;
+  background-image: url('https://png.pngtree.com/png-clipart/20210613/original/pngtree-pet-shop-merchandise-promotion-poster-png-image_6417071.jpg');&#13;
+  background-size: cover;&#13;
+  background-position: center;&#13;
+  background-repeat: no-repeat;&#13;
+  height: 100vh; /* full viewport height */&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  justify-content: center;&#13;
+  text-align: center;&#13;
+  color: white;&#13;
+}&#13;
+&lt;/style&gt;&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>hero_banner</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <static>false</static>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-02 13:53:49</sys_created_on>
+        <sys_id>eeedf1d4c3497210c7e81d12b40131e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>hero_banner</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sp_header_footer_eeedf1d4c3497210c7e81d12b40131e3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-02 13:53:49</sys_updated_on>
+        <template><![CDATA[<div class="hero-section">
+  <div class="hero-content">
+    <h1>Welcome to the Pet Shop!</h1>
+    <p>Order your favorite items easily</p>
+    <a href="/sp?id=place_order" class="btn btn-primary">Place an Order</a>
+  </div>
+</div>
+]]></template>
+    </sp_header_footer>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>eeedf1d4c3497210c7e81d12b40131e3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-02 13:53:49</sys_created_on>
+        <sys_id>053ebd94c3497210c7e81d12b4013187</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-02 13:53:49</sys_updated_on>
+        <table>sp_header_footer</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

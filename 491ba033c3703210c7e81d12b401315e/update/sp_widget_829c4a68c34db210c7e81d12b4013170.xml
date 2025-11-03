@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>* {&#13;
+    margin: 0;&#13;
+    padding: 0;&#13;
+    box-sizing: border-box;&#13;
+}&#13;
+&#13;
+.offers-section {&#13;
+    width: 100%;&#13;
+    padding: 40px 20px;&#13;
+    background-color: #fafafa;&#13;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;&#13;
+}&#13;
+&#13;
+.offers-container {&#13;
+    max-width: 1400px;&#13;
+    margin: 0 auto;&#13;
+}&#13;
+&#13;
+.section-header {&#13;
+    display: flex;&#13;
+    justify-content: space-between;&#13;
+    align-items: center;&#13;
+    margin-bottom: 30px;&#13;
+}&#13;
+&#13;
+.section-title {&#13;
+    font-size: 32px;&#13;
+    font-weight: 800;&#13;
+    color: #1a1a1a;&#13;
+    display: flex;&#13;
+    align-items: center;&#13;
+    gap: 8px;&#13;
+}&#13;
+&#13;
+.paw-icon {&#13;
+    color: #ff8c42;&#13;
+    font-size: 28px;&#13;
+}&#13;
+&#13;
+.carousel-controls {&#13;
+    display: flex;&#13;
+    gap: 12px;&#13;
+}&#13;
+&#13;
+.carousel-btn {&#13;
+    width: 40px;&#13;
+    height: 40px;&#13;
+    border-radius: 50%;&#13;
+    border: 2px solid #e0e0e0;&#13;
+    background: white;&#13;
+    cursor: pointer;&#13;
+    display: flex;&#13;
+    align-items: center;&#13;
+    justify-content: center;&#13;
+    transition: all 0.3s ease;&#13;
+}&#13;
+&#13;
+.carousel-btn:hover {&#13;
+    background: #ff8c42;&#13;
+    border-color: #ff8c42;&#13;
+}&#13;
+&#13;
+.carousel-btn:hover svg {&#13;
+    stroke: white;&#13;
+}&#13;
+&#13;
+.carousel-btn svg {&#13;
+    width: 20px;&#13;
+    height: 20px;&#13;
+    stroke: #666;&#13;
+    stroke-width: 2;&#13;
+    transition: stroke 0.3s ease;&#13;
+}&#13;
+&#13;
+/* Grid layout adjusted so 4 cards fit per row on desktop */&#13;
+.offers-grid {&#13;
+    display: grid;&#13;
+    grid-template-columns: repeat(4, 1fr);&#13;
+    gap: 20px;&#13;
+}&#13;
+&#13;
+.offer-card {&#13;
+    position: relative;&#13;
+    border-radius: 16px;&#13;
+    overflow: hidden;&#13;
+    height: 300px;&#13;
+    cursor: pointer;&#13;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;&#13;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);&#13;
+}&#13;
+&#13;
+.offer-card:hover {&#13;
+    transform: translateY(-8px);&#13;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);&#13;
+}&#13;
+&#13;
+.offer-card-content {&#13;
+    position: relative;&#13;
+    height: 100%;&#13;
+    padding: 28px;&#13;
+    display: flex;&#13;
+    flex-direction: column;&#13;
+    justify-content: space-between;&#13;
+    color: white;&#13;
+}&#13;
+&#13;
+.card-purple {&#13;
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);&#13;
+}&#13;
+&#13;
+.card-teal {&#13;
+    background: linear-gradient(135deg, #5ebbcd 0%, #3b9fb0 100%);&#13;
+}&#13;
+&#13;
+.card-yellow {&#13;
+    background: linear-gradient(135deg, #f5c563 0%, #e5a840 100%);&#13;
+}&#13;
+&#13;
+.card-gray {&#13;
+    background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);&#13;
+}&#13;
+&#13;
+.offer-badge {&#13;
+    font-size: 13px;&#13;
+    font-weight: 600;&#13;
+    text-transform: uppercase;&#13;
+    letter-spacing: 1px;&#13;
+    margin-bottom: 8px;&#13;
+    opacity: 0.95;&#13;
+}&#13;
+&#13;
+.offer-title {&#13;
+    font-size: 42px;&#13;
+    font-weight: 800;&#13;
+    line-height: 1.1;&#13;
+    margin-bottom: 8px;&#13;
+}&#13;
+&#13;
+.offer-subtitle {&#13;
+    font-size: 16px;&#13;
+    font-weight: 600;&#13;
+    margin-bottom: 4px;&#13;
+}&#13;
+&#13;
+.offer-description {&#13;
+    font-size: 14px;&#13;
+    opacity: 0.9;&#13;
+    margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+.offer-price {&#13;
+    font-size: 32px;&#13;
+    font-weight: 800;&#13;
+    margin-bottom: 4px;&#13;
+}&#13;
+&#13;
+.offer-price-old {&#13;
+    font-size: 16px;&#13;
+    text-decoration: line-through;&#13;
+    opacity: 0.7;&#13;
+}&#13;
+&#13;
+.shop-now-btn {&#13;
+    display: inline-flex;&#13;
+    align-items: center;&#13;
+    gap: 8px;&#13;
+    padding: 10px 20px;&#13;
+    background: rgba(255, 255, 255, 0.25);&#13;
+    backdrop-filter: blur(10px);&#13;
+    border: 2px solid rgba(255, 255, 255, 0.3);&#13;
+    border-radius: 50px;&#13;
+    color: white;&#13;
+    font-size: 14px;&#13;
+    font-weight: 700;&#13;
+    text-decoration: none;&#13;
+    transition: all 0.3s ease;&#13;
+    cursor: pointer;&#13;
+    width: fit-content;&#13;
+}&#13;
+&#13;
+.shop-now-btn:hover {&#13;
+    background: rgba(255, 255, 255, 0.35);&#13;
+    transform: translateX(4px);&#13;
+}&#13;
+&#13;
+.btn-icon {&#13;
+    width: 18px;&#13;
+    height: 18px;&#13;
+    background: rgba(255, 255, 255, 0.3);&#13;
+    border-radius: 50%;&#13;
+    display: flex;&#13;
+    align-items: center;&#13;
+    justify-content: center;&#13;
+}&#13;
+&#13;
+/* Slightly smaller mock images so all fit in one line */&#13;
+.mock-image {&#13;
+    position: absolute;&#13;
+    right: -15px;&#13;
+    bottom: -15px;&#13;
+    width: 160px;&#13;
+    height: 160px;&#13;
+    background: rgba(255, 255, 255, 0.1);&#13;
+    border-radius: 50%;&#13;
+    display: flex;&#13;
+    align-items: center;&#13;
+    justify-content: center;&#13;
+    font-size: 60px;&#13;
+    opacity: 0.3;&#13;
+}&#13;
+&#13;
+.use-code {&#13;
+    font-size: 13px;&#13;
+    font-weight: 600;&#13;
+    opacity: 0.9;&#13;
+}&#13;
+&#13;
+/* Responsive Design */&#13;
+@media (max-width: 1200px) {&#13;
+    .offers-grid {&#13;
+        grid-template-columns: repeat(3, 1fr);&#13;
+    }&#13;
+}&#13;
+&#13;
+@media (max-width: 900px) {&#13;
+    .offers-grid {&#13;
+        grid-template-columns: repeat(2, 1fr);&#13;
+    }&#13;
+}&#13;
+&#13;
+@media (max-width: 600px) {&#13;
+    .section-title {&#13;
+        font-size: 24px;&#13;
+    }&#13;
+&#13;
+    .offers-grid {&#13;
+        grid-template-columns: 1fr;&#13;
+    }&#13;
+&#13;
+    .offer-card {&#13;
+        height: 260px;&#13;
+    }&#13;
+&#13;
+    .offer-card-content {&#13;
+        padding: 20px;&#13;
+    }&#13;
+&#13;
+    .offer-title {&#13;
+        font-size: 32px;&#13;
+    }&#13;
+&#13;
+    .mock-image {&#13;
+        width: 120px;&#13;
+        height: 120px;&#13;
+        font-size: 50px;&#13;
+    }&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Offers on Pet</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-03 09:36:04</sys_created_on>
+        <sys_id>829c4a68c34db210c7e81d12b4013170</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Offers on Pet</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sp_widget_829c4a68c34db210c7e81d12b4013170</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-03 09:40:08</sys_updated_on>
+        <template><![CDATA[<div class="offers-section">
+    <div class="offers-container">
+        <div class="section-header">
+            <h2 class="section-title">
+                Offers On Pet
+                <span class="paw-icon">]]>🐾<![CDATA[</span>
+            </h2>
+            <div class="carousel-controls">
+                <button class="carousel-btn" ng-click="c.scrollLeft()">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="carousel-btn" ng-click="c.scrollRight()">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="offers-grid">
+            <!-- Offer Card 1 -->
+            <div class="offer-card">
+                <div class="offer-card-content card-purple">
+                    <div>
+                        <div class="offer-badge">FREE SHIPPING</div>
+                        <div class="offer-title">30%</div>
+                        <div class="offer-subtitle">Sale Off</div>
+                    </div>
+                    <a href="javascript:void(0)" class="shop-now-btn" ng-click="c.shopOffer(1)">
+                        Shop Now
+                        <span class="btn-icon">→</span>
+                    </a>
+                    <div class="mock-image">]]>🎾<![CDATA[</div>
+                </div>
+            </div>
+
+            <!-- Offer Card 2 -->
+            <div class="offer-card">
+                <div class="offer-card-content card-teal">
+                    <div>
+                        <div class="offer-price">$79.99</div>
+                        <div class="offer-price-old">$99.00</div>
+                        <div class="offer-subtitle">Best Seller</div>
+                        <div class="offer-subtitle">Dog Shirt</div>
+                        <div class="offer-description">Everything for your pet.</div>
+                    </div>
+                    <div class="mock-image">]]>🐕<![CDATA[</div>
+                </div>
+            </div>
+
+            <!-- Offer Card 3 -->
+            <div class="offer-card">
+                <div class="offer-card-content card-yellow">
+                    <div>
+                        <div class="offer-badge">UP TO 20% OFF</div>
+                        <div class="offer-subtitle">Food Pet</div>
+                        <div class="offer-description">Only on Sunday!</div>
+                    </div>
+                    <a href="javascript:void(0)" class="shop-now-btn" ng-click="c.shopOffer(3)">
+                        Shop Now
+                        <span class="btn-icon">→</span>
+                    </a>
+                    <div class="mock-image">]]>🍖<![CDATA[</div>
+                </div>
+            </div>
+
+            <!-- Offer Card 4 -->
+            <div class="offer-card">
+                <div class="offer-card-content card-gray">
+                    <div>
+                        <div class="offer-badge">DISCOUNT OFF</div>
+                        <div class="offer-title">15%</div>
+                        <div class="offer-subtitle">Gift for Pets</div>
+                        <div class="use-code">Use Code: SALE15</div>
+                    </div>
+                    <div class="mock-image">]]>🎁<![CDATA[</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>829c4a68c34db210c7e81d12b4013170</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-03 09:36:04</sys_created_on>
+        <sys_id>d3cc4e28c34db210c7e81d12b40131be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-03 09:36:04</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

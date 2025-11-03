@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script/>
+        <controller_as>c</controller_as>
+        <css>.order-container {&#13;
+  max-width: 700px;&#13;
+  margin: 40px auto;&#13;
+  background: #fff;&#13;
+  border-radius: 12px;&#13;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);&#13;
+  padding: 30px 40px;&#13;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;&#13;
+}&#13;
+&#13;
+.order-container:hover {&#13;
+  transform: translateY(-2px);&#13;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);&#13;
+}&#13;
+&#13;
+.order-header h2 {&#13;
+  font-weight: 600;&#13;
+  font-size: 1.6rem;&#13;
+  color: #1b2733;&#13;
+  margin-bottom: 8px;&#13;
+}&#13;
+&#13;
+.order-header p {&#13;
+  color: #5f6c7b;&#13;
+  font-size: 0.95rem;&#13;
+  margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+.order-body {&#13;
+  margin-top: 15px;&#13;
+}&#13;
+&#13;
+.error {&#13;
+  color: #c0392b;&#13;
+  font-weight: bold;&#13;
+  text-align: center;&#13;
+  margin-top: 20px;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>Place an Order</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_1607167_pet_shop.Pet Shop User</roles>
+        <script><![CDATA[(function() {
+  var producerSysId = '31688d54c3457210c7e81d12b401315c'; // your record producer sys_id
+
+  var gr = new GlideRecord('sc_cat_item_producer');
+  if (gr.get(producerSysId)) {
+    data.recordProducer = $sp.getRecordProducer(producerSysId);
+    data.header = gr.getValue('name') || "Place an Order";
+    data.subheader = "Fill out the details below to request pet shop items";
+  } else {
+    data.error = "⚠️ Record Producer not found or inaccessible.";
+  }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-02 18:16:40</sys_created_on>
+        <sys_id>e2f93a9cc34d7210c7e81d12b40131d7</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Place an Order</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sp_widget_e2f93a9cc34d7210c7e81d12b40131d7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-02 18:28:42</sys_updated_on>
+        <template><![CDATA[<div class="order-container">
+  <div class="order-header">
+    <h2>{{data.header}}</h2>
+    <p>{{data.subheader}}</p>
+  </div>
+
+  <div class="order-body" ng-if="data.recordProducer">
+    <!-- This renders your Record Producer form -->
+    <sp-widget widget="data.recordProducer"></sp-widget>
+  </div>
+
+  <div class="error" ng-if="data.error">
+    {{data.error}}
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e2f93a9cc34d7210c7e81d12b40131d7</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-02 18:16:01</sys_created_on>
+        <sys_id>863a3a9cc34d7210c7e81d12b4013148</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-02 18:16:01</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+  var c = this;
+
+  c.viewDetails = function(orderId) {
+    alert("Viewing details for Order #" + orderId);
+    // Or redirect to another page:
+    // window.location.href = '?id=order_details&sys_id=' + orderId;
+  };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap');&#13;
+&#13;
+.order-history-container {&#13;
+  max-width: 900px;&#13;
+  margin: 50px auto;&#13;
+  background: #fdfcff;&#13;
+  padding: 30px;&#13;
+  border-radius: 24px;&#13;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);&#13;
+  font-family: 'Poppins', sans-serif;&#13;
+}&#13;
+&#13;
+.page-title {&#13;
+  text-align: center;&#13;
+  color: #5b4fc4;&#13;
+  font-size: 30px;&#13;
+  font-weight: 600;&#13;
+  margin-bottom: 35px;&#13;
+  letter-spacing: 0.5px;&#13;
+}&#13;
+&#13;
+.order-list {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  gap: 20px;&#13;
+}&#13;
+&#13;
+.order-card {&#13;
+  background: #fff;&#13;
+  border-radius: 18px;&#13;
+  padding: 22px 25px;&#13;
+  transition: all 0.3s ease;&#13;
+  border: 1px solid #e6e6e6;&#13;
+  box-shadow: 0 3px 10px rgba(91, 79, 196, 0.06);&#13;
+}&#13;
+&#13;
+.order-card:hover {&#13;
+  transform: translateY(-3px);&#13;
+  box-shadow: 0 8px 20px rgba(91, 79, 196, 0.15);&#13;
+}&#13;
+&#13;
+.order-info {&#13;
+  display: flex;&#13;
+  justify-content: space-between;&#13;
+  align-items: center;&#13;
+  flex-wrap: wrap;&#13;
+}&#13;
+&#13;
+.order-details {&#13;
+  flex: 1 1 65%;&#13;
+}&#13;
+&#13;
+.order-header {&#13;
+  display: flex;&#13;
+  justify-content: space-between;&#13;
+  color: #666;&#13;
+  font-weight: 500;&#13;
+  margin-bottom: 10px;&#13;
+}&#13;
+&#13;
+.order-body h4 {&#13;
+  font-size: 17px;&#13;
+  color: #333;&#13;
+  margin-bottom: 4px;&#13;
+}&#13;
+&#13;
+.order-body .category {&#13;
+  font-size: 13px;&#13;
+  color: #7b68ee;&#13;
+  background: rgba(123, 104, 238, 0.1);&#13;
+  padding: 3px 8px;&#13;
+  border-radius: 8px;&#13;
+  display: inline-block;&#13;
+  margin-bottom: 5px;&#13;
+  font-weight: 500;&#13;
+}&#13;
+&#13;
+.order-body p {&#13;
+  font-size: 14px;&#13;
+  color: #666;&#13;
+}&#13;
+&#13;
+.order-summary {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  align-items: flex-end;&#13;
+  justify-content: center;&#13;
+  flex: 1 1 30%;&#13;
+  gap: 8px;&#13;
+}&#13;
+&#13;
+.total {&#13;
+  font-size: 18px;&#13;
+  font-weight: 600;&#13;
+  color: #4c3cb4;&#13;
+}&#13;
+&#13;
+.btn-view {&#13;
+  background: linear-gradient(135deg, #7b68ee, #5b4fc4);&#13;
+  color: white;&#13;
+  border: none;&#13;
+  padding: 10px 18px;&#13;
+  border-radius: 12px;&#13;
+  cursor: pointer;&#13;
+  font-weight: 500;&#13;
+  transition: all 0.3s ease;&#13;
+}&#13;
+&#13;
+.btn-view:hover {&#13;
+  background: linear-gradient(135deg, #6a57d5, #4c3cb4);&#13;
+  transform: scale(1.05);&#13;
+}&#13;
+&#13;
+@media (max-width: 700px) {&#13;
+  .order-info {&#13;
+    flex-direction: column;&#13;
+    align-items: flex-start;&#13;
+  }&#13;
+  .order-summary {&#13;
+    align-items: flex-start;&#13;
+    margin-top: 10px;&#13;
+  }&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>psmp_order_history</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Order History</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_1607167_pet_shop.Pet Shop User</roles>
+        <script/>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>ash.vequiso</sys_created_by>
+        <sys_created_on>2025-11-03 13:04:48</sys_created_on>
+        <sys_id>e06afa24c341f210c7e81d12b401319b</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>Order History</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sp_widget_e06afa24c341f210c7e81d12b401319b</sys_update_name>
+        <sys_updated_by>ash.vequiso</sys_updated_by>
+        <sys_updated_on>2025-11-03 14:56:51</sys_updated_on>
+        <template><![CDATA[<div class="order-history-container">
+  <h2 class="page-title">]]>🐾<![CDATA[ Order History</h2>
+
+  <div class="order-list">
+    <div class="order-card">
+      <div class="order-info">
+        <div class="order-details">
+          <div class="order-header">
+            <span class="order-id">#1004</span>
+            <span class="order-date">November 2, 2025</span>
+          </div>
+          <div class="order-body">
+            <h4>Premium Cat Food - Tuna</h4>
+            <p class="category">Category: Cat Food</p>
+            <p>Quantity: 3</p>
+          </div>
+        </div>
+        <div class="order-summary">
+          <span class="total">₱899.00</span>
+          <button class="btn-view" ng-click="c.viewDetails(1004)">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <div class="order-info">
+        <div class="order-details">
+          <div class="order-header">
+            <span class="order-id">#1005</span>
+            <span class="order-date">November 1, 2025</span>
+          </div>
+          <div class="order-body">
+            <h4>Dog Shampoo - Lavender</h4>
+            <p class="category">Category: Grooming</p>
+            <p>Quantity: 1</p>
+          </div>
+        </div>
+        <div class="order-summary">
+          <span class="total">₱450.00</span>
+          <button class="btn-view" ng-click="c.viewDetails(1004)">View Details</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <div class="order-info">
+        <div class="order-details">
+          <div class="order-header">
+            <span class="order-id">#1006</span>
+            <span class="order-date">October 31, 2025</span>
+          </div>
+          <div class="order-body">
+            <h4>Bird Cage Cleaner</h4>
+            <p class="category">Category: Cleaning Supplies</p>
+            <p>Quantity: 2</p>
+          </div>
+        </div>
+        <div class="order-summary">
+          <span class="total">₱320.00</span>
+          <button class="btn-view" ng-click="c.viewDetails(1004)">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e06afa24c341f210c7e81d12b401319b</id>
+        <sys_created_by>ash.vequiso</sys_created_by>
+        <sys_created_on>2025-11-03 13:04:47</sys_created_on>
+        <sys_id>fc9cbae4c341f210c7e81d12b4013108</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ash.vequiso</sys_updated_by>
+        <sys_updated_on>2025-11-03 13:04:47</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
