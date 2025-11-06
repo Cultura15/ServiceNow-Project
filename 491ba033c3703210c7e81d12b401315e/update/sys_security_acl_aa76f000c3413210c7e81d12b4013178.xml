@@ -2,7 +2,7 @@
     <sys_security_acl action="INSERT_OR_UPDATE">
         <active>true</active>
         <admin_overrides>true</admin_overrides>
-        <advanced>false</advanced>
+        <advanced>true</advanced>
         <applies_to/>
         <condition/>
         <decision_type>allow</decision_type>
@@ -10,20 +10,64 @@
         <local_or_existing>Local</local_or_existing>
         <name>x_1607167_pet_shop_pet_shop_order</name>
         <operation display_value="write">write</operation>
-        <script/>
+        <script><![CDATA[// Table-level write ACL script for x_1607167_pet_shop_pet_shop_order
+(function() {
+  // managers always can
+  if (gs.hasRole('x_1607167_pet_shop.Pet Shop Manager')) {
+    return true;
+  }
+
+  // clerks: allowed only if order is unassigned OR assigned to current user
+  if (gs.hasRole('x_1607167_pet_shop.Pet Shop Clerk')) {
+    // for new records (create -> write runs on update too), allow clerk to create/write if assigned_to is null/empty
+    try {
+      var assignedTo = current.assigned_to;
+      // if assigned_to field is empty/nil, any clerk can write (so they can add assigned_to)
+      if (!assignedTo || String(assignedTo) === '' || assignedTo.nil && assignedTo.nil()) {
+        return true;
+      }
+      // if assigned_to equals current user -> allow
+      var mySysId = gs.getUserID();
+      if (assignedTo == mySysId) {
+        return true;
+      }
+      // otherwise not allowed
+      return false;
+    } catch (e) {
+      // conservative default: deny on unexpected error
+      gs.error('Order write ACL error: ' + e);
+      return false;
+    }
+  }
+
+  // others: no write
+  return false;
+})();
+]]></script>
         <security_attribute/>
         <sys_class_name>sys_security_acl</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-01 14:01:56</sys_created_on>
         <sys_id>aa76f000c3413210c7e81d12b4013178</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>12</sys_mod_count>
         <sys_name>x_1607167_pet_shop_pet_shop_order</sys_name>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name>sys_security_acl_aa76f000c3413210c7e81d12b4013178</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-01 14:01:56</sys_updated_on>
+        <sys_updated_on>2025-11-06 05:53:11</sys_updated_on>
         <type display_value="record">record</type>
     </sys_security_acl>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>aa76f000c3413210c7e81d12b4013178</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-05 10:22:57</sys_created_on>
+        <sys_id>25baa419c3cd7610c7e81d12b401316a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-05 10:22:57</sys_updated_on>
+        <table>sys_security_acl</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
 </record_update>

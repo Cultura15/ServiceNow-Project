@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <applies_to/>
+        <condition/>
+        <decision_type>allow</decision_type>
+        <description>Allow write for state in x_1607167_pet_shop_pet_shop_order, for users with roles (x_1607167_pet_shop.Pet Shop Clerk, x_1607167_pet_shop.Pet Shop Manager).</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_1607167_pet_shop_pet_shop_order.state</name>
+        <operation display_value="write">write</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-05 10:48:43</sys_created_on>
+        <sys_id>879fec9dc3cd7610c7e81d12b40131af</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>x_1607167_pet_shop_pet_shop_order.state</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_security_acl_879fec9dc3cd7610c7e81d12b40131af</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-05 13:54:15</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_es_latest_script action="DELETE">
+        <id>879fec9dc3cd7610c7e81d12b40131af</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-05 10:48:38</sys_created_on>
+        <sys_id>c690f49dc3cd7610c7e81d12b4013190</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-05 10:48:38</sys_updated_on>
+        <table>sys_security_acl</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</application>
+        <file_path/>
+        <instance_id>97197bfedbca025002022a5913961906</instance_id>
+        <instance_name>dev269232</instance_name>
+        <name>sys_security_acl_879fec9dc3cd7610c7e81d12b40131af</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><decision_type>allow</decision_type><description>Allow write for state in x_1607167_pet_shop_pet_shop_order, for users with roles (x_1607167_pet_shop.Pet Shop Clerk, x_1607167_pet_shop.Pet Shop Manager).</description><local_or_existing>Local</local_or_existing><name>x_1607167_pet_shop_pet_shop_order.state</name><operation display_value="write">write</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-05 10:48:43</sys_created_on><sys_id>879fec9dc3cd7610c7e81d12b40131af</sys_id><sys_mod_count>3</sys_mod_count><sys_name>x_1607167_pet_shop_pet_shop_order.state</sys_name><sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package><sys_policy/><sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope><sys_update_name>sys_security_acl_879fec9dc3cd7610c7e81d12b40131af</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-05 13:54:15</sys_updated_on><type display_value="record">record</type></sys_security_acl><sys_es_latest_script action="INSERT_OR_UPDATE"><id>879fec9dc3cd7610c7e81d12b40131af</id><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-05 10:48:38</sys_created_on><sys_id>c690f49dc3cd7610c7e81d12b4013190</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-05 10:48:38</sys_updated_on><table>sys_security_acl</table><use_es_latest>true</use_es_latest></sys_es_latest_script></record_update>]]></payload>
+        <payload_hash>-646268065</payload_hash>
+        <record_name>x_1607167_pet_shop_pet_shop_order.state</record_name>
+        <reverted_from/>
+        <source>36424573c3b03210c7e81d12b4013173</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-05 13:54:15</sys_created_on>
+        <sys_id>f01b1955c3c1b610c7e81d12b40131a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a544bf3fe0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-05 13:54:15</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>781b195526c1b610e35245f27c6cefa8</update_guid>
+        <update_guid_history>781b195526c1b610e35245f27c6cefa8:-646268065,42ba9d15edc1b610fa64b370463327a7:399398334,b4eac1dd2a41b61018c5d9d3b1075b00:1536446888,8390b0114701b6101614337f5dc0802b:1704892113</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 05:55:38</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>3ebc83dfb9cf4c6f8a5a54f3ac0a3009</sys_id>
+        <sys_metadata>879fec9dc3cd7610c7e81d12b40131af</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1607167_pet_shop_pet_shop_order.state</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_parent display_value="x_1607167_pet_shop_pet_shop_order">ae76f000c3413210c7e81d12b4013186</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_scope_delete display_value="">6345f443edcf4520bbffdf937b8ec400</sys_scope_delete>
+        <sys_update_name>sys_security_acl_879fec9dc3cd7610c7e81d12b40131af</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_879fec9dc3cd7610c7e81d12b40131af">f01b1955c3c1b610c7e81d12b40131a9</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 05:55:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

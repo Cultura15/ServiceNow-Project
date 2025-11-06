@@ -588,21 +588,32 @@ api.controller.$inject = ['$scope', '$location', '$window', 'spUtil', '$log'];
             }
 
             order.initialize();
+
+            // ]]>🔹<![CDATA[ Load Pet Shop Item details from the source table
+            var itemGr = new GlideRecord("x_1607167_pet_shop_pet_shop_item");
+            if (itemGr.get(input.item_sys_id)) {
+                order.item_name = itemGr.getValue("name");
+                order.category = itemGr.getDisplayValue("category");
+                order.image = itemGr.getValue("image");
+            }
+
+            // ]]>🔹<![CDATA[ Store other form fields
             order.short_description = "Order for " + input.item_name;
-            order.item = input.item_sys_id;
             order.brand = input.brand;
             order.quantity = input.quantity;
             order.special_instructions = input.special_instructions || "";
             order.order_for = gs.getUserID();
-            order.state = "1"; // maybe Pending
+            order.state = "1"; // Pending
             order.total_amount = 0; // optional
 
+            // ]]>🔹<![CDATA[ Insert the record
             var orderSysId = order.insert();
             gs.info("]]>🧩<![CDATA[ Order inserted successfully: " + orderSysId);
 
             data.success = true;
             data.orderNumber = order.getDisplayValue("number") || orderSysId;
             data.message = "✅ Order successfully placed for " + input.item_name;
+
         } catch (e) {
             gs.error("❌ Order submission failed: " + e.message);
             data.success = false;
@@ -637,18 +648,18 @@ api.controller.$inject = ['$scope', '$location', '$window', 'spUtil', '$log'];
     var itemSysId = $sp.getParameter("item_sys_id");
     if (itemSysId) {
         gs.info("]]>🧩<![CDATA[ Loading item details for sys_id: " + itemSysId);
-        var itemGr = new GlideRecord("x_1607167_pet_shop_pet_shop_item");
-        if (itemGr.get(itemSysId)) {
-            gs.info("]]>🧩<![CDATA[ Loaded item: " + itemGr.getValue("name"));
+        var itemGr2 = new GlideRecord("x_1607167_pet_shop_pet_shop_item");
+        if (itemGr2.get(itemSysId)) {
+            gs.info("]]>🧩<![CDATA[ Loaded item: " + itemGr2.getValue("name"));
             data.itemDetails = {
-                sys_id: itemGr.getUniqueValue(),
-                name: itemGr.getValue("name"),
-                short_description: itemGr.getValue("short_description"),
-                category: itemGr.getDisplayValue("category"),
-                brand: itemGr.getDisplayValue("brand"),
-                stocks: parseInt(itemGr.getValue("stocks"), 10),
-                expiry: itemGr.getDisplayValue("expiry"),
-                image: itemGr.getValue("image")
+                sys_id: itemGr2.getUniqueValue(),
+                name: itemGr2.getValue("name"),
+                short_description: itemGr2.getValue("short_description"),
+                category: itemGr2.getDisplayValue("category"),
+                brand: itemGr2.getDisplayValue("brand"),
+                stocks: parseInt(itemGr2.getValue("stocks"), 10),
+                expiry: itemGr2.getDisplayValue("expiry"),
+                image: itemGr2.getValue("image")
             };
         }
     }
@@ -659,14 +670,14 @@ api.controller.$inject = ['$scope', '$location', '$window', 'spUtil', '$log'];
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-03 13:08:16</sys_created_on>
         <sys_id>2b5c7228c341f210c7e81d12b4013188</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Place an Order Widget</sys_name>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name>sp_widget_2b5c7228c341f210c7e81d12b4013188</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-03 20:07:47</sys_updated_on>
+        <sys_updated_on>2025-11-05 08:26:45</sys_updated_on>
         <template><![CDATA[<div class="order-page-container">
   <!-- Back Button -->
   <button class="back-btn" ng-click="c.goBack()">

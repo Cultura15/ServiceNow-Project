@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-05 10:48:43</sys_created_on>
+        <sys_id>5f807c9dc3cd7610c7e81d12b40131ab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_1607167_pet_shop.Pet Shop Clerk</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_security_acl display_value="">879fec9dc3cd7610c7e81d12b40131af</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_5f807c9dc3cd7610c7e81d12b40131ab</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-05 10:48:43</sys_updated_on>
+        <sys_user_role display_value="x_1607167_pet_shop.Pet Shop Clerk" name="x_1607167_pet_shop.Pet Shop Clerk">374ee4f3c3703210c7e81d12b401311e</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</application>
+        <file_path/>
+        <instance_id>97197bfedbca025002022a5913961906</instance_id>
+        <instance_name>dev269232</instance_name>
+        <name>sys_security_acl_role_5f807c9dc3cd7610c7e81d12b40131ab</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-05 10:48:43</sys_created_on><sys_id>5f807c9dc3cd7610c7e81d12b40131ab</sys_id><sys_mod_count>0</sys_mod_count><sys_name>.x_1607167_pet_shop.Pet Shop Clerk</sys_name><sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package><sys_policy/><sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope><sys_security_acl display_value="">879fec9dc3cd7610c7e81d12b40131af</sys_security_acl><sys_update_name>sys_security_acl_role_5f807c9dc3cd7610c7e81d12b40131ab</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-05 10:48:43</sys_updated_on><sys_user_role display_value="x_1607167_pet_shop.Pet Shop Clerk" name="x_1607167_pet_shop.Pet Shop Clerk">374ee4f3c3703210c7e81d12b401311e</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-1417209423</payload_hash>
+        <record_name>.x_1607167_pet_shop.Pet Shop Clerk</record_name>
+        <reverted_from/>
+        <source>36424573c3b03210c7e81d12b4013173</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-05 10:48:43</sys_created_on>
+        <sys_id>cf90b011c301b610c7e81d12b4013127</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a53a218ee0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-05 10:48:43</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>c390b011e001b610a6a79a0303950d27</update_guid>
+        <update_guid_history>c390b011e001b610a6a79a0303950d27:-1417209423</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value=".x_1607167_pet_shop.Pet Shop Clerk">2717f425c3c1f610c7e81d12b40131b1</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 05:55:38</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>1505a1870a8a4ff0826d086c4f858040</sys_id>
+        <sys_metadata>5f807c9dc3cd7610c7e81d12b40131ab</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_1607167_pet_shop.Pet Shop Clerk</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_scope_delete display_value="">6345f443edcf4520bbffdf937b8ec400</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_5f807c9dc3cd7610c7e81d12b40131ab</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_5f807c9dc3cd7610c7e81d12b40131ab">cf90b011c301b610c7e81d12b4013127</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 05:55:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

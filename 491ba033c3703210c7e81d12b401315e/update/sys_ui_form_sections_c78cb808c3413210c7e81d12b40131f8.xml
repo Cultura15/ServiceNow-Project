@@ -7,12 +7,12 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>cb8cb808c3413210c7e81d12b40131fb</sys_id>
-            <sys_mod_count>0</sys_mod_count>
+            <sys_mod_count>2</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="x_1607167_pet_shop_pet_shop_order" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c78cb808c3413210c7e81d12b40131f8</sys_ui_form>
-            <sys_ui_section caption="NULL" display_value="" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">e94a3804c3413210c7e81d12b401313a</sys_ui_section>
+            <sys_ui_section caption="Order Summary" display_value="Order Summary" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">e94a3804c3413210c7e81d12b401313a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-01 14:28:27</sys_updated_on>
+            <sys_updated_on>2025-11-05 08:16:00</sys_updated_on>
         </sys_ui_form_section>
         <sys_ui_form_section action="INSERT_OR_UPDATE">
             <position>1</position>
@@ -21,12 +21,26 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>878cb808c3413210c7e81d12b40131fc</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1607167_pet_shop_pet_shop_order" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c78cb808c3413210c7e81d12b40131f8</sys_ui_form>
+            <sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-05 08:16:00</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-05 08:18:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d84e8415c34d7610c7e81d12b401319f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_overrides/>
             <sys_ui_form display_value="x_1607167_pet_shop_pet_shop_order" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c78cb808c3413210c7e81d12b40131f8</sys_ui_form>
-            <sys_ui_section caption="Details" display_value="Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section>
+            <sys_ui_section caption="Description" display_value="Description" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">5c4e8415c34d7610c7e81d12b401319c</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-01 14:28:27</sys_updated_on>
+            <sys_updated_on>2025-11-05 08:18:37</sys_updated_on>
         </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_1607167_pet_shop_pet_shop_order</name>
