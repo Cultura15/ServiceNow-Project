@@ -5,7 +5,7 @@
         <draft>false</draft>
         <dynamic_title_structure/>
         <human_readable_url_structure/>
-        <id>psmp_my_orders</id>
+        <id>psmp_cart</id>
         <internal>false</internal>
         <omit_watcher>false</omit_watcher>
         <public>false</public>
@@ -16,15 +16,15 @@
         <sys_created_by>ash.vequiso</sys_created_by>
         <sys_created_on>2025-11-03 12:57:31</sys_created_on>
         <sys_id>48dab264c341f210c7e81d12b4013170</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>psmp_my_orders</sys_name>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>psmp_cart</sys_name>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name>sp_page_48dab264c341f210c7e81d12b4013170</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-06 06:51:01</sys_updated_on>
-        <title>My Orders</title>
+        <sys_updated_on>2025-11-09 10:37:03</sys_updated_on>
+        <title>My Cart</title>
         <use_seo_script>false</use_seo_script>
     </sp_page>
     <sys_translated_text action="delete_multiple" query="documentkey=48dab264c341f210c7e81d12b4013170"/>
