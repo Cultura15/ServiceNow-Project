@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $window, spUtil, $log) {
+  var c = this;
+
+  // Initialize cart data
+  c.cartItems = c.data.cartItems || [];
+  c.totalItems = c.data.totalItems || 0;
+  c.grandTotal = c.data.grandTotal || 0;
+
+  // ]]>🧮<![CDATA[ Remove item from cart
+  c.removeFromCart = function(sys_id) {
+    if (!confirm("Remove this item from your cart?")) return;
+
+    c.data.action = 'remove_item';
+    c.data.sys_id = sys_id;
+
+    c.server.update(c.data).then(function(response) {
+      if (response.success) {
+        spUtil.addInfoMessage("]]>🗑<![CDATA[️ Item removed from cart!");
+        c.cartItems = response.cartItems;
+        c.totalItems = response.totalItems;
+        c.grandTotal = response.grandTotal;
+      } else {
+        spUtil.addErrorMessage("❌ Failed to remove item: " + (response.error || "Unknown error"));
+      }
+    });
+  };
+
+  // ]]>🧾<![CDATA[ Checkout
+  c.checkout = function() {
+    if (!c.cartItems || c.cartItems.length === 0) {
+      spUtil.addErrorMessage("Your cart is empty!");
+      return;
+    }
+
+    if (!confirm("Proceed to checkout?")) return;
+
+    // Prepare checkout payload
+    c.data.action = 'checkout';
+    c.data.cartItems = angular.copy(c.cartItems); // send all items to server
+
+    $log.info("]]>🧾<![CDATA[ Sending checkout payload:", c.data);
+
+    c.server.update(c.data).then(function(response) {
+      $log.info("✅ Checkout response:", response);
+
+      if (response.success) {
+        spUtil.addInfoMessage("✅ Checkout complete! Your orders have been placed.");
+        c.cartItems = [];
+        c.totalItems = 0;
+        c.grandTotal = 0;
+
+        // Redirect after short delay
+        setTimeout(function() {
+          $window.location.href = '/psmp?id=psmp_my_orders';
+        }, 1500);
+      } else {
+        spUtil.addErrorMessage("❌ Checkout failed: " + (response.error || "Please try again."));
+      }
+    }).catch(function(error) {
+      $log.error("❌ Checkout error:", error);
+      spUtil.addErrorMessage("An unexpected error occurred during checkout.");
+    });
+  };
+
+  // ]]>🔙<![CDATA[ Back to shop
+  c.goBack = function() {
+    $window.location.href = '/psmp?id=psmp_shop';
+  };
+};
+
+api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.cart-widget-container {&#13;
+  padding: 20px;&#13;
+  max-width: 800px;&#13;
+  margin: 0 auto;&#13;
+}&#13;
+&#13;
+.cart-title {&#13;
+  font-size: 1.6rem;&#13;
+  font-weight: 600;&#13;
+  margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+.cart-items {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  gap: 16px;&#13;
+}&#13;
+&#13;
+.cart-item {&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  background: #fff;&#13;
+  border-radius: 12px;&#13;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);&#13;
+  padding: 12px;&#13;
+  transition: transform 0.2s;&#13;
+}&#13;
+&#13;
+.cart-item:hover {&#13;
+  transform: scale(1.01);&#13;
+}&#13;
+&#13;
+.cart-item-img {&#13;
+  width: 90px;&#13;
+  height: 90px;&#13;
+  object-fit: cover;&#13;
+  border-radius: 10px;&#13;
+  margin-right: 15px;&#13;
+}&#13;
+&#13;
+.cart-item-info {&#13;
+  flex: 1;&#13;
+}&#13;
+&#13;
+.cart-item-name {&#13;
+  font-size: 1.1rem;&#13;
+  font-weight: 600;&#13;
+  margin: 0;&#13;
+}&#13;
+&#13;
+.cart-item-brand {&#13;
+  color: #888;&#13;
+  margin: 4px 0;&#13;
+}&#13;
+&#13;
+.cart-item-price,&#13;
+.cart-item-total {&#13;
+  font-size: 0.95rem;&#13;
+  margin: 2px 0;&#13;
+}&#13;
+&#13;
+.remove-btn {&#13;
+  background: #ff5252;&#13;
+  color: white;&#13;
+  border: none;&#13;
+  border-radius: 6px;&#13;
+  padding: 6px 10px;&#13;
+  cursor: pointer;&#13;
+  transition: background 0.2s;&#13;
+}&#13;
+&#13;
+.remove-btn:hover {&#13;
+  background: #ff0000;&#13;
+}&#13;
+&#13;
+.cart-summary {&#13;
+  margin-top: 25px;&#13;
+  background: #f9f9f9;&#13;
+  border-radius: 10px;&#13;
+  padding: 15px;&#13;
+  text-align: right;&#13;
+}&#13;
+&#13;
+.checkout-btn {&#13;
+  background: #28a745;&#13;
+  color: white;&#13;
+  border: none;&#13;
+  border-radius: 8px;&#13;
+  padding: 10px 16px;&#13;
+  margin-top: 10px;&#13;
+  font-size: 1rem;&#13;
+  cursor: pointer;&#13;
+  transition: background 0.2s;&#13;
+}&#13;
+&#13;
+.checkout-btn:hover {&#13;
+  background: #218838;&#13;
+}&#13;
+&#13;
+.empty-cart {&#13;
+  text-align: center;&#13;
+  padding: 40px;&#13;
+  font-size: 1.2rem;&#13;
+}&#13;
+&#13;
+.back-btn {&#13;
+  background: #007bff;&#13;
+  color: white;&#13;
+  border: none;&#13;
+  border-radius: 8px;&#13;
+  padding: 10px 16px;&#13;
+  cursor: pointer;&#13;
+}&#13;
+&#13;
+.back-btn:hover {&#13;
+  background: #0069d9;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Pet Shop Cart</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_1607167_pet_shop.Pet Shop User</roles>
+        <script><![CDATA[(function() {
+  data.cartItems = [];
+  data.totalItems = 0;
+  data.grandTotal = 0;
+
+  var currentUser = gs.getUserID();
+
+  // Load user's active cart items
+  var cart = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
+  cart.addQuery("user", currentUser);
+  cart.addQuery("active", true);
+  cart.addQuery("ordered", false);
+  cart.query();
+
+  while (cart.next()) {
+    data.cartItems.push({
+      sys_id: cart.getUniqueValue(),
+      item: cart.getValue("item"),
+      brand: cart.getValue("brand"),
+	  category: cart.getValue("category"),
+      price: parseFloat(cart.getValue("price") || 0),
+      quantity: parseInt(cart.getValue("quantity") || 0, 10),
+      total_price: parseFloat(cart.getValue("total_price") || 0),
+      image: cart.getValue("image")
+    });
+  }
+
+  // Totals
+  data.totalItems = data.cartItems.length;
+  data.grandTotal = data.cartItems.reduce(function(sum, item) {
+    return sum + item.total_price;
+  }, 0);
+
+  // ---------------------------------------------
+  // ]]>🧩<![CDATA[ ACTION: Remove Item
+  // ---------------------------------------------
+  if (input && input.action === "remove_item") {
+    var rm = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
+    if (rm.get(input.sys_id)) {
+      rm.active = false;
+      rm.update();
+    }
+
+    gs.info("]]>🗑<![CDATA[ Removed item from cart: " + input.sys_id);
+
+    // Reload cart
+    var reload = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
+    reload.addQuery("user", currentUser);
+    reload.addQuery("active", true);
+    reload.addQuery("ordered", false);
+    reload.query();
+
+    data.cartItems = [];
+    while (reload.next()) {
+      data.cartItems.push({
+        sys_id: reload.getUniqueValue(),
+        item: reload.getValue("item"),
+        brand: reload.getValue("brand"),
+		category: reload.getValue("category"),  
+        price: parseFloat(reload.getValue("price") || 0),
+        quantity: parseInt(reload.getValue("quantity") || 0, 10),
+        total_price: parseFloat(reload.getValue("total_price") || 0),
+        image: reload.getValue("image")
+      });
+    }
+
+    data.totalItems = data.cartItems.length;
+    data.grandTotal = data.cartItems.reduce(function(sum, item) {
+      return sum + item.total_price;
+    }, 0);
+
+    data.success = true;
+    return;
+  }
+
+  // ---------------------------------------------
+  // ]]>🧾<![CDATA[ ACTION: Checkout (Post Orders)
+  // ---------------------------------------------
+  if (input && input.action === "checkout") {
+    gs.info("]]>🧾<![CDATA[ Checkout started for user: " + currentUser);
+
+    var checkout = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
+    checkout.addQuery("user", currentUser);
+    checkout.addQuery("active", true);
+    checkout.addQuery("ordered", false);
+    checkout.query();
+
+    var count = 0;
+
+    while (checkout.next()) {
+      // ✅ Create order record for each cart item
+      var order = new GlideRecord("x_1607167_pet_shop_pet_shop_order");
+      if (order.isValid()) {
+        order.initialize();
+        order.short_description = "Order for " + checkout.getValue("item");
+        order.item_name = checkout.getValue("item");
+        order.brand = checkout.getValue("brand");
+		order.category = checkout.getValue("category");
+        order.image = checkout.getValue("image");
+        order.quantity = checkout.getValue("quantity");
+        order.total_amount = checkout.getValue("total_price");
+        order.order_for = currentUser;
+        order.state = "1"; // Pending or equivalent
+
+        var orderSysId = order.insert();
+        gs.info("✅ Order inserted from cart item → " + orderSysId);
+        count++;
+      }
+
+      // Mark the cart item as completed
+      checkout.ordered = true;
+      checkout.active = false;
+      checkout.update();
+    }
+
+    gs.info("]]>🧾<![CDATA[ Checkout complete for user " + currentUser + " — total orders created: " + count);
+
+    data.success = true;
+    data.message = "✅ Checkout complete! " + count + " orders created.";
+    data.totalOrders = count;
+    return;
+  }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-09 10:36:23</sys_created_on>
+        <sys_id>f19395eec3013e10c7e81d12b40131ce</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Pet Shop Cart</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sp_widget_f19395eec3013e10c7e81d12b40131ce</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-10 09:46:41</sys_updated_on>
+        <template><![CDATA[<div class="cart-widget-container" ng-if="c.cartItems.length > 0">
+  <h2 class="cart-title">]]>🛒<![CDATA[ Your Shopping Cart</h2>
+
+  <div class="cart-items">
+    <div class="cart-item" ng-repeat="item in c.cartItems track by item.sys_id">
+      <img ng-if="item.image" ng-src="/sys_attachment.do?sys_id={{item.image}}" alt="{{item.item}}" class="cart-item-img"/>
+      <div class="cart-item-info">
+        <h3 class="cart-item-name">{{item.item}}</h3>
+        <p class="cart-item-brand">{{item.brand}}</p>
+        <p class="cart-item-category">Category: {{item.category}}</p>
+        <p class="cart-item-price">₱{{item.price}} × {{item.quantity}}</p>
+        <p class="cart-item-total">Total: <strong>₱{{item.total_price}}</strong></p>
+      </div>
+      <button class="remove-btn" ng-click="c.removeFromCart(item.sys_id)">]]>🗑<![CDATA[ Remove</button>
+    </div>
+  </div>
+
+  <div class="cart-summary">
+    <p><strong>Total Items:</strong> {{c.totalItems}}</p>
+    <p><strong>Grand Total:</strong> ₱{{c.grandTotal}}</p>
+    <button class="checkout-btn" ng-click="c.checkout()">✅ Checkout</button>
+  </div>
+</div>
+
+<div class="empty-cart" ng-if="c.cartItems.length === 0">
+  <p>Your cart is empty ]]>🐾<![CDATA[</p>
+  <button class="back-btn" ng-click="c.goBack()">⬅ Back to Shop</button>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>f19395eec3013e10c7e81d12b40131ce</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-09 10:36:22</sys_created_on>
+        <sys_id>952495eec3013e10c7e81d12b40131ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-09 10:36:22</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

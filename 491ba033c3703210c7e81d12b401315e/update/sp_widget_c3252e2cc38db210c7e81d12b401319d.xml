@@ -358,6 +358,13 @@
   color: #94a3b8;&#13;
 }&#13;
 &#13;
+   .item-price {&#13;
+    font-size: 16px;&#13;
+    font-weight: 600;&#13;
+    color: #059669;&#13;
+    margin-bottom: 10px;&#13;
+  }&#13;
+&#13;
 /* Responsive Design */&#13;
 @media (max-width: 768px) {&#13;
   .petshop-container {&#13;
@@ -410,7 +417,7 @@
 }]]></link>
         <name>Pet Shop Items</name>
         <option_schema/>
-        <public>false</public>
+        <public>true</public>
         <roles>x_1607167_pet_shop.Pet Shop User</roles>
         <script><![CDATA[(function() {
     var gr = new GlideRecord('x_1607167_pet_shop_pet_shop_item');
@@ -425,7 +432,8 @@
             category: gr.getValue('category'),
             short_description: gr.getValue('short_description'),
             stocks: parseInt(gr.getValue('stocks'), 10),
-            image: gr.getValue('image') // attachment sys_id or ref field
+            image: gr.getValue('image'),
+			price: parseFloat(gr.getValue('price') || 0)
         });
     }
 })();
@@ -435,14 +443,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-03 11:23:02</sys_created_on>
         <sys_id>c3252e2cc38db210c7e81d12b401319d</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>Pet Shop Items</sys_name>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name>sp_widget_c3252e2cc38db210c7e81d12b401319d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-03 14:01:31</sys_updated_on>
+        <sys_updated_on>2025-11-09 09:31:34</sys_updated_on>
         <template><![CDATA[<div class="petshop-container">
   <!-- Header Section -->
   <div class="header-section">
@@ -499,6 +507,9 @@
         <div class="item-meta">
           <span class="category-tag">{{item.category}}</span>
           <span class="brand-text">{{item.brand}}</span>
+        </div>
+        <div class="item-price">
+          ₱{{item.price | number:2}}
         </div>
         <p class="item-description">{{item.short_description}}</p>
         <button class="order-btn" 

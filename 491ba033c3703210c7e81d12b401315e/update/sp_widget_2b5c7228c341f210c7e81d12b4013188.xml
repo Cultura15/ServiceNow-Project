@@ -34,47 +34,50 @@
 
   // Submit Order
   c.submitOrder = function() {
-    if (!c.itemDetails.sys_id || !c.quantity) {
-      spUtil.addErrorMessage("Please complete all required fields.");
-      return;
+  if (!c.itemDetails.sys_id || !c.quantity) {
+    spUtil.addErrorMessage("Please complete all required fields.");
+    return;
+  }
+
+  if (c.quantity > c.itemDetails.stocks) {
+    spUtil.addErrorMessage("Quantity exceeds available stock.");
+    return;
+  }
+
+  c.isSubmitting = true;
+
+  // Prepare payload
+  c.data.action = 'submit_order'; // now adds to cart
+  c.data.item_sys_id = c.itemDetails.sys_id;
+  c.data.item_name = c.itemDetails.name;
+  c.data.brand = c.selectedBrand || c.itemDetails.brand;
+  c.data.category = c.itemDetails.category; 
+  c.data.quantity = c.quantity;
+  c.data.image = c.itemDetails.image;
+ 
+
+  $log.info("]]>🛒<![CDATA[ Sending Add-to-Cart payload:", c.data);
+
+  c.server.update(c.data).then(function(response) {
+    c.isSubmitting = false;
+    $log.info("]]>🧩<![CDATA[ Server response:", response);
+
+    if (response.success) {
+      spUtil.addInfoMessage(response.message || "Item added to cart successfully!");
+      // Optional: redirect user to cart page
+      setTimeout(function() {
+        $window.location.href = '/psmp?id=psmp_cart';
+      }, 1500);
+    } else {
+      spUtil.addErrorMessage("❌ Failed to add to cart: " + (response.error || 'Please try again.'));
     }
+  }).catch(function(error) {
+    c.isSubmitting = false;
+    $log.error("❌ Error in submitOrder:", error);
+    spUtil.addErrorMessage("❌ An error occurred. Please try again.");
+  });
+};
 
-    if (c.quantity > c.itemDetails.stocks) {
-      spUtil.addErrorMessage("Quantity exceeds available stock.");
-      return;
-    }
-
-    c.isSubmitting = true;
-
-    // ✅ Make sure action is attached directly to data
-    c.data.action = 'submit_order';
-    c.data.item_sys_id = c.itemDetails.sys_id;
-    c.data.item_name = c.itemDetails.name;
-    c.data.brand = c.selectedBrand || c.itemDetails.brand;
-    c.data.quantity = c.quantity;
-    c.data.special_instructions = c.specialInstructions;
-
-    $log.info("]]>🧩<![CDATA[ Sending payload:", c.data);
-
-    // Send to server
-    c.server.update(c.data).then(function(response) {
-      c.isSubmitting = false;
-      $log.info("]]>🧩<![CDATA[ Server response:", response);
-
-      if (response.success) {
-        spUtil.addInfoMessage("✅ Order placed successfully! Order #" + (response.orderNumber || ''));
-        setTimeout(function() {
-          $window.location.href = '/psmp?id=psmp_my_orders';
-        }, 2000);
-      } else {
-        spUtil.addErrorMessage("❌ Failed to place order: " + (response.error || 'Please try again.'));
-      }
-    }).catch(function(error) {
-      c.isSubmitting = false;
-      $log.error("❌ Error in submitOrder:", error);
-      spUtil.addErrorMessage("❌ An error occurred. Please try again.");
-    });
-  };
 
   // Clear form
   c.clearForm = function() {
@@ -575,54 +578,61 @@ api.controller.$inject = ['$scope', '$location', '$window', 'spUtil', '$log'];
     // --- PHASE 0: Handle Order Submission ---
     gs.info("]]>🧩<![CDATA[ Debug Order: Checking for submit_order...");
 
-    if (input && input.action === "submit_order") {
-        gs.info("]]>🧩<![CDATA[ Debug Order: Processing payload → " + JSON.stringify(input));
+   if (input && input.action === "submit_order") {
+    gs.info("]]>🛒<![CDATA[ Adding item to cart: " + JSON.stringify(input));
 
-        try {
-            var order = new GlideRecord("x_1607167_pet_shop_pet_shop_order");
-            if (!order.isValid()) {
-                gs.error("❌ Invalid table: x_1607167_pet_shop_pet_shop_order");
-                data.success = false;
-                data.error = "Invalid order table name.";
-                return;
-            }
-
-            order.initialize();
-
-            // ]]>🔹<![CDATA[ Load Pet Shop Item details from the source table
-            var itemGr = new GlideRecord("x_1607167_pet_shop_pet_shop_item");
-            if (itemGr.get(input.item_sys_id)) {
-                order.item_name = itemGr.getValue("name");
-                order.category = itemGr.getDisplayValue("category");
-                order.image = itemGr.getValue("image");
-            }
-
-            // ]]>🔹<![CDATA[ Store other form fields
-            order.short_description = "Order for " + input.item_name;
-            order.brand = input.brand;
-            order.quantity = input.quantity;
-            order.special_instructions = input.special_instructions || "";
-            order.order_for = gs.getUserID();
-            order.state = "1"; // Pending
-            order.total_amount = 0; // optional
-
-            // ]]>🔹<![CDATA[ Insert the record
-            var orderSysId = order.insert();
-            gs.info("]]>🧩<![CDATA[ Order inserted successfully: " + orderSysId);
-
-            data.success = true;
-            data.orderNumber = order.getDisplayValue("number") || orderSysId;
-            data.message = "✅ Order successfully placed for " + input.item_name;
-
-        } catch (e) {
-            gs.error("❌ Order submission failed: " + e.message);
+    try {
+        var cart = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
+        if (!cart.isValid()) {
+            gs.error("❌ Invalid table: x_1607167_pet_shop_pet_shop_cart");
             data.success = false;
-            data.error = e.message;
+            data.error = "Invalid cart table.";
+            return;
         }
 
-        // Stop further execution after submitting
-        return;
+        // ]]>🔹<![CDATA[ Load item details
+        var itemGr = new GlideRecord("x_1607167_pet_shop_pet_shop_item");
+        if (!itemGr.get(input.item_sys_id)) {
+            gs.error("❌ Invalid item_sys_id: " + input.item_sys_id);
+            data.success = false;
+            data.error = "Item not found.";
+            return;
+        }
+
+        // ]]>🔹<![CDATA[ Initialize cart entry
+        cart.initialize();
+        cart.user = gs.getUserID();
+        cart.brand = input.brand || itemGr.getDisplayValue("brand");
+        cart.item = itemGr.getDisplayValue("name");
+        cart.price = itemGr.getValue("price"); // Assuming your item table has a "price" field
+        cart.quantity = input.quantity;
+		cart.image = itemGr.getValue("image");
+		cart.category = itemGr.getValue("category");
+        
+        // Compute total price
+        var unitPrice = parseFloat(itemGr.getValue("price") || 0);
+        var qty = parseInt(input.quantity, 10) || 1;
+        cart.total_price = unitPrice * qty;
+
+        cart.active = true;
+        cart.ordered = false;
+
+        var cartSysId = cart.insert();
+        gs.info("]]>🛒<![CDATA[ Added to cart successfully: " + cartSysId);
+
+        data.success = true;
+        data.message = "✅ Item added to your cart!";
+        data.cartSysId = cartSysId;
+
+    } catch (e) {
+        gs.error("❌ Add to cart failed: " + e.message);
+        data.success = false;
+        data.error = e.message;
     }
+
+    return;
+}
+
 
     // --- PHASE 1: Fetch all Pet Shop items ---
     gs.info("]]>🧩<![CDATA[ Fetching Pet Shop items...");
@@ -670,14 +680,14 @@ api.controller.$inject = ['$scope', '$location', '$window', 'spUtil', '$log'];
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-03 13:08:16</sys_created_on>
         <sys_id>2b5c7228c341f210c7e81d12b4013188</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>Place an Order Widget</sys_name>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name>sp_widget_2b5c7228c341f210c7e81d12b4013188</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-06 06:56:54</sys_updated_on>
+        <sys_updated_on>2025-11-10 09:42:22</sys_updated_on>
         <template><![CDATA[<div class="order-page-container">
   <!-- Back Button -->
   <button class="back-btn" ng-click="c.goBack()">
