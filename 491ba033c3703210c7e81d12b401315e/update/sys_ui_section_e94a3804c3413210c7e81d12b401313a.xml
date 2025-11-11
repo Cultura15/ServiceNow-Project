@@ -4,13 +4,13 @@
             <element>number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
-            <sys_id>c6febdadc309f610c7e81d12b4013131</sys_id>
+            <sys_created_on>2025-11-10 17:44:40</sys_created_on>
+            <sys_id>f8cfbfbac301be10c7e81d12b40131ee</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Order Summary" display_value="Order Summary" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">e94a3804c3413210c7e81d12b401313a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_updated_on>2025-11-10 17:44:40</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>order_for</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
-            <sys_id>cefebdadc309f610c7e81d12b4013131</sys_id>
+            <sys_created_on>2025-11-10 17:44:40</sys_created_on>
+            <sys_id>38cfbfbac301be10c7e81d12b40131ef</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Order Summary" display_value="Order Summary" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">e94a3804c3413210c7e81d12b401313a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_updated_on>2025-11-10 17:44:40</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>state</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
-            <sys_id>c6febdadc309f610c7e81d12b4013132</sys_id>
+            <sys_created_on>2025-11-10 17:44:40</sys_created_on>
+            <sys_id>30cfbfbac301be10c7e81d12b40131f0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Order Summary" display_value="Order Summary" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">e94a3804c3413210c7e81d12b401313a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_updated_on>2025-11-10 17:44:40</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>.split</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
-            <sys_id>cefebdadc309f610c7e81d12b4013132</sys_id>
+            <sys_created_on>2025-11-10 17:44:40</sys_created_on>
+            <sys_id>38cfbfbac301be10c7e81d12b40131f0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Order Summary" display_value="Order Summary" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">e94a3804c3413210c7e81d12b401313a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_updated_on>2025-11-10 17:44:40</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -60,13 +60,13 @@
             <element>approval</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
-            <sys_id>c6febdadc309f610c7e81d12b4013133</sys_id>
+            <sys_created_on>2025-11-10 17:44:40</sys_created_on>
+            <sys_id>30cfbfbac301be10c7e81d12b40131f1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Order Summary" display_value="Order Summary" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">e94a3804c3413210c7e81d12b401313a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_updated_on>2025-11-10 17:44:40</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -74,13 +74,13 @@
             <element>assigned_to</element>
             <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
-            <sys_id>cefebdadc309f610c7e81d12b4013133</sys_id>
+            <sys_created_on>2025-11-10 17:44:40</sys_created_on>
+            <sys_id>38cfbfbac301be10c7e81d12b40131f1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Order Summary" display_value="Order Summary" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">e94a3804c3413210c7e81d12b401313a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_updated_on>2025-11-10 17:44:40</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -88,29 +88,15 @@
             <element>total_amount</element>
             <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
-            <sys_id>c6febdadc309f610c7e81d12b4013134</sys_id>
+            <sys_created_on>2025-11-10 17:44:40</sys_created_on>
+            <sys_id>30cfbfbac301be10c7e81d12b40131f2</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Order Summary" display_value="Order Summary" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">e94a3804c3413210c7e81d12b401313a</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_updated_on>2025-11-10 17:44:40</sys_updated_on>
             <sys_user/>
             <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>.split</element>
-            <position>7</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
-            <sys_id>cefebdadc309f610c7e81d12b4013134</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="Order Summary" display_value="Order Summary" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">e94a3804c3413210c7e81d12b401313a</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
-            <sys_user/>
-            <type>.split</type>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption>Order Summary</caption>

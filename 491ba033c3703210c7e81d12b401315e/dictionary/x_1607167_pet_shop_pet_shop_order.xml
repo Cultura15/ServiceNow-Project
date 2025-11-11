@@ -4,6 +4,7 @@
         <element attributes="u_ref_qual_condition=rolesLIKEpet_user" default="javascript:gs.getUserID()" dynamic_default_value="90d1921e5f510100a9ad2572f2b477fe" label="Order for" max_length="32" name="order_for" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element label="Brand" max_length="50" name="brand" type="string"/>
         <element label="Order Details Editable" max_length="40" name="order_details_editable" type="boolean"/>
+        <element label="Order Details" max_length="5000" name="order_details" type="string"/>
         <element label="Quantity" max_length="40" name="quantity" type="integer"/>
         <element label="Item Name" max_length="100" name="item_name" type="string"/>
         <element label="Category" max_length="50" name="category" type="string"/>

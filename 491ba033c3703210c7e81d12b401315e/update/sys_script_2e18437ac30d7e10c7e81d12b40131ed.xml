@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>false</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1607167_pet_shop_pet_shop_order</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Create Order Details on Checkout</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+    // ]]>🟢<![CDATA[ Run only on insert
+    if (current.operation() != 'insert') return;
+
+    gs.info("]]>🐾<![CDATA[ Async BR triggered for order: " + current.number);
+
+    var orderId = current.getUniqueValue();
+
+    // ]]>🔹<![CDATA[ Query cart items that belong to this order and are not yet linked
+    var cart = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
+    cart.addQuery("parent_order", orderId);
+    cart.addQuery("ordered", true);
+    cart.addQuery("order_linked", false);
+    cart.query();
+
+    var created = 0;
+    gs.info("]]>🔍<![CDATA[ Found " + cart.getRowCount() + " cart items linked to order " + current.number);
+
+    while (cart.next()) {
+        // ⚡ Create order detail record
+        var detail = new GlideRecord("x_1607167_pet_shop_pet_shop_order_details");
+        detail.initialize();
+        detail.pet_shop_order = orderId;
+        // Use getDisplayValue() if field is a reference
+        detail.item_name = cart.item ? cart.item.getDisplayValue() : '';
+        detail.brand = cart.getValue("brand");
+        detail.category = cart.getValue("category");
+        detail.quantity = cart.getValue("quantity");
+        detail.price = cart.getValue("price");
+        detail.image = cart.getValue("image");
+        detail.insert();
+
+        // ]]>🔹<![CDATA[ Mark cart item as linked
+        cart.order_linked = true;
+        cart.update();
+
+        created++;
+    }
+
+    gs.info("✅ Created " + created + " order details for order: " + current.number);
+
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-10 13:43:21</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2e18437ac30d7e10c7e81d12b40131ed</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Create Order Details on Checkout</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_script_2e18437ac30d7e10c7e81d12b40131ed</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-11 09:07:43</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=2e18437ac30d7e10c7e81d12b40131ed"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>2e18437ac30d7e10c7e81d12b40131ed</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-10 13:43:20</sys_created_on>
+        <sys_id>b188c3b6c30d7e10c7e81d12b40131b0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-10 13:43:20</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
