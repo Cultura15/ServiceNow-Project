@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_related sys_domain="global" table="x_1607167_pet_shop_pet_shop_order" version="2" view="">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Pet Shop Order - Default view" name="x_1607167_pet_shop_pet_shop_order" related_list="NULL" sys_domain="global" view="Default view">a4470bb6c30d7e10c7e81d12b401318c</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>x_1607167_pet_shop_pet_shop_order_details.pet_shop_order</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-10 13:37:48</sys_created_on>
+            <sys_id>ec470bb6c30d7e10c7e81d12b401318d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-10 13:37:48</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Pet Shop Order - Default view</calculated_name>
+            <filter/>
+            <name>x_1607167_pet_shop_pet_shop_order</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-10 13:37:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a4470bb6c30d7e10c7e81d12b401318c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Pet Shop Order - Default view</sys_name>
+            <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+            <sys_update_name>sys_ui_related_x_1607167_pet_shop_pet_shop_order_null</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-10 13:37:47</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>

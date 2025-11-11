@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="Order Details" section_id="c38cb808c3413210c7e81d12b40131f7" sys_domain="global" table="x_1607167_pet_shop_pet_shop_order" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>order_details_editable</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
+            <sys_id>4afebdadc309f610c7e81d12b4013140</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>item_name</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
+            <sys_id>42febdadc309f610c7e81d12b4013141</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>category</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
+            <sys_id>4afebdadc309f610c7e81d12b4013141</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>brand</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
+            <sys_id>42febdadc309f610c7e81d12b4013142</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
+            <sys_id>4afebdadc309f610c7e81d12b4013142</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>image</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
+            <sys_id>42febdadc309f610c7e81d12b4013143</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>quantity</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-06 11:09:33</sys_created_on>
+            <sys_id>4afebdadc309f610c7e81d12b4013143</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>Order Details</caption>
+            <header>false</header>
+            <name>x_1607167_pet_shop_pet_shop_order</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-01 14:28:27</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c38cb808c3413210c7e81d12b40131f7</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>x_1607167_pet_shop_pet_shop_order</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+            <sys_update_name>sys_ui_section_c38cb808c3413210c7e81d12b40131f7</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-05 08:14:57</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</application>
+        <file_path/>
+        <instance_id>97197bfedbca025002022a5913961906</instance_id>
+        <instance_name>dev269232</instance_name>
+        <name>sys_ui_section_c38cb808c3413210c7e81d12b40131f7</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="Order Details" section_id="c38cb808c3413210c7e81d12b40131f7" sys_domain="global" table="x_1607167_pet_shop_pet_shop_order" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>order_details_editable</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-06 11:09:33</sys_created_on><sys_id>4afebdadc309f610c7e81d12b4013140</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-06 11:09:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>item_name</element><position>1</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-06 11:09:33</sys_created_on><sys_id>42febdadc309f610c7e81d12b4013141</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-06 11:09:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>category</element><position>2</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-06 11:09:33</sys_created_on><sys_id>4afebdadc309f610c7e81d12b4013141</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-06 11:09:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>brand</element><position>3</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-06 11:09:33</sys_created_on><sys_id>42febdadc309f610c7e81d12b4013142</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-06 11:09:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>.split</element><position>4</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-06 11:09:33</sys_created_on><sys_id>4afebdadc309f610c7e81d12b4013142</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-06 11:09:33</sys_updated_on><sys_user/><type>.split</type></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>image</element><position>5</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-06 11:09:33</sys_created_on><sys_id>42febdadc309f610c7e81d12b4013143</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-06 11:09:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_element action="INSERT_OR_UPDATE"><element>quantity</element><position>6</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-06 11:09:33</sys_created_on><sys_id>4afebdadc309f610c7e81d12b4013143</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="Order Details" display_value="Order Details" name="x_1607167_pet_shop_pet_shop_order" sys_domain="global" view="Default view">c38cb808c3413210c7e81d12b40131f7</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-06 11:09:33</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>Order Details</caption><header>false</header><name>x_1607167_pet_shop_pet_shop_order</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-01 14:28:27</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>c38cb808c3413210c7e81d12b40131f7</sys_id><sys_mod_count>1</sys_mod_count><sys_name>x_1607167_pet_shop_pet_shop_order</sys_name><sys_overrides/><sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package><sys_policy/><sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope><sys_update_name>sys_ui_section_c38cb808c3413210c7e81d12b40131f7</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-05 08:14:57</sys_updated_on><sys_user/><title>false</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>767130751</payload_hash>
+        <record_name>Pet Shop Order</record_name>
+        <reverted_from/>
+        <source>36424573c3b03210c7e81d12b4013173</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 11:09:33</sys_created_on>
+        <sys_id>8efebdadc309f610c7e81d12b4013145</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a58db872e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 11:09:33</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>46febdad7309f610264e02663ebefa45</update_guid>
+        <update_guid_history>46febdad7309f610264e02663ebefa45:767130751,a44ec415d84d76107f7ab34f44db9508:2118015553,6a6d40d19f4d76106f1e3630483709e5:437143900,e26d40d1d74d7610d5f222df6096f493:1093747461,438cf8083041321096dba3202cc7e067:-222897275</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-10 17:44:39</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>7c6a4c90b88c4950a0c9524a9e2609c9</sys_id>
+        <sys_metadata>c38cb808c3413210c7e81d12b40131f7</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Order Details</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_parent display_value="Pet Shop Order">8956f04cc3013210c7e81d12b40131f8</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_scope_delete display_value="">6345f443edcf4520bbffdf937b8ec400</sys_scope_delete>
+        <sys_update_name>sys_ui_section_c38cb808c3413210c7e81d12b40131f7</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_c38cb808c3413210c7e81d12b40131f7">8efebdadc309f610c7e81d12b4013145</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-10 17:44:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

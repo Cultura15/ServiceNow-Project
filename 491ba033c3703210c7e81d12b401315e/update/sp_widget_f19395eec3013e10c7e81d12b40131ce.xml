@@ -4,12 +4,11 @@
         <client_script><![CDATA[api.controller = function($scope, $window, spUtil, $log) {
   var c = this;
 
-  // Initialize cart data
   c.cartItems = c.data.cartItems || [];
   c.totalItems = c.data.totalItems || 0;
   c.grandTotal = c.data.grandTotal || 0;
 
-  // ]]>🧮<![CDATA[ Remove item from cart
+  // Remove item
   c.removeFromCart = function(sys_id) {
     if (!confirm("Remove this item from your cart?")) return;
 
@@ -18,7 +17,7 @@
 
     c.server.update(c.data).then(function(response) {
       if (response.success) {
-        spUtil.addInfoMessage("]]>🗑<![CDATA[️ Item removed from cart!");
+        spUtil.addInfoMessage("]]>🗑<![CDATA[ Item removed!");
         c.cartItems = response.cartItems;
         c.totalItems = response.totalItems;
         c.grandTotal = response.grandTotal;
@@ -28,31 +27,27 @@
     });
   };
 
-  // ]]>🧾<![CDATA[ Checkout
+  // Checkout
   c.checkout = function() {
     if (!c.cartItems || c.cartItems.length === 0) {
-      spUtil.addErrorMessage("Your cart is empty!");
+      spUtil.addErrorMessage("Cart is empty!");
       return;
     }
 
     if (!confirm("Proceed to checkout?")) return;
 
-    // Prepare checkout payload
     c.data.action = 'checkout';
-    c.data.cartItems = angular.copy(c.cartItems); // send all items to server
+    c.data.cartItems = angular.copy(c.cartItems);
 
     $log.info("]]>🧾<![CDATA[ Sending checkout payload:", c.data);
 
     c.server.update(c.data).then(function(response) {
-      $log.info("✅ Checkout response:", response);
-
       if (response.success) {
-        spUtil.addInfoMessage("✅ Checkout complete! Your orders have been placed.");
+        spUtil.addInfoMessage(response.message || "✅ Checkout successful!");
         c.cartItems = [];
         c.totalItems = 0;
         c.grandTotal = 0;
 
-        // Redirect after short delay
         setTimeout(function() {
           $window.location.href = '/psmp?id=psmp_my_orders';
         }, 1500);
@@ -65,7 +60,6 @@
     });
   };
 
-  // ]]>🔙<![CDATA[ Back to shop
   c.goBack = function() {
     $window.location.href = '/psmp?id=psmp_shop';
   };
@@ -214,7 +208,9 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
 
   var currentUser = gs.getUserID();
 
-  // Load user's active cart items
+  // ---------------------------------------------
+  // Load active cart items
+  // ---------------------------------------------
   var cart = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
   cart.addQuery("user", currentUser);
   cart.addQuery("active", true);
@@ -222,11 +218,17 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
   cart.query();
 
   while (cart.next()) {
+    // Initialize order_linked if undefined
+    if (cart.order_linked === undefined) {
+      cart.order_linked = false;
+      cart.update();
+    }
+
     data.cartItems.push({
       sys_id: cart.getUniqueValue(),
-      item: cart.getValue("item"),
+      item: cart.item.getDisplayValue(),
       brand: cart.getValue("brand"),
-	  category: cart.getValue("category"),
+      category: cart.getValue("category"),
       price: parseFloat(cart.getValue("price") || 0),
       quantity: parseInt(cart.getValue("quantity") || 0, 10),
       total_price: parseFloat(cart.getValue("total_price") || 0),
@@ -234,14 +236,13 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
     });
   }
 
-  // Totals
   data.totalItems = data.cartItems.length;
   data.grandTotal = data.cartItems.reduce(function(sum, item) {
     return sum + item.total_price;
   }, 0);
 
   // ---------------------------------------------
-  // ]]>🧩<![CDATA[ ACTION: Remove Item
+  // Remove item
   // ---------------------------------------------
   if (input && input.action === "remove_item") {
     var rm = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
@@ -250,9 +251,7 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
       rm.update();
     }
 
-    gs.info("]]>🗑<![CDATA[ Removed item from cart: " + input.sys_id);
-
-    // Reload cart
+    // Reload remaining cart
     var reload = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
     reload.addQuery("user", currentUser);
     reload.addQuery("active", true);
@@ -263,9 +262,9 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
     while (reload.next()) {
       data.cartItems.push({
         sys_id: reload.getUniqueValue(),
-        item: reload.getValue("item"),
+        item: reload.item.getDisplayValue(),
         brand: reload.getValue("brand"),
-		category: reload.getValue("category"),  
+        category: reload.getValue("category"),
         price: parseFloat(reload.getValue("price") || 0),
         quantity: parseInt(reload.getValue("quantity") || 0, 10),
         total_price: parseFloat(reload.getValue("total_price") || 0),
@@ -283,50 +282,80 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
   }
 
   // ---------------------------------------------
-  // ]]>🧾<![CDATA[ ACTION: Checkout (Post Orders)
+  // Checkout: Create ONE order per user checkout + order details
   // ---------------------------------------------
   if (input && input.action === "checkout") {
-    gs.info("]]>🧾<![CDATA[ Checkout started for user: " + currentUser);
-
-    var checkout = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
-    checkout.addQuery("user", currentUser);
-    checkout.addQuery("active", true);
-    checkout.addQuery("ordered", false);
-    checkout.query();
-
-    var count = 0;
-
-    while (checkout.next()) {
-      // ✅ Create order record for each cart item
-      var order = new GlideRecord("x_1607167_pet_shop_pet_shop_order");
-      if (order.isValid()) {
-        order.initialize();
-        order.short_description = "Order for " + checkout.getValue("item");
-        order.item_name = checkout.getValue("item");
-        order.brand = checkout.getValue("brand");
-		order.category = checkout.getValue("category");
-        order.image = checkout.getValue("image");
-        order.quantity = checkout.getValue("quantity");
-        order.total_amount = checkout.getValue("total_price");
-        order.order_for = currentUser;
-        order.state = "1"; // Pending or equivalent
-
-        var orderSysId = order.insert();
-        gs.info("✅ Order inserted from cart item → " + orderSysId);
-        count++;
-      }
-
-      // Mark the cart item as completed
-      checkout.ordered = true;
-      checkout.active = false;
-      checkout.update();
+    if (!data.cartItems || data.cartItems.length === 0) {
+      data.success = false;
+      data.error = "Cart is empty!";
+      return;
     }
 
-    gs.info("]]>🧾<![CDATA[ Checkout complete for user " + currentUser + " — total orders created: " + count);
+    var order = new GlideRecord("x_1607167_pet_shop_pet_shop_order");
+    if (!order.isValid()) {
+      data.success = false;
+      data.error = "Order table invalid";
+      return;
+    }
+
+    // ]]>🆕<![CDATA[ Create one parent order
+    order.initialize();
+    order.order_for = currentUser;
+    order.state = "1"; // Pending
+    order.short_description = "Order with " + data.totalItems + " item(s)";
+    order.total_amount = data.grandTotal;
+
+    var orderSysId = order.insert();
+    gs.info("✅ Created single parent order: " + orderSysId);
+
+    // ---------------------------------------------
+    // Mark cart items as ordered and link to this order
+    // ---------------------------------------------
+    var markCart = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
+    markCart.addQuery("user", currentUser);
+    markCart.addQuery("active", true);
+    markCart.addQuery("ordered", false);
+    markCart.query();
+
+    var createdDetails = 0;
+
+    while (markCart.next()) {
+      markCart.ordered = true;
+      markCart.active = false;
+      markCart.order_linked = true;      // mark as linked
+      markCart.parent_order = orderSysId; // link to this order
+      markCart.update();
+
+      // ---------------------------------------------
+      // Create corresponding order detail record
+      // ---------------------------------------------
+      var detail = new GlideRecord("x_1607167_pet_shop_pet_shop_order_details");
+      detail.initialize();
+      detail.pet_shop_order = orderSysId;           // reference to parent order
+      detail.item_name = markCart.item.getDisplayValue(); // string name
+      detail.brand = markCart.getValue("brand");
+      detail.category = markCart.getValue("category");
+      detail.quantity = markCart.getValue("quantity");
+      detail.price = markCart.getValue("price");
+      detail.image = markCart.getValue("image");
+      detail.insert();
+
+      createdDetails++;
+    }
+
+    gs.info("✅ Created " + createdDetails + " order details for order: " + order.getDisplayValue("number"));
 
     data.success = true;
-    data.message = "✅ Checkout complete! " + count + " orders created.";
-    data.totalOrders = count;
+    data.message =
+      "✅ Checkout complete! Your order #" +
+      order.getDisplayValue("number") +
+      " has been created with " + createdDetails + " items.";
+
+    // Clear cart display after checkout
+    data.cartItems = [];
+    data.totalItems = 0;
+    data.grandTotal = 0;
+
     return;
   }
 })();
@@ -336,14 +365,14 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-09 10:36:23</sys_created_on>
         <sys_id>f19395eec3013e10c7e81d12b40131ce</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>13</sys_mod_count>
         <sys_name>Pet Shop Cart</sys_name>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name>sp_widget_f19395eec3013e10c7e81d12b40131ce</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-10 09:46:41</sys_updated_on>
+        <sys_updated_on>2025-11-11 09:10:01</sys_updated_on>
         <template><![CDATA[<div class="cart-widget-container" ng-if="c.cartItems.length > 0">
   <h2 class="cart-title">]]>🛒<![CDATA[ Your Shopping Cart</h2>
 

@@ -3,17 +3,22 @@
         <element label="Brand" max_length="50" name="brand" type="string"/>
         <element label="Active" max_length="40" name="active" type="boolean"/>
         <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <element label="Order Linked" max_length="40" name="order_linked" type="boolean"/>
         <element label="Total Price" max_length="20" name="total_price" type="currency"/>
         <element label="Category" max_length="50" name="category" type="string"/>
         <element label="Price" max_length="20" name="price" type="currency"/>
         <element label="Ordered" max_length="40" name="ordered" type="boolean"/>
         <element label="Quantity" max_length="40" name="quantity" type="integer"/>
+        <element label="Parent Order" max_length="32" name="parent_order" reference="x_1607167_pet_shop_pet_shop_order" type="reference"/>
         <element label="Item" max_length="32" name="item" reference="x_1607167_pet_shop_pet_shop_item" type="reference"/>
         <element label="Image" max_length="40" name="image" type="user_image"/>
         <index name="index">
             <element name="item"/>
         </index>
         <index name="index2">
+            <element name="parent_order"/>
+        </index>
+        <index name="index3">
             <element name="user"/>
         </index>
     </element>

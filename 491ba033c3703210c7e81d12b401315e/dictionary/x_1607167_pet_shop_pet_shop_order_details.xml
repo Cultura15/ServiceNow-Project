@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="95d4c332c30d7e10c7e81d12b4013150" extends="task" label="Pet Shop Order Details" max_length="40" name="x_1607167_pet_shop_pet_shop_order_details" type="collection">
+        <element label="Category" max_length="50" name="category" type="string"/>
+        <element label="Item Name" max_length="100" name="item_name" type="string"/>
+        <element label="Quantity" max_length="40" name="quantity" type="integer"/>
+        <element label="Price" max_length="20" name="price" type="currency"/>
+        <element label="Brand" max_length="50" name="brand" type="string"/>
+        <element label="Pet Shop Order" max_length="32" name="pet_shop_order" reference="x_1607167_pet_shop_pet_shop_order" type="reference"/>
+        <element label="Image" max_length="40" name="image" type="user_image"/>
+    </element>
+</database>

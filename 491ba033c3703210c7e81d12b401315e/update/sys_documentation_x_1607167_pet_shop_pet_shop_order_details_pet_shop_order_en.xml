@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="pet_shop_order" label="Pet Shop Order" language="en" table="x_1607167_pet_shop_pet_shop_order_details">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>pet_shop_order</element>
+            <help/>
+            <hint/>
+            <label>Pet Shop Order</label>
+            <language>en</language>
+            <name>x_1607167_pet_shop_pet_shop_order_details</name>
+            <plural>Pet Shop Orders</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-11-10 13:31:00</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Pet Shop Order</sys_name>
+            <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+            <sys_update_name>sys_documentation_x_1607167_pet_shop_pet_shop_order_details_pet_shop_order_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-11-10 13:31:00</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -603,7 +603,7 @@ api.controller.$inject = ['$scope', '$location', '$window', 'spUtil', '$log'];
         cart.initialize();
         cart.user = gs.getUserID();
         cart.brand = input.brand || itemGr.getDisplayValue("brand");
-        cart.item = itemGr.getDisplayValue("name");
+        cart.item = itemGr.getUniqueValue();  // use sys_id for reference
         cart.price = itemGr.getValue("price"); // Assuming your item table has a "price" field
         cart.quantity = input.quantity;
 		cart.image = itemGr.getValue("image");
@@ -680,14 +680,14 @@ api.controller.$inject = ['$scope', '$location', '$window', 'spUtil', '$log'];
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-03 13:08:16</sys_created_on>
         <sys_id>2b5c7228c341f210c7e81d12b4013188</sys_id>
-        <sys_mod_count>47</sys_mod_count>
+        <sys_mod_count>48</sys_mod_count>
         <sys_name>Place an Order Widget</sys_name>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name>sp_widget_2b5c7228c341f210c7e81d12b4013188</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-10 09:42:22</sys_updated_on>
+        <sys_updated_on>2025-11-11 08:52:17</sys_updated_on>
         <template><![CDATA[<div class="order-page-container">
   <!-- Back Button -->
   <button class="back-btn" ng-click="c.goBack()">
