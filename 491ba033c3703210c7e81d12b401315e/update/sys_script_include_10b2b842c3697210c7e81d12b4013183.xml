@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1607167_pet_shop.ExportCurrentMonthOrders</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>ExportCurrentMonthOrders</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ExportCurrentMonthOrders = Class.create();
+ExportCurrentMonthOrders.prototype = {
+    initialize: function() {},
+
+    getCSV: function() {
+        var csv = '"Order Number","Order For","Created","Total Amount","Item Name"\n';
+        var gr = new GlideRecord('order'); // Replace 'order' with your table name
+
+        // Filter for current month
+        var startOfMonth = new GlideDateTime();
+        startOfMonth.setDisplayValue(gs.beginningOfThisMonth());
+
+        var endOfMonth = new GlideDateTime();
+        endOfMonth.setDisplayValue(gs.endOfThisMonth());
+
+        gr.addQuery('created', '>=', startOfMonth);
+        gr.addQuery('created', '<=', endOfMonth);
+        gr.query();
+
+        while(gr.next()) {
+            csv += '"' + gr.getValue('number') + '","' +
+                   gr.getValue('order_for') + '","' +
+                   gr.getValue('created') + '","' +
+                   gr.getValue('total_amount') + '","' +
+                   gr.getValue('item_name') + '"\n';
+        }
+
+        return csv;
+    },
+
+    type: 'ExportCurrentMonthOrders'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-02 15:28:46</sys_created_on>
+        <sys_id>10b2b842c3697210c7e81d12b4013183</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ExportCurrentMonthOrders</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_script_include_10b2b842c3697210c7e81d12b4013183</sys_update_name>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-02 15:28:46</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>10b2b842c3697210c7e81d12b4013183</id>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-02 15:28:46</sys_created_on>
+        <sys_id>e8a3f882c3697210c7e81d12b401311f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-02 15:28:46</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

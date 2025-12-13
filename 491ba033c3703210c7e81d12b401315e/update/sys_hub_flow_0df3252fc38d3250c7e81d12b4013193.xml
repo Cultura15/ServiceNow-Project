@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=2736000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>low_stock_expiration_notification</internal_name>
+        <label_cache>[{"name":"a5baf357-3556-471a-91b7-465daee6815e.Record","label":"1 - Look Up Record➛Pet Shop Item Record","reference":"x_1607167_pet_shop_pet_shop_item","reference_display":"Pet Shop Item","type":"reference","base_type":"reference","usedInstances":{"bc3e9a08-b03d-4f71-b6de-78b536b8cedc":["record"],"08caacb7-0d0f-45ac-a176-d97b623c7b2a":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <master_snapshot>0bdaad27c3cd3250c7e81d12b40131ea</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Low Stock Expiration Notification</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>4fdaed27c3cd3250c7e81d12b4013103</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:19:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0df3252fc38d3250c7e81d12b4013193</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Low Stock Expiration Notification</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_hub_flow_0df3252fc38d3250c7e81d12b4013193</sys_update_name>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 15:04:59</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_variable_value action="delete_multiple" query="document_key=0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_flow_timer_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <day_of_month>1</day_of_month>
+        <day_of_week/>
+        <name/>
+        <run_period/>
+        <run_start>2025-11-12 14:49:33</run_start>
+        <sys_class_name>sys_flow_timer_trigger</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:49:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4fdaed27c3cd3250c7e81d12b4013103</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:49:33</sys_updated_on>
+        <time>1970-01-01 16:00:00</time>
+        <timer_type>11</timer_type>
+    </sys_flow_timer_trigger>
+    <sys_flow_trigger_auto_script action="delete_multiple" query="name=Trigger:4fdaed27c3cd3250c7e81d12b4013103^sys_idNOT INc7daed27c3cd3250c7e81d12b4013104"/>
+    <sys_flow_trigger_auto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time/>
+        <max_drift/>
+        <name>Trigger:4fdaed27c3cd3250c7e81d12b4013103</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="Harold Destura">9cf1aee6c3203210c7e81d12b4013123</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek/>
+        <run_period/>
+        <run_start>2025-11-12 14:49:33</run_start>
+        <run_time>1970-01-01 16:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[sn_flow_trigger.FlowTriggerAPI.fireTimerTrigger('4fdaed27c3cd3250c7e81d12b4013103');]]></script>
+        <sys_class_name>sys_flow_trigger_auto_script</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:49:33</sys_created_on>
+        <sys_id>c7daed27c3cd3250c7e81d12b4013104</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:49:33</sys_updated_on>
+        <time_zone/>
+        <trigger display_value="">4fdaed27c3cd3250c7e81d12b4013103</trigger>
+        <upgrade_safe>true</upgrade_safe>
+    </sys_flow_trigger_auto_script>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=0df3252fc38d3250c7e81d12b4013193^sys_idNOT IN09f3252fc38d3250c7e81d12b4013194"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>0df3252fc38d3250c7e81d12b4013193</id>
+        <name>Low Stock Expiration Notification</name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:19:22</sys_created_on>
+        <sys_id>09f3252fc38d3250c7e81d12b4013194</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:19:22</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=09f3252fc38d3250c7e81d12b4013194"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=0df3252fc38d3250c7e81d12b4013193^sys_idNOT INf73a6127c3cd3250c7e81d12b401316e"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Low Stock Expiration Notification">0df3252fc38d3250c7e81d12b4013193</flow>
+        <name>Daily</name>
+        <remote_sys_id/>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:46:52</sys_created_on>
+        <sys_id>f73a6127c3cd3250c7e81d12b401316e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:49:31</sys_updated_on>
+        <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/21STUvEMBD9K5LzWtJdP3sTZMGDCipeRMo0me4GpklM09Uq/ncnbVxULLnMm5k37z369CEIGiRRiQfToVgIYyMGC/QwemR0Q0ZjHedeB1ZDdGEUVQwDLoQLGoOoSikXYgc04P3YX2le42ELXSLIq1OXy/L8VB7Kkt+BPKuk5MddD4GnY+L6EGprSAe0onp6Zj2JbgX6CLWSarXkT8rl2VHZnKyacqlXgHjMFH9s/L4e/zHzUzu+RbQa+VQL1OM/TgOCvrU07ie2HNRstIO33rxjpgrYIotXODf3Za1N7wnGGVZbZxTe+micnZEIDeUd5Wjo7M3sgGuNLQwUH3OEjAw986FPmpOKLKm937rXu++Da2Mng7lJTgHtK4gxmGaI2KfEkbBjoroD743d1D64nZmWWUtXTLEVLblXPtqbjS1AJeEFRwTFmvHLCX6EYJKLa6bh5c/Jff0ypLuzj6y4nk3zQA5lbZDyb9OrYHy84AM7zHI/n78AN8Sgj6cCAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>daily</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=0df3252fc38d3250c7e81d12b4013193^sys_idNOT IN506e216bc3cd3250c7e81d12b4013186,c44a6127c3cd3250c7e81d12b4013170"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Low Stock Expiration Notification">0df3252fc38d3250c7e81d12b4013193</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 15:04:55</sys_created_on>
+        <sys_id>506e216bc3cd3250c7e81d12b4013186</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 16:00:01</sys_updated_on>
+        <ui_id>08caacb7-0d0f-45ac-a176-d97b623c7b2a</ui_id>
+        <values>H4sIAAAAAAAA/9WV227bOBCGX8XQtWWIok7OXdFsgADddJFke1MUAg/DmAB1KEWlyRp59x1K8il206a7WWDvrCGH/Oef+czP60DL4CxIZCHlUpFIEUIiEqUkJgUUwEWe5RAXwTyoWQW404JorMTve2Z6H1ivWcqZomke0jTNwiQnLFwSnodJlkoGkBUkhcX1kPf0hJlSd61hj5+mAzAiVtpIC3Vw9vnLPGiZxbsc2OBs/WzpZ8UaxsHg1uuN2ufq3WPrv2Uj+gpqV+pN8MOUeT6tzC7PcQWTvBwyD+DBQS0BdShmOpgHFaslc4193EYsMPmxNrvAStduLLRiD53+C2+msd+nACsTkwnbz3IyaAyrc+bYjbO9cL3d+tVoAd3oiQTFeuPe78fGDR9bp5t6THGMm012Y/qqvhodCbYH7PWj71AEtL5QrxwvxyrUzar5dr0ReaHrwZKpRNMIZrZfzDmree+8nHXQ69tTbo/h036DgWFjxdpW13dla5t7PdyH6qvFncGPhTLNN5TZ6bt6wYQvdYGdYIsLjJ8P4U/Mal/373gMJvs7/6z11x4u/RxJEuV0GYkwj1MaJpFgIS8kDxmPVZokWZFxEjzNg+6xe29Y1+0cw1aVX3tf8Ojf5FQ5mD04XQ4D55OF1a17h/LuYfLnaT5RV5CXBpnGu7ndO3NH3kNJsignWV624Mpu1bS7H9pBdYzaH+Bm2MV2djkuv467n5C74e52mLbT8if0jmIf9nNnV+PCBF78SvDGiT3BXRH9j7ibyvrn4B14fcjdgdv/CXaCc644LEPChcDnAoqwiFkeQhoJqmIaRbn6Bex+BFvy8vTuPXF147TSgg1N3OGWk6iI04wKKiSNUSwqJ5LEPIkIJTkc4+Ypm/320Go7nDV7Z8C61z93Pxa+we7qUPnpeib+dhQc4ne9F5/ooy/TN8L2K68ethjufQehYtqU4zR9B8lntf3LeH5PyQGzTCkQDmSpNBiJY1cOOW/yhKobYFasLvxNvocjoId8HzQWKcc7jvjeb+fb4X17PFMdPkWTLaU/oFSNrZifiKHC5/8KyZJATuMiXGYx/isATUMuKQ0J/ksAMFCxfJvH+MvfkVnMeAQLAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=506e216bc3cd3250c7e81d12b4013186"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Low Stock Expiration Notification">0df3252fc38d3250c7e81d12b4013193</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:46:52</sys_created_on>
+        <sys_id>c44a6127c3cd3250c7e81d12b4013170</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 16:00:01</sys_updated_on>
+        <ui_id>a5baf357-3556-471a-91b7-465daee6815e</ui_id>
+        <values>H4sIAAAAAAAA/+VYXU/rOBD9K948lVUpSb/LPq1ArJAul7vA3hdAlhM71LupE2yHUlD/+45jJy1pgVZbJNBWqCXj8fjM+Jyp3etnj1Pv0KMjfxSPRr3hwPc7Hd/v9zsRCcKw049CPyRdr+kJMmHgqUmYMHh8IElunh9x0PcHQX+AM6axGqfZ4h+u2QRcKVdZQmY/3YwfTKNLGEandjga84RKJrzD69umlxEJC2kmvcPn2tCmSBMSsgRcrxzUGnI9y6pHXIxZ27flaei7HUglNVD8psceNROUAYaYJIo1vQkRlOhUziqLZISei2RhGHOhIaJnnB8Vf4J1h77xixlkFTE7Vj1iVylrjo+JJpda5pHOpXONximPmLL1oCwmeaKPlm3W4TzTPBV2ik3bzk6TfCK+23J4VYByY8CSKwDBMpOoQe7SiGG7phclyhMuipq4wSSNSFI9Ea0lD3Nt8Dx7LGETCIQnJMu4uMOZTB94MRmwTFp3CTy04iSdwqKK34kWiQzwFtSVtE7AflyYfxLJTRZnEAYmAyCeAEOw3UKV5rIo5QOOklwVA5IIZWN586anZuooIUotMoeS4/vc4LZ1cBljWzQzJZI8079DiAfmkps3S7H03qTgaEG5KBWUGxRqSTGritheBO8jKEVwtAxhHSwnhxXbt3UBnByCncmh6/tfSRCw+OfTw/YMtyVYobnNztoK5i22Hp7e8gVySySZguIpdJMDKym6vv3tRhj7nSxNgk3RHybJCxYBlRrG3B689xVivfYg2p1sEUr/zJmcubnsMeOSGIwYisSssYns5y922ZfGF9Hui1B7DqhOKZmtYAXWsSs+YYXbFMTIUAOmClBAY28PPd8IBC8zH8AY59cjwLQaYBOznE55HJ9V5XPBWndMf88nTPKooGVjD+1boKsjtVjHZFZFOyN6bJiVyoZb5gA1AhAf+hX1q7d2d68MwmPUqAVZfkedKnPzclvfynI1NlkCHzGnLZ2CXIHojSrs/EbA38EBumAgYoESrjRKY3QJq5weK8gMgShAvepGSOtSxv475cLtenOxid58XjXmgL7ZFumiA6pUamzVv9vOvAGEsjOfm16KwtlrqFxjjjlL6LpzyokZqJ1T2v/Pc8qnbMsAiGK7e1wkXBSHTgC6u3798ljSe5N6YVDjWUGvBfcLG1HRqgaIEeXT1krYAE6phEtYG11ZPGsglieUgjL100lpdALo7EwAnfZuBPBcpVkVck3Ny3uG2c3S/8n4k7o/UHBpQjBfJ7Ct1gy2XbM9XxVwZysFL5PNjhy/wrkdX0heUWTzI1vAGKa69bDVL55yCl/ei9VLL5rqKUn+WTfuGIfLjSrS+4DLTfDm/TpcutzwGE9g53gGdzBZnOcUJpLhOM0Fxe72tSCS2cmYS6Wd82qjcUeCFISJ9JihwhtV3lt+Eb+fR1nK0xiVibjVFIJEUJEIqhLZLu1tmlZ3h9epXTetE8KTYjfgYp0tbSeTMpWvNK53NvINRmzY1TYEFewU1H9ve+sksLb9vYP1S/xKs4vWVL+QbqS9tVfVpVtCxEjYbZP+oBPABSjw6cAfDgbBsB/GfTLoxgupY6xEBE0ZAMbAOECJS4aVdPFX25jtzNv2qw1QlUw+ToW9/2hkYAFNUAnrfeCuL4VpmjAiao3pCip1cOLwO9r3Pl1z+hI/feb8ql5pa1pb6486fuT8L8Hvc3ZqKDZkfnsY0Gh/OAgG+92Y9vdHlPT2ySjsDTqURd14lyeK238BIWl5k10YAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=c44a6127c3cd3250c7e81d12b4013170"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_0df3252fc38d3250c7e81d12b4013193"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>low_stock_expiration_notification</internal_name>
+        <label_cache>[{"name":"a5baf357-3556-471a-91b7-465daee6815e.Record","label":"1 - Look Up Record➛Pet Shop Item Record","reference":"x_1607167_pet_shop_pet_shop_item","reference_display":"Pet Shop Item","type":"reference","base_type":"reference","usedInstances":{"bc3e9a08-b03d-4f71-b6de-78b536b8cedc":["record"],"08caacb7-0d0f-45ac-a176-d97b623c7b2a":["record"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}}]</label_cache>
+        <master>true</master>
+        <name>Low Stock Expiration Notification</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Low Stock Expiration Notification">0df3252fc38d3250c7e81d12b4013193</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:49:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0bdaad27c3cd3250c7e81d12b40131ea</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 15:04:59</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_variable_value action="delete_multiple" query="document_key=0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=0bdaad27c3cd3250c7e81d12b40131ea^sys_idNOT INc3daad27c3cd3250c7e81d12b40131eb"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>0bdaad27c3cd3250c7e81d12b40131ea</id>
+        <name>Low Stock Expiration Notification</name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:49:32</sys_created_on>
+        <sys_id>c3daad27c3cd3250c7e81d12b40131eb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:49:32</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=c3daad27c3cd3250c7e81d12b40131eb"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=0bdaad27c3cd3250c7e81d12b40131ea^sys_idNOT IN4fdaad27c3cd3250c7e81d12b40131f3"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Low Stock Expiration Notification">0bdaad27c3cd3250c7e81d12b40131ea</flow>
+        <name>Daily</name>
+        <remote_sys_id/>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:49:32</sys_created_on>
+        <sys_id>4fdaad27c3cd3250c7e81d12b40131f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:49:32</sys_updated_on>
+        <trigger_definition display_value="Daily">89142dc0c32222002841b63b12d3ae8a</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/21STUvEMBD9K5LzWtJdP3sTZMGDCipeRMo0me4GpklM09Uq/ncnbVxULLnMm5k37z369CEIGiRRiQfToVgIYyMGC/QwemR0Q0ZjHedeB1ZDdGEUVQwDLoQLGoOoSikXYgc04P3YX2le42ELXSLIq1OXy/L8VB7Kkt+BPKuk5MddD4GnY+L6EGprSAe0onp6Zj2JbgX6CLWSarXkT8rl2VHZnKyacqlXgHjMFH9s/L4e/zHzUzu+RbQa+VQL1OM/TgOCvrU07ie2HNRstIO33rxjpgrYIotXODf3Za1N7wnGGVZbZxTe+micnZEIDeUd5Wjo7M3sgGuNLQwUH3OEjAw986FPmpOKLKm937rXu++Da2Mng7lJTgHtK4gxmGaI2KfEkbBjoroD743d1D64nZmWWUtXTLEVLblXPtqbjS1AJeEFRwTFmvHLCX6EYJKLa6bh5c/Jff0ypLuzj6y4nk3zQA5lbZDyb9OrYHy84AM7zHI/n78AN8Sgj6cCAAA=</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>daily</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=0bdaad27c3cd3250c7e81d12b40131ea^sys_idNOT IN556e616bc3cd3250c7e81d12b401313d,83daad27c3cd3250c7e81d12b40131f2"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Low Stock Expiration Notification">0bdaad27c3cd3250c7e81d12b40131ea</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 15:04:59</sys_created_on>
+        <sys_id>556e616bc3cd3250c7e81d12b401313d</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 15:04:59</sys_updated_on>
+        <ui_id>08caacb7-0d0f-45ac-a176-d97b623c7b2a</ui_id>
+        <values>H4sIAAAAAAAA/9WV227bOBCGX8XQtWWIok7OXdFsgADddJFke1MUAg/DmAB1KEWlyRp59x1K8il206a7WWDvrCGH/Oef+czP60DL4CxIZCHlUpFIEUIiEqUkJgUUwEWe5RAXwTyoWQW404JorMTve2Z6H1ivWcqZomke0jTNwiQnLFwSnodJlkoGkBUkhcX1kPf0hJlSd61hj5+mAzAiVtpIC3Vw9vnLPGiZxbsc2OBs/WzpZ8UaxsHg1uuN2ufq3WPrv2Uj+gpqV+pN8MOUeT6tzC7PcQWTvBwyD+DBQS0BdShmOpgHFaslc4193EYsMPmxNrvAStduLLRiD53+C2+msd+nACsTkwnbz3IyaAyrc+bYjbO9cL3d+tVoAd3oiQTFeuPe78fGDR9bp5t6THGMm012Y/qqvhodCbYH7PWj71AEtL5QrxwvxyrUzar5dr0ReaHrwZKpRNMIZrZfzDmree+8nHXQ69tTbo/h036DgWFjxdpW13dla5t7PdyH6qvFncGPhTLNN5TZ6bt6wYQvdYGdYIsLjJ8P4U/Mal/373gMJvs7/6z11x4u/RxJEuV0GYkwj1MaJpFgIS8kDxmPVZokWZFxEjzNg+6xe29Y1+0cw1aVX3tf8Ojf5FQ5mD04XQ4D55OF1a17h/LuYfLnaT5RV5CXBpnGu7ndO3NH3kNJsignWV624Mpu1bS7H9pBdYzaH+Bm2MV2djkuv467n5C74e52mLbT8if0jmIf9nNnV+PCBF78SvDGiT3BXRH9j7ibyvrn4B14fcjdgdv/CXaCc644LEPChcDnAoqwiFkeQhoJqmIaRbn6Bex+BFvy8vTuPXF147TSgg1N3OGWk6iI04wKKiSNUSwqJ5LEPIkIJTkc4+Ypm/320Go7nDV7Z8C61z93Pxa+we7qUPnpeib+dhQc4ne9F5/ooy/TN8L2K68ethjufQehYtqU4zR9B8lntf3LeH5PyQGzTCkQDmSpNBiJY1cOOW/yhKobYFasLvxNvocjoId8HzQWKcc7jvjeb+fb4X17PFMdPkWTLaU/oFSNrZifiKHC5/8KyZJATuMiXGYx/isATUMuKQ0J/ksAMFCxfJvH+MvfkVnMeAQLAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=556e616bc3cd3250c7e81d12b401313d"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Record">9d09f99587003300663ca1bb36cb0ba3</action_type>
+        <action_type_parent display_value="Look Up Record">b93f42810b30030085c083eb37673a63</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>9d09f99587003300663ca1bb36cb0ba3</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Low Stock Expiration Notification">0bdaad27c3cd3250c7e81d12b40131ea</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:49:32</sys_created_on>
+        <sys_id>83daad27c3cd3250c7e81d12b40131f2</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 15:04:59</sys_updated_on>
+        <ui_id>a5baf357-3556-471a-91b7-465daee6815e</ui_id>
+        <values>H4sIAAAAAAAA/+VYXU/rOBD9K948lVUpSb/LPq1ArJAul7vA3hdAlhM71LupE2yHUlD/+45jJy1pgVZbJNBWqCXj8fjM+Jyp3etnj1Pv0KMjfxSPRr3hwPc7Hd/v9zsRCcKw049CPyRdr+kJMmHgqUmYMHh8IElunh9x0PcHQX+AM6axGqfZ4h+u2QRcKVdZQmY/3YwfTKNLGEandjga84RKJrzD69umlxEJC2kmvcPn2tCmSBMSsgRcrxzUGnI9y6pHXIxZ27flaei7HUglNVD8psceNROUAYaYJIo1vQkRlOhUziqLZISei2RhGHOhIaJnnB8Vf4J1h77xixlkFTE7Vj1iVylrjo+JJpda5pHOpXONximPmLL1oCwmeaKPlm3W4TzTPBV2ik3bzk6TfCK+23J4VYByY8CSKwDBMpOoQe7SiGG7phclyhMuipq4wSSNSFI9Ea0lD3Nt8Dx7LGETCIQnJMu4uMOZTB94MRmwTFp3CTy04iSdwqKK34kWiQzwFtSVtE7AflyYfxLJTRZnEAYmAyCeAEOw3UKV5rIo5QOOklwVA5IIZWN586anZuooIUotMoeS4/vc4LZ1cBljWzQzJZI8079DiAfmkps3S7H03qTgaEG5KBWUGxRqSTGritheBO8jKEVwtAxhHSwnhxXbt3UBnByCncmh6/tfSRCw+OfTw/YMtyVYobnNztoK5i22Hp7e8gVySySZguIpdJMDKym6vv3tRhj7nSxNgk3RHybJCxYBlRrG3B689xVivfYg2p1sEUr/zJmcubnsMeOSGIwYisSssYns5y922ZfGF9Hui1B7DqhOKZmtYAXWsSs+YYXbFMTIUAOmClBAY28PPd8IBC8zH8AY59cjwLQaYBOznE55HJ9V5XPBWndMf88nTPKooGVjD+1boKsjtVjHZFZFOyN6bJiVyoZb5gA1AhAf+hX1q7d2d68MwmPUqAVZfkedKnPzclvfynI1NlkCHzGnLZ2CXIHojSrs/EbA38EBumAgYoESrjRKY3QJq5weK8gMgShAvepGSOtSxv475cLtenOxid58XjXmgL7ZFumiA6pUamzVv9vOvAGEsjOfm16KwtlrqFxjjjlL6LpzyokZqJ1T2v/Pc8qnbMsAiGK7e1wkXBSHTgC6u3798ljSe5N6YVDjWUGvBfcLG1HRqgaIEeXT1krYAE6phEtYG11ZPGsglieUgjL100lpdALo7EwAnfZuBPBcpVkVck3Ny3uG2c3S/8n4k7o/UHBpQjBfJ7Ct1gy2XbM9XxVwZysFL5PNjhy/wrkdX0heUWTzI1vAGKa69bDVL55yCl/ei9VLL5rqKUn+WTfuGIfLjSrS+4DLTfDm/TpcutzwGE9g53gGdzBZnOcUJpLhOM0Fxe72tSCS2cmYS6Wd82qjcUeCFISJ9JihwhtV3lt+Eb+fR1nK0xiVibjVFIJEUJEIqhLZLu1tmlZ3h9epXTetE8KTYjfgYp0tbSeTMpWvNK53NvINRmzY1TYEFewU1H9ve+sksLb9vYP1S/xKs4vWVL+QbqS9tVfVpVtCxEjYbZP+oBPABSjw6cAfDgbBsB/GfTLoxgupY6xEBE0ZAMbAOECJS4aVdPFX25jtzNv2qw1QlUw+ToW9/2hkYAFNUAnrfeCuL4VpmjAiao3pCip1cOLwO9r3Pl1z+hI/feb8ql5pa1pb6486fuT8L8Hvc3ZqKDZkfnsY0Gh/OAgG+92Y9vdHlPT2ySjsDTqURd14lyeK238BIWl5k10YAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=83daad27c3cd3250c7e81d12b40131f2"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_0bdaad27c3cd3250c7e81d12b40131ea"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>0df3252fc38d3250c7e81d12b4013193</sys_id>
+        <latest_snapshot>0bdaad27c3cd3250c7e81d12b40131ea</latest_snapshot>
+        <compiler_build>glide-xanadu-07-02-2024__patch10-08-08-2025_08-21-2025_1913.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=0df3252fc38d3250c7e81d12b4013193^sys_idNOT IN4fdaed27c3cd3250c7e81d12b4013106"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"4fdaed27c3cd3250c7e81d12b4013106","name":"plan","plan_signature":null}}</plan>
+        <plan_id>0df3252fc38d3250c7e81d12b4013193</plan_id>
+        <snapshot>abfab9e7c3017250c7e81d12b401311e</snapshot>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:49:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4fdaed27c3cd3250c7e81d12b4013106</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:49:33</sys_updated_on>
+        <trigger display_value="">4fdaed27c3cd3250c7e81d12b4013103</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=0df3252fc38d3250c7e81d12b4013193"/>
+</record_update>

@@ -618,6 +618,20 @@ api.controller.$inject = ['$scope', '$location', '$window', 'spUtil', '$log'];
         cart.ordered = false;
 
         var cartSysId = cart.insert();
+		// --- Create Actual Order (Triggers Stock Decrement BR) ---
+		var order = new GlideRecord("x_1607167_pet_shop_pet_shop_order");
+		order.initialize();
+
+		order.item = input.item_sys_id;
+		order.quantity = input.quantity;
+		order.user = gs.getUserID();
+		order.brand = input.brand;
+		order.category = input.category;
+		order.special_instructions = input.specialInstructions || "";
+
+		var orderSysId = order.insert();
+		gs.info("]]>📦<![CDATA[ Order created successfully: " + orderSysId);
+
         gs.info("]]>🛒<![CDATA[ Added to cart successfully: " + cartSysId);
 
         data.success = true;
@@ -673,6 +687,8 @@ api.controller.$inject = ['$scope', '$location', '$window', 'spUtil', '$log'];
             };
         }
     }
+
+	
 })();
 ]]></script>
         <servicenow>false</servicenow>
@@ -680,14 +696,14 @@ api.controller.$inject = ['$scope', '$location', '$window', 'spUtil', '$log'];
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-03 13:08:16</sys_created_on>
         <sys_id>2b5c7228c341f210c7e81d12b4013188</sys_id>
-        <sys_mod_count>48</sys_mod_count>
+        <sys_mod_count>49</sys_mod_count>
         <sys_name>Place an Order Widget</sys_name>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name>sp_widget_2b5c7228c341f210c7e81d12b4013188</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-11 08:52:17</sys_updated_on>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-01 17:42:41</sys_updated_on>
         <template><![CDATA[<div class="order-page-container">
   <!-- Back Button -->
   <button class="back-btn" ng-click="c.goBack()">

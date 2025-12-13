@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <applies_to/>
+        <condition/>
+        <decision_type>allow</decision_type>
+        <description>Default access control on x_1607167_pet_shop_pet_shop_items_import</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_1607167_pet_shop_pet_shop_items_import</name>
+        <operation display_value="create">create</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-02 13:28:31</sys_created_on>
+        <sys_id>4f18dccac3a57210c7e81d12b4013172</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1607167_pet_shop_pet_shop_items_import</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_security_acl_4f18dccac3a57210c7e81d12b4013172</sys_update_name>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-02 13:28:31</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</application>
+        <file_path/>
+        <instance_id>97197bfedbca025002022a5913961906</instance_id>
+        <instance_name>dev269232</instance_name>
+        <name>sys_security_acl_4f18dccac3a57210c7e81d12b4013172</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><decision_type>allow</decision_type><description>Default access control on x_1607167_pet_shop_pet_shop_items_import</description><local_or_existing>Local</local_or_existing><name>x_1607167_pet_shop_pet_shop_items_import</name><operation display_value="create">create</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>harold.destura</sys_created_by><sys_created_on>2025-12-02 13:28:31</sys_created_on><sys_id>4f18dccac3a57210c7e81d12b4013172</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1607167_pet_shop_pet_shop_items_import</sys_name><sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package><sys_policy/><sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope><sys_update_name>sys_security_acl_4f18dccac3a57210c7e81d12b4013172</sys_update_name><sys_updated_by>harold.destura</sys_updated_by><sys_updated_on>2025-12-02 13:28:31</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+        <payload_hash>-586755502</payload_hash>
+        <record_name>x_1607167_pet_shop_pet_shop_items_import</record_name>
+        <reverted_from/>
+        <source>5641fdeac3e13610c7e81d12b40131f9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-02 13:28:31</sys_created_on>
+        <sys_id>8318dccac3a57210c7e81d12b4013176</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_recorded_at>19adf4019090000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-04 09:15:06</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>8718dcca9fa57210e8dea166d734a375</update_guid>
+        <update_guid_history>8718dcca9fa57210e8dea166d734a375:-586755502</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-02 13:34:23</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>da55aff4010541549169d42a06f33e24</sys_id>
+        <sys_metadata>4f18dccac3a57210c7e81d12b4013172</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1607167_pet_shop_pet_shop_items_import</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_parent display_value="">c718dccac3a57210c7e81d12b401318f</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_scope_delete display_value="">6345f443edcf4520bbffdf937b8ec400</sys_scope_delete>
+        <sys_update_name>sys_security_acl_4f18dccac3a57210c7e81d12b4013172</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_4f18dccac3a57210c7e81d12b4013172">8318dccac3a57210c7e81d12b4013176</sys_update_version>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-02 13:34:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

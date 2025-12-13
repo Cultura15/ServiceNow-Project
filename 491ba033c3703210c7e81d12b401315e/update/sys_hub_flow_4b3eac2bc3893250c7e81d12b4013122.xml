@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=13192000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Notify managers when stock ≤ 2 and this is the only item remaining in its category.</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>low_stock_item_notification</internal_name>
+        <label_cache>[{"name":"Updated_1.current.sys_id","label":"Trigger - Record Updated➛Pet Shop Item Record➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"x_1607167_pet_shop_pet_shop_item","column_name":"sys_id","usedInstances":{"d7f8d6b8-bbb7-4f99-9199-7ebad8666020":["conditions"]}},{"name":"d7f8d6b8-bbb7-4f99-9199-7ebad8666020.Records","label":"2 - Look Up Records➛Pet Shop Item Records","reference":"x_1607167_pet_shop_pet_shop_item","reference_display":"Pet Shop Item","type":"records","base_type":"records","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Updated_1.current.category","label":"Trigger - Record Updated➛Pet Shop Item Record➛Category","reference":"","reference_display":"Category","type":"choice","base_type":"choice","parent_table_name":"x_1607167_pet_shop_pet_shop_item","column_name":"category","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"used":false,"image":"","label":"Accessories","reference":false,"rawLabel":"Accessories","selected":false,"missing":false,"value":"accessories","parameters":{"name":"x_1607167_pet_shop_pet_shop_item","dependent_values":[""]}},{"used":false,"image":"","label":"Bird Supplies","reference":false,"rawLabel":"Bird Supplies","selected":false,"missing":false,"value":"bird_supplies","parameters":{"name":"x_1607167_pet_shop_pet_shop_item","dependent_values":[""]}},{"used":false,"image":"","label":"Cat Food","reference":false,"rawLabel":"Cat Food","selected":false,"missing":false,"value":"cat_food","parameters":{"name":"x_1607167_pet_shop_pet_shop_item","dependent_values":[""]}},{"used":false,"image":"","label":"Dog Food","reference":false,"rawLabel":"Dog Food","selected":false,"missing":false,"value":"dog_food","parameters":{"name":"x_1607167_pet_shop_pet_shop_item","dependent_values":[""]}},{"used":false,"image":"","label":"Fish Food","reference":false,"rawLabel":"Fish Food","selected":false,"missing":false,"value":"fish_food","parameters":{"name":"x_1607167_pet_shop_pet_shop_item","dependent_values":[""]}}],"usedInstances":{"d7f8d6b8-bbb7-4f99-9199-7ebad8666020":["conditions"]}},{"name":"Updated_1.current.stocks","label":"Trigger - Record Updated➛Pet Shop Item Record➛Stocks","reference":"","reference_display":"Stocks","type":"integer","base_type":"integer","parent_table_name":"x_1607167_pet_shop_pet_shop_item","column_name":"stocks","usedInstances":{"e8311468-c3dc-402f-a646-ef2d0ead5edb":["condition"]}},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Pet Shop Item Record","reference":"x_1607167_pet_shop_pet_shop_item","reference_display":"Pet Shop Item","type":"reference","base_type":"reference","usedInstances":{"c5879f59-a5a8-43df-ac91-9f52cd729c15":["record"],"3a34ef21-e364-48ae-842a-5ad2dd06999d":["record"],"367f3cac-294b-4663-8bec-ac7ac1565bd4":["record"],"610e0d55-0092-40c3-a262-890f8292fff9":["record"]},"attributes":{}}]</label_cache>
+        <master_snapshot>78877067c3c93250c7e81d12b40131d8</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Low Stock Item Notification</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>c0134de3c30d3250c7e81d12b40131ae</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 10:24:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4b3eac2bc3893250c7e81d12b4013122</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>Low Stock Item Notification</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_hub_flow_4b3eac2bc3893250c7e81d12b4013122</sys_update_name>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:04:34</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=4b3eac2bc3893250c7e81d12b4013122"/>
+    <sys_variable_value action="delete_multiple" query="document_key=4b3eac2bc3893250c7e81d12b4013122"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_1607167_pet_shop_pet_shop_item">stocks&lt;=2<item endquery="false" field="stocks" goto="false" newquery="false" operator="&lt;=" or="false" value="2"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>false</on_insert>
+        <on_update>true</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:55:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c0134de3c30d3250c7e81d12b40131ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:55:40</sys_updated_on>
+        <table>x_1607167_pet_shop_pet_shop_item</table>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>4b3eac2bc3893250c7e81d12b4013122</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:04:34</sys_created_on>
+        <sys_id>d890e12bc38d3250c7e81d12b401318d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:04:34</sys_updated_on>
+        <trigger display_value="">c0134de3c30d3250c7e81d12b40131ae</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=4b3eac2bc3893250c7e81d12b4013122^sys_idNOT INd890e12bc38d3250c7e81d12b401318d"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=4b3eac2bc3893250c7e81d12b4013122"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=4b3eac2bc3893250c7e81d12b4013122^sys_idNOT IN8b3eac2bc3893250c7e81d12b4013124"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>4b3eac2bc3893250c7e81d12b4013122</id>
+        <name>Low Stock Item Notification</name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 10:24:40</sys_created_on>
+        <sys_id>8b3eac2bc3893250c7e81d12b4013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 10:24:40</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=8b3eac2bc3893250c7e81d12b4013124"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=4b3eac2bc3893250c7e81d12b4013122^sys_idNOT IN17773067c3c93250c7e81d12b40131a8,1f773067c3c93250c7e81d12b40131a1,d7773067c3c93250c7e81d12b40131ab"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Low Stock Item Notification">4b3eac2bc3893250c7e81d12b4013122</model>
+        <model_id>4b3eac2bc3893250c7e81d12b4013122</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_4b3eac2bc3893250c7e81d12b4013122</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:06</sys_created_on>
+        <sys_id>17773067c3c93250c7e81d12b40131a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:05:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=17773067c3c93250c7e81d12b40131a8"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Low Stock Item Notification">4b3eac2bc3893250c7e81d12b4013122</model>
+        <model_id>4b3eac2bc3893250c7e81d12b4013122</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_4b3eac2bc3893250c7e81d12b4013122</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:06</sys_created_on>
+        <sys_id>1f773067c3c93250c7e81d12b40131a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:05:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=1f773067c3c93250c7e81d12b40131a1"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Low Stock Item Notification">4b3eac2bc3893250c7e81d12b4013122</model>
+        <model_id>4b3eac2bc3893250c7e81d12b4013122</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_4b3eac2bc3893250c7e81d12b4013122</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:06</sys_created_on>
+        <sys_id>d7773067c3c93250c7e81d12b40131ab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:05:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=d7773067c3c93250c7e81d12b40131ab"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=4b3eac2bc3893250c7e81d12b4013122"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4b3eac2bc3893250c7e81d12b4013122"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=4b3eac2bc3893250c7e81d12b4013122^sys_idNOT IN1f773067c3c93250c7e81d12b40131d2"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Low Stock Item Notification">4b3eac2bc3893250c7e81d12b4013122</flow>
+        <name>Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:06</sys_created_on>
+        <sys_id>1f773067c3c93250c7e81d12b40131d2</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:55:24</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/+1a23KjRhD9FYqnpMpJgZBAcp4cX7Ku8tpbsrJ5cFzUwAwStWjQwoCtbPnf08MMCBDo6k2MkxdbmmufntOnm0EP39QAOSRQT9UJcgKinqg+ZSSiKJgsFwSaGW+2KZrzvjmiGLEwWqqnLErIiRpGmETqqX6ipihIyP0yvsYwCYZmM+R0VXbD92dbNzVLNy17QZgdz8LF6oPPyByGYj9eBGj5Wc74RJhyD93KteheoAiWZnzbb6o78wMcEaqePjyC6XxvHWOk94jmGrrR62lab9jXHdNw9B42EEFDWKIOuWYra0C+AkqeGaGYwFYeCmLS4JSIIHxHg2UxYgY+FV6Zo+fY/wtWH2p8nEfAdpeIvuKrLT0gmt1Z6LvkbsH8kIoWYafoDINkTm+F/dx3xENJwHLfQUsSw3pkwU3mRkiLPPDo0zjf8MqnGTrZGYQuCopviLHIdxJGYu5wzw/A9bbwTRwmUWb9+PL8bnxh/3E2Of9wObbHl/eT8fX55PJCfclw2V8TvqKwUNpiCzgvxYFf+STgByg9HruRv2BnLvNTIo15OVnRNUqo/TQj1AaAkR34MVvn7jTwMcn7SsckkeVnqmmt9G3cJV15t8bVHehpeEM8GFiWawE1DU3z+sRBer83QCPLNIhZomfj5psMYw2wyyA3UVe27MLdvqbV2Bsv48yQFhb/LrreFpMRThHM4GfCw3Ynpu7KyZgw5tPpOiOFCwpf3PAzOn2AsMpx0pDa2RwkNgGAN3J1fizKOKGKF0bKbUh/ul6NU+5JHHO3wvjrOZpKl3mfcjZmkCV3UhTZ9tzmhzZLHBucMp0CiXy6SJjtOOZoQMw2+RxUHJNFAiz9oKqPL/wsSEBcViKYB0df+vbRByvBLyvXFcB3Ac15pLwr1E7IZmW4OdJfob2CFAK17czjbsF/PFaKV8GVVr24vxj3h8ZogD2jWYytXpMYr7ZvN4zVov27iPB+BUSc6Uywn5akraqUIyrL366xmjaGvFyxV17x0HCoEUMubXDuybxy/r9TSk6pZWZjr9ScR59ovagG4aHGdiPZe0H4BBw4IM87yP0yjcKE4jX5hzUVnyqrEcoP0rc/dkvpy4kOOEA2462O6A7KY/LZij95cCK6PCyTERdbZt/UPF0zIJM5g9HIcVHP8yzTIhquZbLVxo3WvPn8tUOgpE2R1qTQrSRMm7hbKPLmXPI2DDxK1yUVG2Vd9HVDpCFNF5zdX6izJeuaFfKkHlLFTSIAyZT85qhDslUW58zbaxALdDxV5x4UUP9DjxxV9qQ1Vuwv1KaL9b5jmZrFUYNYO6DYljZAHgbZHhk1oa5u32pXJwS7LWrqTm3TwK2UTKt83kOq/03TjhLpgoit1XcbtLcv3uchxT4Tj0d12c67YvXA2HZLi+eHE7PQ/RL/mWia4WZ/cW+HiHacEcIEtSiZaZUiuoyowQ7WAO4fub/dFsuvdWcr3o8czLF5iElwsVpOraQU7q3cQ3a4gKdK8AzMUz+f3Zx/OLv97fL+F/n/anz3Mf88uYN5T4iy2GahjTC2S/7fkczCJ+uvMtQ9X2Mcc2/MTSF26JUT+UWoQIcCmyi+p0hvgSw5S4XNCBSTAZSVsKHCd+9YUi8XMOvIi2uXd41blOFrt8fQrMjXMR0CdvTFcC2Ejn2kdr2Rg0dGy5u6QfubuvYb4lr3m6/a9taPtEmONl6L7rdufc3Gi9ES/asc2PEe+B2j/m4XAg1WvP0Ckxs9EcdwQMoNqVt7Vel2+A4gof7XhNjuDNGpeL7PcV3BsRLkzhQxRBFDuosUBU9oGav1YgFCkke9fEyCBoh/KnS6o0BJSqLl2knyRiVZQC7p2Blurg82/ARNWhwzeCIg02VJINdIv7Um0EeDnoGHgHdkrOPVSzVBVVzabWktArb81mxLEVDaXp458+ckSzTF840yR8ydkfhEAWJk9wRZHvKjmGWjf369SkKKY1rVzqYc2So3rYfWlBW3hXRaF4MiS9ZNqcZLWostOa2/9dXy+4d/VG0hPdJcXEjvvW5BccAvE1se5x//BvHR6a9GKwAA</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=4b3eac2bc3893250c7e81d12b4013122^sys_idNOT IN97773067c3c93250c7e81d12b40131d6,f51069e7c38d3250c7e81d12b40131ac,f91069e7c38d3250c7e81d12b40131ad"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Low Stock Item Notification">4b3eac2bc3893250c7e81d12b4013122</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>e8311468-c3dc-402f-a646-ef2d0ead5edb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:06</sys_created_on>
+        <sys_id>97773067c3c93250c7e81d12b40131d6</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:05:49</sys_updated_on>
+        <ui_id>d7f8d6b8-bbb7-4f99-9199-7ebad8666020</ui_id>
+        <values>H4sIAAAAAAAA/+VXbU/bMBD+K1k+R1VCS8v4hmBISLxsdOMLY5ZjO62Fm2S201Kq/Ped47ypDayVygTat/ru7Hvu7nkc937lcuoeu0fRwPdxcHg08v1+3/eHwz7BQRj2hyT0w0Hoem6MZwwiNQ4Fg+Uci8ysn1Aw9EfBcIRSppGaJmnzg2s2g1DKVSrw8q7c8ZVpZwxu58K6yZQLKlnsHt8/eG6KJSTSTLrHqzXXtkgFDpmA0O8l1DXkepnWS1T4rO2yvc25to5EUgPF91z2pFlMGWCIsFDMc2c4plgncllbJMP0JhaNYcpjDSe6JvhJ8WfIe+SbuIhBVYRZX71EZaesOTrDGo+1zIjOZBlKpgknTNl+UBbhTOjTts0G3KSaJ7HdYsu2uxORzeJr2w63PqAaDFgyBSBYago1yMsyIhjX4rZCec7joielUyQEi3qFtZY8zLTBs3KZYDM4CM1wmvJ4glKZzHmxGbDMehMBi14kkgUkVXwS9zAxwHvQV9w7B/tZYb7DkpsqruAY2AyAuACGIDtClWSyaOUcEZGpwiFxrOxZbu65aqlOBVaqqRxajn5nBrftQ1kxsk0zW4jkqT6BI+asLC73thLLod9QjiQx5QaFaimGYM0mQJvxydWXk/Fq9SOFchlFQY9kEjqse1VEnv+6/qZ0Qh7VzwxyMd+slwpx+qkw0K7dNiDPN5X3DzPvU9RFRytRn7Zb2tXmUt4btsuuA0p5B3uTN9TxkQQOyd+fvndXrG3BX2RLRq+S7LDhk0qkRraXLd1u6mlnnm8BoeL5jWGmEy5fQlXSPOJM0K6v2LlxrH3FDv7Pr9i7JDkAoshOj8eCx8WTBIC+Ffv916/Yz2s8K+jVcL+wYUU2NYAdnTjPOythCziVEsaQ2/lu8XRArO77gjLrd31lLAXQ35sA+gf7EcCqLrNuZEfPq1eomWYV/2zi8Xo8ULC1Ici7BLZTzmDXnAf5poD7Oym4TTbrOXuBc3t+rr6gSO8tr4ApbC3zIatftOB0wnSTvYqiiV5g8djlLxmHqkEV5b3B03fwqmyHQSNRUAqSTMHw2m/fAJ5Hm3dI4FnzblfIFliqdlzhJ+e2BtOJsLxGQOlsUsymfY9c1NaS5IM9Phjf7Ze0GlanBquZfYh/jPsTwsMfnzA1PDIRAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=97773067c3c93250c7e81d12b40131d6"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Fire Event">80a30edeff30311077a95dac793bf19b</action_type>
+        <action_type_parent display_value="Fire Event">15e10e5eff30311077a95dac793bf11e</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>80a30edeff30311077a95dac793bf19b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Low Stock Item Notification">4b3eac2bc3893250c7e81d12b4013122</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>e8311468-c3dc-402f-a646-ef2d0ead5edb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:02:29</sys_created_on>
+        <sys_id>f51069e7c38d3250c7e81d12b40131ac</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:05:49</sys_updated_on>
+        <ui_id>367f3cac-294b-4663-8bec-ac7ac1565bd4</ui_id>
+        <values>H4sIAAAAAAAA/+2W247bNhCGX0XQtWWIFHXyXRB3iwXSJMgmuQkCgSKHa7a0pFCUs66x717q4HPtXQfOAkV6Y1jDIfXzn/kw+rJyJXcnbsJo4AMHIQI/QMiPY5qGnLI4DXKBUnBHbkHnYDNhAYXJuoeRu6CqaYMhT9MQgWAB4QEOfRZDgjjCOfFRgFhoU7msK0WXn4cdDxmK/BhFcVaByepZWY1V+T2rTcn+yqgCbeweNpOKayjcyZevI7ei2r7VgHYnq4Ol595B0RyUTf2tvcSJO5ll1cY0CLDns3XozbD1w0681LxVg0YuPBgoOFgZgqoaRu6cFpyaUi/didGNDWig/F2hlpuMmbQSJu4UaqmBO3fL2sDc6ZQ5ZkaNY01pFHdycESb4baHPtTyb6suwKMdgRO3Xtb9HTTcy7q1aGc9G6xf39v50CVpamRZ2EQxpYbeWZXMNLo9rXO+lAzq3l1rKW2Ueb0b6xPeVd0Z3RZDc3VKCytVMy/e9m67mxPXzWAjTW11QtWa2NoyeCTuZuX3jeM3suj8HhZVyajaSQWq2exGguKHJaXGaJk3phW/chv58bjEffDfigwK5u1Zc1pVsrjPKl0uZKfDXms+vlf2YSza5uW2lPfFmLLWlLEtPx3f2Pi0C3+mWrYO/WGP6Txp5KdCfmvgtpMLfgA8Fl5MCfEICXMvz0ngMT9MU+pjLBB2H0etua8VreutlfYS2bemNaI3drAw68vSbmFaVuaVFbWAwa3H0YA9888hQ8kWEQ3MdvsO8qvVp8peEXiGxqzR1i3z+HjM+cUUP0OS2lRp0HSocUCYl6zpSif5AcTTYcW5nW4xxtfA+Pe2HXphTpn/Ccw4QpdzSzQ40LPdcXIG5hPsXp/UHwGzd+ECLk+wt1+bffr2q/Mi/AnEaIhw4OEgZh5JWeIlBOyPpRCTNGGYRT/AX+/0UxCenVs03jb4unUWJ4fo9o+00+QYx/dgHFu7yrntly9k82mlazY/DlIPlA9kdo+7A/fN7jbnbb8wcBmc53KIbMHsW3SDV+L/h/C6fO6d4GvP4X289jx+EbpSTIiIksTLMeUeSSJip5ufeDEiPrb9hIMw+AnTjSdn2zXftqdt/DnaAesKc+wZL1+z8n59lIOOJQ3E2O81W54DWu7WwYEUciEp+yPsVbF0OgP6z08NdakWUDumdKizef8OV/4vSdbGiX2qNrV4EaKi0E99HwuPRwl4BAnsUZQmHsZBjnjECI7Sn0EUOdvUYr998ZWJevrlx0ThY0mXEBX+T9QvQpQgEQlYHHvE9pj9AkzsjIoh9IKQi5jwmEUJuiJRX/8B+YTLBXoRAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f51069e7c38d3250c7e81d12b40131ac"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Low Stock Item Notification">4b3eac2bc3893250c7e81d12b4013122</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>e8311468-c3dc-402f-a646-ef2d0ead5edb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:02:29</sys_created_on>
+        <sys_id>f91069e7c38d3250c7e81d12b40131ad</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:05:49</sys_updated_on>
+        <ui_id>610e0d55-0092-40c3-a262-890f8292fff9</ui_id>
+        <values>H4sIAAAAAAAA/9WW207jMBCGX6XKdVPFSduk3CEqJCQWVhT2BqHIscfUWueA4xS6Fe++4yQ9l+MuK+1dPT798898cW8XjuTOkdPnEecjQTxBCPGINyA+iSCChIXDEPzI6ToZTQFXamC55jieUVXZwGJxU3BqgMekxyqtITPPzzjPZVkoOv/RLsMIm0rFcd45ur3rOgXVeKIB7RwtdqbeK0nRBBQuvVpq2tVo5oUd85xVKeqK5TJ43u4ctzOdszHO4CYrh3QdeDKQcUAdgqoSuk5KM0wy1/NVRAPll5laB6YyM02iKX0q5S+8OfDtOgGYGWtNWA3j1qAmLMbU0InRFTOVXvmVSwZl4wkHQStlTjZjzYLLwsg8a7YYmqjl7lxVaXbROOKsDtioR1WiCChsolY5Xo5ZiMk0f7xaijyVWW1Jm6LKGVWrETVGy6QyVs7CqeT1Ibeb8GG/QUG9MKVFIbP7uND5TNb3ofq0d69w0BMqf0SZpbzPepTZVHtYCdo7xfi4Dv+gWtq8v+ExuNneeZPJhwrObB9x4oXByGNu6A8Ct+8x6iYRT1ya+GLQ7w+jYUKc565TzssTRcty7RiWKn6obMKNf61TcW127XRcN5zdzLQszDHKm0Hrz3O3ZSsirzVy4K/7duPMNV9PMRl6IRmGcQEmLqd5sf4hDaT7qH0H08EqFp2zZvpj3L1D7pK767rbDstv0duLnW/u7Vw0Ey14/gfBazr2AHeR9x9x16b15+Bteb3N3Zbb/wQ7liSJSGDkkoQxtx9C5EY+DV0YeCwQfuB5ofgEdm/B1n+9ezcesiw3UkhG6yKuceP+MAgjECyIRoGPYlE54cRP+h4JSP3s7OB2nj92JiZnPzvHCrT5+EP3tuQlcBfbmg9n0pK37v9t8K424i13wevcNZh95r3D4sLM1g5SKlXc9NELMO7k9pfBfEnJFq1UCGD2n4yQoDg2XFzv+ZLHU0yAajY9tTfZGjZobpO9VVjkG+/YI3uznF8H9vV+T5X4CLW2xPaAWOQ6pbYj6gx3vwf9EYEw8CN3NPTxewDBwE14ELgEvw8AFITPv+YZvvsNP4IWqeQKAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f91069e7c38d3250c7e81d12b40131ad"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=4b3eac2bc3893250c7e81d12b4013122"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=4b3eac2bc3893250c7e81d12b4013122^sys_idNOT INdb773067c3c93250c7e81d12b40131d4"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">53773067c3c93250c7e81d12b40131d4</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Low Stock Item Notification">4b3eac2bc3893250c7e81d12b4013122</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:06</sys_created_on>
+        <sys_id>db773067c3c93250c7e81d12b40131d4</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:04:32</sys_updated_on>
+        <ui_id>e8311468-c3dc-402f-a646-ef2d0ead5edb</ui_id>
+        <values>H4sIAAAAAAAA/+1U22rbQBD9FaFnIXSJTeO3kBIotA00aV7aIEa7I3vJalfZix3X+N87q0tiGoc2IY99EbtndmbOmTloF2vvOu/stT6zVixVvPhxm8RCBYzOu1hBi/EiZlpx4YRWVQ8k8RqkD4HzFbK7SDSRdTocbCT1JgLFI6/EvcdIqIiBw6U2W0rjwnYStjdvy2YrIbnBkWUHhrg4NPFi90fIbTusJNQoqcmVM0ItKV1wujUZNPkpy1lZzMsiy4oPJ3k9L+u84CUglPRuSjyfREefeyR5cRqhH+F26qQND7TyLInxwaHiSK0bkBaTuCV54IKgCTEI/FLJJ2AllKNycXj8YMUvql3MZuFhg6SR4RB8vFbjWAeYrbRgeNkFggPioJZjDtPSt+rroCMsBBvw0k0LIcRbqoddIB1YjJSaq5XefJsaXgjVCxyDUjOQjzdwNIbaO7RhMSixpUJVC11Hw6k6o9eiTyYubbqUdEkbWjs1DQ5MgQXiKc0I0gvCP/bwDRgRVHyhMpQ80KzBClb1bqVyzpCEfT+W6t4HQoPAUUo1TIMeWGZE586ozxpH1vvkudUPXL7bfe+IEPIqT5k3NAOX9pa1+/1Pn2Ul67+8eG7x16S+h79PYdbM8mx23N8n82P+PuLsl01d/MXUYQ3/6Oksy/6b+tDUwlaDOUdtffM3e/o2GHjoYAffcGTCEpHrgH2a/vIhsCUDCHYIbbS5CxKesP1vlW6OHi8GAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=4b3eac2bc3893250c7e81d12b4013122"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=4b3eac2bc3893250c7e81d12b4013122"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_4b3eac2bc3893250c7e81d12b4013122^sys_idNOT IN1b773067c3c93250c7e81d12b40131ad,9b773067c3c93250c7e81d12b40131aa,d3773067c3c93250c7e81d12b40131a7"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4b3eac2bc3893250c7e81d12b4013122</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:06</sys_created_on>
+        <sys_id>1b773067c3c93250c7e81d12b40131ad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:05:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4b3eac2bc3893250c7e81d12b4013122</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:06</sys_created_on>
+        <sys_id>9b773067c3c93250c7e81d12b40131aa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:05:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_4b3eac2bc3893250c7e81d12b4013122</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:06</sys_created_on>
+        <sys_id>d3773067c3c93250c7e81d12b40131a7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:05:06</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_4b3eac2bc3893250c7e81d12b4013122"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_4b3eac2bc3893250c7e81d12b4013122"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_4b3eac2bc3893250c7e81d12b4013122"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Notify managers when stock ≤ 2 and this is the only item remaining in its category.</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>low_stock_item_notification</internal_name>
+        <label_cache>[{"name":"Updated_1.current.sys_id","label":"Trigger - Record Updated➛Pet Shop Item Record➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"x_1607167_pet_shop_pet_shop_item","column_name":"sys_id","usedInstances":{"d7f8d6b8-bbb7-4f99-9199-7ebad8666020":["conditions"]}},{"name":"d7f8d6b8-bbb7-4f99-9199-7ebad8666020.Records","label":"2 - Look Up Records➛Pet Shop Item Records","reference":"x_1607167_pet_shop_pet_shop_item","reference_display":"Pet Shop Item","type":"records","base_type":"records","usedInstances":{},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Updated_1.current.category","label":"Trigger - Record Updated➛Pet Shop Item Record➛Category","reference":"","reference_display":"Category","type":"choice","base_type":"choice","parent_table_name":"x_1607167_pet_shop_pet_shop_item","column_name":"category","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"rawLabel":"-- None --","selected":false,"missing":false,"value":""},{"used":false,"image":"","label":"Accessories","reference":false,"rawLabel":"Accessories","selected":false,"missing":false,"value":"accessories","parameters":{"name":"x_1607167_pet_shop_pet_shop_item","dependent_values":[""]}},{"used":false,"image":"","label":"Bird Supplies","reference":false,"rawLabel":"Bird Supplies","selected":false,"missing":false,"value":"bird_supplies","parameters":{"name":"x_1607167_pet_shop_pet_shop_item","dependent_values":[""]}},{"used":false,"image":"","label":"Cat Food","reference":false,"rawLabel":"Cat Food","selected":false,"missing":false,"value":"cat_food","parameters":{"name":"x_1607167_pet_shop_pet_shop_item","dependent_values":[""]}},{"used":false,"image":"","label":"Dog Food","reference":false,"rawLabel":"Dog Food","selected":false,"missing":false,"value":"dog_food","parameters":{"name":"x_1607167_pet_shop_pet_shop_item","dependent_values":[""]}},{"used":false,"image":"","label":"Fish Food","reference":false,"rawLabel":"Fish Food","selected":false,"missing":false,"value":"fish_food","parameters":{"name":"x_1607167_pet_shop_pet_shop_item","dependent_values":[""]}}],"usedInstances":{"d7f8d6b8-bbb7-4f99-9199-7ebad8666020":["conditions"]}},{"name":"Updated_1.current.stocks","label":"Trigger - Record Updated➛Pet Shop Item Record➛Stocks","reference":"","reference_display":"Stocks","type":"integer","base_type":"integer","parent_table_name":"x_1607167_pet_shop_pet_shop_item","column_name":"stocks","usedInstances":{"e8311468-c3dc-402f-a646-ef2d0ead5edb":["condition"]}},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Pet Shop Item Record","reference":"x_1607167_pet_shop_pet_shop_item","reference_display":"Pet Shop Item","type":"reference","base_type":"reference","usedInstances":{"c5879f59-a5a8-43df-ac91-9f52cd729c15":["record"],"3a34ef21-e364-48ae-842a-5ad2dd06999d":["record"],"367f3cac-294b-4663-8bec-ac7ac1565bd4":["record"],"610e0d55-0092-40c3-a262-890f8292fff9":["record"]},"attributes":{}}]</label_cache>
+        <master>true</master>
+        <name>Low Stock Item Notification</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Low Stock Item Notification">4b3eac2bc3893250c7e81d12b4013122</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>78877067c3c93250c7e81d12b40131d8</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:04:34</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=78877067c3c93250c7e81d12b40131d8"/>
+    <sys_variable_value action="delete_multiple" query="document_key=78877067c3c93250c7e81d12b40131d8"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=78877067c3c93250c7e81d12b40131d8"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=78877067c3c93250c7e81d12b40131d8^sys_idNOT IN78877067c3c93250c7e81d12b40131d9"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>78877067c3c93250c7e81d12b40131d8</id>
+        <name>Low Stock Item Notification</name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:12</sys_created_on>
+        <sys_id>78877067c3c93250c7e81d12b40131d9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:05:12</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=78877067c3c93250c7e81d12b40131d9"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=78877067c3c93250c7e81d12b40131d8^sys_idNOT IN3c877067c3c93250c7e81d12b40131da,70877067c3c93250c7e81d12b40131e7,8d877067c3c93250c7e81d12b40131ed"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Low Stock Item Notification">78877067c3c93250c7e81d12b40131d8</model>
+        <model_id>78877067c3c93250c7e81d12b40131d8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_78877067c3c93250c7e81d12b40131d8</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:12</sys_created_on>
+        <sys_id>3c877067c3c93250c7e81d12b40131da</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:04:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3c877067c3c93250c7e81d12b40131da"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Low Stock Item Notification">78877067c3c93250c7e81d12b40131d8</model>
+        <model_id>78877067c3c93250c7e81d12b40131d8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_78877067c3c93250c7e81d12b40131d8</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:12</sys_created_on>
+        <sys_id>70877067c3c93250c7e81d12b40131e7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:27:59</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=70877067c3c93250c7e81d12b40131e7"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Low Stock Item Notification">78877067c3c93250c7e81d12b40131d8</model>
+        <model_id>78877067c3c93250c7e81d12b40131d8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_78877067c3c93250c7e81d12b40131d8</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:12</sys_created_on>
+        <sys_id>8d877067c3c93250c7e81d12b40131ed</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:04:33</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=8d877067c3c93250c7e81d12b40131ed"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=78877067c3c93250c7e81d12b40131d8"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=78877067c3c93250c7e81d12b40131d8"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=78877067c3c93250c7e81d12b40131d8^sys_idNOT IN09877067c3c93250c7e81d12b40131fd"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Low Stock Item Notification">78877067c3c93250c7e81d12b40131d8</flow>
+        <name>Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:13</sys_created_on>
+        <sys_id>09877067c3c93250c7e81d12b40131fd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:55:39</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/+1a23KjRhD9FYqnpMpJgZBAcp4cX7Ku8tpbsrJ5cFzUwAwStWjQwoCtbPnf08MMCBDo6k2MkxdbmmufntOnm0EP39QAOSRQT9UJcgKinqg+ZSSiKJgsFwSaGW+2KZrzvjmiGLEwWqqnLErIiRpGmETqqX6ipihIyP0yvsYwCYZmM+R0VXbD92dbNzVLNy17QZgdz8LF6oPPyByGYj9eBGj5Wc74RJhyD93KteheoAiWZnzbb6o78wMcEaqePjyC6XxvHWOk94jmGrrR62lab9jXHdNw9B42EEFDWKIOuWYra0C+AkqeGaGYwFYeCmLS4JSIIHxHg2UxYgY+FV6Zo+fY/wtWH2p8nEfAdpeIvuKrLT0gmt1Z6LvkbsH8kIoWYafoDINkTm+F/dx3xENJwHLfQUsSw3pkwU3mRkiLPPDo0zjf8MqnGTrZGYQuCopviLHIdxJGYu5wzw/A9bbwTRwmUWb9+PL8bnxh/3E2Of9wObbHl/eT8fX55PJCfclw2V8TvqKwUNpiCzgvxYFf+STgByg9HruRv2BnLvNTIo15OVnRNUqo/TQj1AaAkR34MVvn7jTwMcn7SsckkeVnqmmt9G3cJV15t8bVHehpeEM8GFiWawE1DU3z+sRBer83QCPLNIhZomfj5psMYw2wyyA3UVe27MLdvqbV2Bsv48yQFhb/LrreFpMRThHM4GfCw3Ynpu7KyZgw5tPpOiOFCwpf3PAzOn2AsMpx0pDa2RwkNgGAN3J1fizKOKGKF0bKbUh/ul6NU+5JHHO3wvjrOZpKl3mfcjZmkCV3UhTZ9tzmhzZLHBucMp0CiXy6SJjtOOZoQMw2+RxUHJNFAiz9oKqPL/wsSEBcViKYB0df+vbRByvBLyvXFcB3Ac15pLwr1E7IZmW4OdJfob2CFAK17czjbsF/PFaKV8GVVr24vxj3h8ZogD2jWYytXpMYr7ZvN4zVov27iPB+BUSc6Uywn5akraqUIyrL366xmjaGvFyxV17x0HCoEUMubXDuybxy/r9TSk6pZWZjr9ScR59ovagG4aHGdiPZe0H4BBw4IM87yP0yjcKE4jX5hzUVnyqrEcoP0rc/dkvpy4kOOEA2462O6A7KY/LZij95cCK6PCyTERdbZt/UPF0zIJM5g9HIcVHP8yzTIhquZbLVxo3WvPn8tUOgpE2R1qTQrSRMm7hbKPLmXPI2DDxK1yUVG2Vd9HVDpCFNF5zdX6izJeuaFfKkHlLFTSIAyZT85qhDslUW58zbaxALdDxV5x4UUP9DjxxV9qQ1Vuwv1KaL9b5jmZrFUYNYO6DYljZAHgbZHhk1oa5u32pXJwS7LWrqTm3TwK2UTKt83kOq/03TjhLpgoit1XcbtLcv3uchxT4Tj0d12c67YvXA2HZLi+eHE7PQ/RL/mWia4WZ/cW+HiHacEcIEtSiZaZUiuoyowQ7WAO4fub/dFsuvdWcr3o8czLF5iElwsVpOraQU7q3cQ3a4gKdK8AzMUz+f3Zx/OLv97fL+F/n/anz3Mf88uYN5T4iy2GahjTC2S/7fkczCJ+uvMtQ9X2Mcc2/MTSF26JUT+UWoQIcCmyi+p0hvgSw5S4XNCBSTAZSVsKHCd+9YUi8XMOvIi2uXd41blOFrt8fQrMjXMR0CdvTFcC2Ejn2kdr2Rg0dGy5u6QfubuvYb4lr3m6/a9taPtEmONl6L7rdufc3Gi9ES/asc2PEe+B2j/m4XAg1WvP0Ckxs9EcdwQMoNqVt7Vel2+A4gof7XhNjuDNGpeL7PcV3BsRLkzhQxRBFDuosUBU9oGav1YgFCkke9fEyCBoh/KnS6o0BJSqLl2knyRiVZQC7p2Blurg82/ARNWhwzeCIg02VJINdIv7Um0EeDnoGHgHdkrOPVSzVBVVzabWktArb81mxLEVDaXp458+ckSzTF840yR8ydkfhEAWJk9wRZHvKjmGWjf369SkKKY1rVzqYc2So3rYfWlBW3hXRaF4MiS9ZNqcZLWostOa2/9dXy+4d/VG0hPdJcXEjvvW5BccAvE1se5x//BvHR6a9GKwAA</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=78877067c3c93250c7e81d12b40131d8^sys_idNOT IN0890e12bc38d3250c7e81d12b401314a,81877067c3c93250c7e81d12b40131fb,c490e12bc38d3250c7e81d12b401314b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Fire Event">80a30edeff30311077a95dac793bf19b</action_type>
+        <action_type_parent display_value="Fire Event">15e10e5eff30311077a95dac793bf11e</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>80a30edeff30311077a95dac793bf19b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Low Stock Item Notification">78877067c3c93250c7e81d12b40131d8</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>e8311468-c3dc-402f-a646-ef2d0ead5edb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:04:33</sys_created_on>
+        <sys_id>0890e12bc38d3250c7e81d12b401314a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:04:33</sys_updated_on>
+        <ui_id>367f3cac-294b-4663-8bec-ac7ac1565bd4</ui_id>
+        <values>H4sIAAAAAAAA/+2W247bNhCGX0XQtWWIFHXyXRB3iwXSJMgmuQkCgSKHa7a0pFCUs66x717q4HPtXQfOAkV6Y1jDIfXzn/kw+rJyJXcnbsJo4AMHIQI/QMiPY5qGnLI4DXKBUnBHbkHnYDNhAYXJuoeRu6CqaYMhT9MQgWAB4QEOfRZDgjjCOfFRgFhoU7msK0WXn4cdDxmK/BhFcVaByepZWY1V+T2rTcn+yqgCbeweNpOKayjcyZevI7ei2r7VgHYnq4Ol595B0RyUTf2tvcSJO5ll1cY0CLDns3XozbD1w0681LxVg0YuPBgoOFgZgqoaRu6cFpyaUi/didGNDWig/F2hlpuMmbQSJu4UaqmBO3fL2sDc6ZQ5ZkaNY01pFHdycESb4baHPtTyb6suwKMdgRO3Xtb9HTTcy7q1aGc9G6xf39v50CVpamRZ2EQxpYbeWZXMNLo9rXO+lAzq3l1rKW2Ueb0b6xPeVd0Z3RZDc3VKCytVMy/e9m67mxPXzWAjTW11QtWa2NoyeCTuZuX3jeM3suj8HhZVyajaSQWq2exGguKHJaXGaJk3phW/chv58bjEffDfigwK5u1Zc1pVsrjPKl0uZKfDXms+vlf2YSza5uW2lPfFmLLWlLEtPx3f2Pi0C3+mWrYO/WGP6Txp5KdCfmvgtpMLfgA8Fl5MCfEICXMvz0ngMT9MU+pjLBB2H0etua8VreutlfYS2bemNaI3drAw68vSbmFaVuaVFbWAwa3H0YA9888hQ8kWEQ3MdvsO8qvVp8peEXiGxqzR1i3z+HjM+cUUP0OS2lRp0HSocUCYl6zpSif5AcTTYcW5nW4xxtfA+Pe2HXphTpn/Ccw4QpdzSzQ40LPdcXIG5hPsXp/UHwGzd+ECLk+wt1+bffr2q/Mi/AnEaIhw4OEgZh5JWeIlBOyPpRCTNGGYRT/AX+/0UxCenVs03jb4unUWJ4fo9o+00+QYx/dgHFu7yrntly9k82mlazY/DlIPlA9kdo+7A/fN7jbnbb8wcBmc53KIbMHsW3SDV+L/h/C6fO6d4GvP4X289jx+EbpSTIiIksTLMeUeSSJip5ufeDEiPrb9hIMw+AnTjSdn2zXftqdt/DnaAesKc+wZL1+z8n59lIOOJQ3E2O81W54DWu7WwYEUciEp+yPsVbF0OgP6z08NdakWUDumdKizef8OV/4vSdbGiX2qNrV4EaKi0E99HwuPRwl4BAnsUZQmHsZBjnjECI7Sn0EUOdvUYr998ZWJevrlx0ThY0mXEBX+T9QvQpQgEQlYHHvE9pj9AkzsjIoh9IKQi5jwmEUJuiJRX/8B+YTLBXoRAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0890e12bc38d3250c7e81d12b401314a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent display_value="Look Up Records">d1c56ec50b30030085c083eb37673a50</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>43400a1587003300663ca1bb36cb0b4b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Low Stock Item Notification">78877067c3c93250c7e81d12b40131d8</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>e8311468-c3dc-402f-a646-ef2d0ead5edb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:13</sys_created_on>
+        <sys_id>81877067c3c93250c7e81d12b40131fb</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:33:52</sys_updated_on>
+        <ui_id>d7f8d6b8-bbb7-4f99-9199-7ebad8666020</ui_id>
+        <values>H4sIAAAAAAAA/+VXbU/bMBD+K1k+R1VCS8v4hmBISLxsdOMLY5ZjO62Fm2S201Kq/Ped47ypDayVygTat/ru7Hvu7nkc937lcuoeu0fRwPdxcHg08v1+3/eHwz7BQRj2hyT0w0Hoem6MZwwiNQ4Fg+Uci8ysn1Aw9EfBcIRSppGaJmnzg2s2g1DKVSrw8q7c8ZVpZwxu58K6yZQLKlnsHt8/eG6KJSTSTLrHqzXXtkgFDpmA0O8l1DXkepnWS1T4rO2yvc25to5EUgPF91z2pFlMGWCIsFDMc2c4plgncllbJMP0JhaNYcpjDSe6JvhJ8WfIe+SbuIhBVYRZX71EZaesOTrDGo+1zIjOZBlKpgknTNl+UBbhTOjTts0G3KSaJ7HdYsu2uxORzeJr2w63PqAaDFgyBSBYago1yMsyIhjX4rZCec7joielUyQEi3qFtZY8zLTBs3KZYDM4CM1wmvJ4glKZzHmxGbDMehMBi14kkgUkVXwS9zAxwHvQV9w7B/tZYb7DkpsqruAY2AyAuACGIDtClWSyaOUcEZGpwiFxrOxZbu65aqlOBVaqqRxajn5nBrftQ1kxsk0zW4jkqT6BI+asLC73thLLod9QjiQx5QaFaimGYM0mQJvxydWXk/Fq9SOFchlFQY9kEjqse1VEnv+6/qZ0Qh7VzwxyMd+slwpx+qkw0K7dNiDPN5X3DzPvU9RFRytRn7Zb2tXmUt4btsuuA0p5B3uTN9TxkQQOyd+fvndXrG3BX2RLRq+S7LDhk0qkRraXLd1u6mlnnm8BoeL5jWGmEy5fQlXSPOJM0K6v2LlxrH3FDv7Pr9i7JDkAoshOj8eCx8WTBIC+Ffv916/Yz2s8K+jVcL+wYUU2NYAdnTjPOythCziVEsaQ2/lu8XRArO77gjLrd31lLAXQ35sA+gf7EcCqLrNuZEfPq1eomWYV/2zi8Xo8ULC1Ici7BLZTzmDXnAf5poD7Oym4TTbrOXuBc3t+rr6gSO8tr4ApbC3zIatftOB0wnSTvYqiiV5g8djlLxmHqkEV5b3B03fwqmyHQSNRUAqSTMHw2m/fAJ5Hm3dI4FnzblfIFliqdlzhJ+e2BtOJsLxGQOlsUsymfY9c1NaS5IM9Phjf7Ze0GlanBquZfYh/jPsTwsMfnzA1PDIRAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=81877067c3c93250c7e81d12b40131fb"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Low Stock Item Notification">78877067c3c93250c7e81d12b40131d8</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>e8311468-c3dc-402f-a646-ef2d0ead5edb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:04:33</sys_created_on>
+        <sys_id>c490e12bc38d3250c7e81d12b401314b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:04:33</sys_updated_on>
+        <ui_id>610e0d55-0092-40c3-a262-890f8292fff9</ui_id>
+        <values>H4sIAAAAAAAA/9WW207jMBCGX6XKdVPFSduk3CEqJCQWVhT2BqHIscfUWueA4xS6Fe++4yQ9l+MuK+1dPT798898cW8XjuTOkdPnEecjQTxBCPGINyA+iSCChIXDEPzI6ToZTQFXamC55jieUVXZwGJxU3BqgMekxyqtITPPzzjPZVkoOv/RLsMIm0rFcd45ur3rOgXVeKIB7RwtdqbeK0nRBBQuvVpq2tVo5oUd85xVKeqK5TJ43u4ctzOdszHO4CYrh3QdeDKQcUAdgqoSuk5KM0wy1/NVRAPll5laB6YyM02iKX0q5S+8OfDtOgGYGWtNWA3j1qAmLMbU0InRFTOVXvmVSwZl4wkHQStlTjZjzYLLwsg8a7YYmqjl7lxVaXbROOKsDtioR1WiCChsolY5Xo5ZiMk0f7xaijyVWW1Jm6LKGVWrETVGy6QyVs7CqeT1Ibeb8GG/QUG9MKVFIbP7uND5TNb3ofq0d69w0BMqf0SZpbzPepTZVHtYCdo7xfi4Dv+gWtq8v+ExuNneeZPJhwrObB9x4oXByGNu6A8Ct+8x6iYRT1ya+GLQ7w+jYUKc565TzssTRcty7RiWKn6obMKNf61TcW127XRcN5zdzLQszDHKm0Hrz3O3ZSsirzVy4K/7duPMNV9PMRl6IRmGcQEmLqd5sf4hDaT7qH0H08EqFp2zZvpj3L1D7pK767rbDstv0duLnW/u7Vw0Ey14/gfBazr2AHeR9x9x16b15+Bteb3N3Zbb/wQ7liSJSGDkkoQxtx9C5EY+DV0YeCwQfuB5ofgEdm/B1n+9ezcesiw3UkhG6yKuceP+MAgjECyIRoGPYlE54cRP+h4JSP3s7OB2nj92JiZnPzvHCrT5+EP3tuQlcBfbmg9n0pK37v9t8K424i13wevcNZh95r3D4sLM1g5SKlXc9NELMO7k9pfBfEnJFq1UCGD2n4yQoDg2XFzv+ZLHU0yAajY9tTfZGjZobpO9VVjkG+/YI3uznF8H9vV+T5X4CLW2xPaAWOQ6pbYj6gx3vwf9EYEw8CN3NPTxewDBwE14ELgEvw8AFITPv+YZvvsNP4IWqeQKAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=c490e12bc38d3250c7e81d12b401314b"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=78877067c3c93250c7e81d12b40131d8"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=78877067c3c93250c7e81d12b40131d8^sys_idNOT IN81877067c3c93250c7e81d12b40131f9"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">53773067c3c93250c7e81d12b40131d4</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Low Stock Item Notification">78877067c3c93250c7e81d12b40131d8</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:13</sys_created_on>
+        <sys_id>81877067c3c93250c7e81d12b40131f9</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:04:33</sys_updated_on>
+        <ui_id>e8311468-c3dc-402f-a646-ef2d0ead5edb</ui_id>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYFnQdAjNhrfAgcBCqQN0KS5tIGwIimbCEUqfNhxDf97l3rYRuOiddtjL4I45C5nRjvQlmjvWu/sg76yViwUmX15iolQAcP3LVHQcDIjVCsmnNCq7ICYrED6sDFfcvociTqyTocXG0m9jkCxyCvx4nkkVETB8YU2GyxjwrYSNo9/Vk2XQjLDB5YtGOTiuCGz7Q9bgmHzOoU6u6QZLfJpkadp/u4iq6ZFleWsAA4FNpRQcRl4jPKi2w6Jf6rbbdqAW2eEWgzr26HL/QhqwwKrLI0Jf3VcMY58apCWx6RBdeCCnhExHNidkgdgKZTDdiQcfrXiG16YTybhYM1RIuX95n5ZDq72cH0NDpCKp86b4ShdakG57c1hvAYv3fwY6w/ctUFqX+KgkmO1lr5RH3tHyL7B+BER8RZJ8DYoDdQHHfX9Uq8/jSxvhOpcGTalpiD3K3DoXeVd4LMlXPIGG5UNtC06WrZGr0RXjFyaZCFxkdQ4KnhpmNoEaCCeoLGQ3CB+3cGPYERQ8QHbYHFPswIraNlNOLZDmzjZxcRu7FyCtQeR6G754gPFXvIgruz9CSXUiNZd4c0rPujYxW8Dc5SV7fZzixQ5K7OEeoOuuKQbfLvbffVpWtDuyfK3QTmn9LyUXMKknmTp5HRKLqanUnIiH2dGI/9FNMJ3+c1kpGn6Pxp/HQ1hy36gB23d5f8wGU8hBv2de6+psEjtIWDvxz9O2NjgcAl6DK21eQ6iDtjuO4KLfQS7BgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=78877067c3c93250c7e81d12b40131d8"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=78877067c3c93250c7e81d12b40131d8"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_78877067c3c93250c7e81d12b40131d8^sys_idNOT IN41877067c3c93250c7e81d12b40131f2,b8877067c3c93250c7e81d12b40131e4,f4877067c3c93250c7e81d12b40131eb"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_78877067c3c93250c7e81d12b40131d8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:13</sys_created_on>
+        <sys_id>41877067c3c93250c7e81d12b40131f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:05:13</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_78877067c3c93250c7e81d12b40131d8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:12</sys_created_on>
+        <sys_id>b8877067c3c93250c7e81d12b40131e4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:05:12</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_78877067c3c93250c7e81d12b40131d8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:12</sys_created_on>
+        <sys_id>f4877067c3c93250c7e81d12b40131eb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 11:05:12</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_78877067c3c93250c7e81d12b40131d8"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_78877067c3c93250c7e81d12b40131d8"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_78877067c3c93250c7e81d12b40131d8"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>4b3eac2bc3893250c7e81d12b4013122</sys_id>
+        <latest_snapshot>78877067c3c93250c7e81d12b40131d8</latest_snapshot>
+        <compiler_build>glide-xanadu-07-02-2024__patch10-08-08-2025_08-21-2025_1913.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=4b3eac2bc3893250c7e81d12b4013122^sys_idNOT IN4187b067c3c93250c7e81d12b401311a"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerUniqueChange</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"4187b067c3c93250c7e81d12b401311a","name":"plan","plan_signature":null}}</plan>
+        <plan_id>4b3eac2bc3893250c7e81d12b4013122</plan_id>
+        <snapshot>a2d0692bc38d3250c7e81d12b4013173</snapshot>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 11:05:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4187b067c3c93250c7e81d12b401311a</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:04:34</sys_updated_on>
+        <trigger display_value="">c0134de3c30d3250c7e81d12b40131ae</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=4b3eac2bc3893250c7e81d12b4013122"/>
+</record_update>

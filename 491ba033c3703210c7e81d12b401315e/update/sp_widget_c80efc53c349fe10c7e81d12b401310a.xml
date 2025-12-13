@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $window, spUtil, $http) {
+  var c = this;
+
+  c.page = 'open'; // default page
+
+  // Navigation
+  c.setPage = function(page) {
+    c.page = page;
+  };
+
+  c.isCompleted = function(step) {
+    if(step === 'open') return c.data.openCount === 0;
+    if(step === 'pending') return c.data.pendingCount === 0;
+    return false;
+  };
+
+  // View order
+  c.viewOrder = function(sys_id) {
+    $window.location.href = '/psmp?id=psmp_order&order_sys_id=' + sys_id;
+  };
+
+  // Cancel order
+  c.cancelOrder = function(sys_id, $event) {
+    $event.stopPropagation(); // prevent triggering viewOrder
+    if(confirm("Are you sure you want to cancel this order?")) {
+      $http.post('/api/now/table/x_1607167_pet_shop_pet_shop_order/' + sys_id, {state: 'canceled'})
+        .then(function(response){
+          alert("Order canceled successfully!");
+          location.reload(); // refresh the widget
+        }, function(err){
+          alert("Failed to cancel order.");
+        });
+    }
+  };
+};
+api.controller.$inject = ['$scope', '$window', 'spUtil', '$http'];
+	]]></client_script>
+        <controller_as>c</controller_as>
+        <css>/* CONTAINER */&#13;
+.order-tracker-container {&#13;
+  max-width: 900px;&#13;
+  margin: 0 auto;&#13;
+  padding: 20px;&#13;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;&#13;
+}&#13;
+&#13;
+.cancel-btn {&#13;
+  background: #dc3545;&#13;
+  color: white;&#13;
+  border: none;&#13;
+  padding: 4px 12px;&#13;
+  border-radius: 8px;&#13;
+  font-size: 12px;&#13;
+  font-weight: 600;&#13;
+  cursor: pointer;&#13;
+  transition: all 0.2s ease;&#13;
+}&#13;
+&#13;
+.cancel-btn:hover {&#13;
+  background: #c82333;&#13;
+  transform: translateY(-1px);&#13;
+}&#13;
+&#13;
+/* PROGRESS TRACKER */&#13;
+.progress-tracker {&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  justify-content: center;&#13;
+  margin-bottom: 40px;&#13;
+  padding: 30px 20px;&#13;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);&#13;
+  border-radius: 16px;&#13;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);&#13;
+}&#13;
+&#13;
+.progress-step {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  align-items: center;&#13;
+  position: relative;&#13;
+  z-index: 2;&#13;
+}&#13;
+&#13;
+.step-circle {&#13;
+  width: 60px;&#13;
+  height: 60px;&#13;
+  border-radius: 50%;&#13;
+  background: white;&#13;
+  border: 3px solid #dee2e6;&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  justify-content: center;&#13;
+  cursor: pointer;&#13;
+  transition: all 0.3s ease;&#13;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);&#13;
+}&#13;
+&#13;
+.step-icon {&#13;
+  font-size: 24px;&#13;
+}&#13;
+&#13;
+.progress-step.active .step-circle {&#13;
+  background: #87bd20;&#13;
+  border-color: #87bd20;&#13;
+  transform: scale(1.1);&#13;
+  box-shadow: 0 4px 16px rgba(135, 189, 32, 0.3);&#13;
+}&#13;
+&#13;
+.progress-step.completed .step-circle {&#13;
+  background: #87bd20;&#13;
+  border-color: #87bd20;&#13;
+}&#13;
+&#13;
+.step-label {&#13;
+  margin-top: 8px;&#13;
+  font-size: 13px;&#13;
+  font-weight: 600;&#13;
+  color: #6c757d;&#13;
+  text-align: center;&#13;
+}&#13;
+&#13;
+.progress-step.active .step-label {&#13;
+  color: #87bd20;&#13;
+}&#13;
+&#13;
+.step-count {&#13;
+  margin-top: 4px;&#13;
+  font-size: 12px;&#13;
+  font-weight: bold;&#13;
+  color: white;&#13;
+  background: #6c757d;&#13;
+  padding: 2px 10px;&#13;
+  border-radius: 12px;&#13;
+  min-width: 24px;&#13;
+  text-align: center;&#13;
+}&#13;
+&#13;
+.progress-step.active .step-count {&#13;
+  background: #87bd20;&#13;
+}&#13;
+&#13;
+.progress-line {&#13;
+  width: 80px;&#13;
+  height: 3px;&#13;
+  background: #dee2e6;&#13;
+  margin: 0 -5px;&#13;
+  position: relative;&#13;
+  top: -30px;&#13;
+  z-index: 1;&#13;
+  transition: all 0.3s ease;&#13;
+}&#13;
+&#13;
+.progress-line.filled {&#13;
+  background: #87bd20;&#13;
+}&#13;
+&#13;
+/* ORDERS SECTION */&#13;
+.orders-section {&#13;
+  animation: fadeIn 0.4s ease;&#13;
+}&#13;
+&#13;
+@keyframes fadeIn {&#13;
+  from { opacity: 0; transform: translateY(10px); }&#13;
+  to { opacity: 1; transform: translateY(0); }&#13;
+}&#13;
+&#13;
+/* ORDER CARDS */&#13;
+.order-card {&#13;
+  background: white;&#13;
+  border-radius: 12px;&#13;
+  padding: 20px;&#13;
+  margin-bottom: 16px;&#13;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);&#13;
+  cursor: pointer;&#13;
+  transition: all 0.2s ease;&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  gap: 16px;&#13;
+  position: relative;&#13;
+  overflow: hidden;&#13;
+}&#13;
+&#13;
+.order-status-indicator {&#13;
+  width: 4px;&#13;
+  height: 100%;&#13;
+  position: absolute;&#13;
+  left: 0;&#13;
+  top: 0;&#13;
+  border-radius: 12px 0 0 12px;&#13;
+}&#13;
+&#13;
+.status-open { background: #87bd20; }&#13;
+.status-pending { background: #ffc107; }&#13;
+.status-wip { background: #17a2b8; }&#13;
+&#13;
+.order-content { flex: 1; padding-left: 12px; }&#13;
+.order-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }&#13;
+.order-number { display: flex; flex-direction: column; gap: 2px; }&#13;
+.order-number .label { font-size: 11px; color: #6c757d; text-transform: uppercase; letter-spacing: 0.5px; }&#13;
+.order-number strong { font-size: 16px; color: #212529; }&#13;
+.order-date { font-size: 12px; color: #6c757d; }&#13;
+.order-description { margin: 0 0 12px 0; font-size: 14px; color: #495057; line-height: 1.5; }&#13;
+.order-footer { display: flex; justify-content: space-between; align-items: center; }&#13;
+.order-amount { display: flex; align-items: baseline; gap: 4px; }&#13;
+.currency-icon { font-size: 14px; color: #6c757d; }&#13;
+.order-amount strong { font-size: 18px; color: #212529; }&#13;
+.order-badge { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }&#13;
+.badge-open { background: #d4edda; color: #155724; }&#13;
+.badge-pending { background: #fff3cd; color: #856404; }&#13;
+.badge-wip { background: #d1ecf1; color: #0c5460; }&#13;
+.order-arrow { font-size: 24px; color: #dee2e6; transition: all 0.2s ease; }&#13;
+.order-card:hover .order-arrow { color: #87bd20; transform: translateX(4px); }&#13;
+&#13;
+/* EMPTY STATES */&#13;
+.empty-state, .global-empty-state { text-align: center; padding: 60px 20px; }&#13;
+.empty-icon { font-size: 64px; margin-bottom: 16px; opacity: 0.6; }&#13;
+.global-empty-state .empty-illustration { font-size: 80px; margin-bottom: 24px; opacity: 0.7; }&#13;
+.primary-btn { background: #87bd20; color: white; border: none; padding: 12px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }&#13;
+.primary-btn:hover { background: #73a01a; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(135, 189, 32, 0.4); }&#13;
+&#13;
+/* RESPONSIVE */&#13;
+@media (max-width: 768px) {&#13;
+  .progress-tracker { padding: 20px 10px; }&#13;
+  .step-circle { width: 50px; height: 50px; }&#13;
+  .step-icon { font-size: 20px; }&#13;
+  .progress-line { width: 40px; top: -25px; }&#13;
+  .step-label { font-size: 11px; }&#13;
+  .order-card { padding: 16px; }&#13;
+  .order-arrow { display: none; }&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Pet Shop Order Tracker</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_1607167_pet_shop.Pet Shop User</roles>
+        <script><![CDATA[(function() {
+  data.orders = [];
+  data.openOrders = [];
+  data.pendingOrders = [];
+  data.wipOrders = [];
+
+  var userID = gs.getUserID();
+
+  var gr = new GlideRecord("x_1607167_pet_shop_pet_shop_order");
+  gr.addQuery("order_for", userID);
+  gr.orderByDesc("sys_created_on");
+  gr.query();
+
+  while (gr.next()) {
+    var o = {
+      sys_id: gr.getUniqueValue(),
+      number: gr.getDisplayValue("number"),
+      short_description: gr.getValue("short_description"),
+      total_amount: parseFloat(gr.getValue("total_amount") || 0),
+      state: gr.getDisplayValue("state"),
+      state_value: parseInt(gr.getValue("state")),
+      created_on: gr.getDisplayValue("sys_created_on")
+    };
+
+    data.orders.push(o);
+
+    // GROUPS (based on your corrected definitions)
+    if (o.state_value === 1) data.openOrders.push(o);          // OPEN
+    if (o.state_value === -5) data.pendingOrders.push(o);      // PENDING
+    if (o.state_value === 2) data.wipOrders.push(o);           // WIP
+  }
+
+  // COUNTS
+  data.openCount = data.openOrders.length;
+  data.pendingCount = data.pendingOrders.length;
+  data.wipCount = data.wipOrders.length;
+
+  data.hasOrders = data.orders.length > 0;
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-11 16:56:48</sys_created_on>
+        <sys_id>c80efc53c349fe10c7e81d12b401310a</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Pet Shop Order Tracker</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sp_widget_c80efc53c349fe10c7e81d12b401310a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-02 17:01:28</sys_updated_on>
+        <template><![CDATA[<!-- HTML TEMPLATE -->
+<div class="order-tracker-container">
+  
+  <!-- PROGRESS BAR WITH STATES -->
+  <div class="progress-tracker">
+    <div class="progress-step" ng-class="{active: c.page === 'open', completed: c.isCompleted('open')}">
+      <div class="step-circle" ng-click="c.setPage('open')">
+        <span class="step-icon">]]>📦<![CDATA[</span>
+      </div>
+      <div class="step-label">Open</div>
+      <div class="step-count">{{c.data.openCount}}</div>
+    </div>
+    
+    <div class="progress-line" ng-class="{filled: c.isCompleted('open')}"></div>
+    
+    <div class="progress-step" ng-class="{active: c.page === 'pending', completed: c.isCompleted('pending')}">
+      <div class="step-circle" ng-click="c.setPage('pending')">
+        <span class="step-icon">⏳</span>
+      </div>
+      <div class="step-label">Pending</div>
+      <div class="step-count">{{c.data.pendingCount}}</div>
+    </div>
+    
+    <div class="progress-line" ng-class="{filled: c.isCompleted('pending')}"></div>
+    
+    <div class="progress-step" ng-class="{active: c.page === 'wip', completed: c.isCompleted('wip')}">
+      <div class="step-circle" ng-click="c.setPage('wip')">
+        <span class="step-icon">]]>🔄<![CDATA[</span>
+      </div>
+      <div class="step-label">In Progress</div>
+      <div class="step-count">{{c.data.wipCount}}</div>
+    </div>
+  </div>
+
+  <!-- ORDERS LIST -->
+  <div class="orders-container" ng-if="c.data.hasOrders">
+    
+    <!-- OPEN ORDERS -->
+    <div ng-if="c.page === 'open'" class="orders-section">
+      <div class="section-header">
+        <h2>]]>📦<![CDATA[ Open Orders</h2>
+      </div>
+      
+      <div class="order-card" 
+           ng-repeat="order in c.data.openOrders" 
+           ng-click="c.viewOrder(order.sys_id)">
+        
+        <div class="order-status-indicator status-open"></div>
+        
+        <div class="order-content">
+          <div class="order-header">
+            <div class="order-number">
+              <span class="label">Order #</span>
+              <strong>{{order.number}}</strong>
+            </div>
+            <div class="order-date">{{order.created_on}}</div>
+          </div>
+          
+          <p class="order-description">{{order.short_description}}</p>
+          
+          <div class="order-footer">
+            <div class="order-amount">
+              <span class="currency-icon">₱</span>
+              <strong>{{order.total_amount | number:2}}</strong>
+            </div>
+            <div class="order-badge badge-open">{{order.state}}</div>
+            <!-- CANCEL BUTTON FOR OPEN -->
+            <button ng-if="c.page === 'open'" class="cancel-btn" ng-click="c.cancelOrder(order.sys_id, $event)">Cancel</button>
+          </div>
+        </div>
+        
+        <div class="order-arrow">›</div>
+      </div>
+      
+      <div ng-if="c.data.openCount === 0" class="empty-state">
+        <div class="empty-icon">]]>📭<![CDATA[</div>
+        <p>No open orders at the moment</p>
+      </div>
+    </div>
+
+    <!-- PENDING ORDERS -->
+    <div ng-if="c.page === 'pending'" class="orders-section">
+      <div class="section-header">
+        <h2>⏳ Pending Orders</h2>
+      </div>
+      
+      <div class="order-card"
+           ng-repeat="order in c.data.pendingOrders"
+           ng-click="c.viewOrder(order.sys_id)">
+        
+        <div class="order-status-indicator status-pending"></div>
+        
+        <div class="order-content">
+          <div class="order-header">
+            <div class="order-number">
+              <span class="label">Order #</span>
+              <strong>{{order.number}}</strong>
+            </div>
+            <div class="order-date">{{order.created_on}}</div>
+          </div>
+          
+          <p class="order-description">{{order.short_description}}</p>
+          
+          <div class="order-footer">
+            <div class="order-amount">
+              <span class="currency-icon">₱</span>
+              <strong>{{order.total_amount | number:2}}</strong>
+            </div>
+            <div class="order-badge badge-pending">{{order.state}}</div>
+            <!-- CANCEL BUTTON FOR PENDING -->
+            <button ng-if="c.page === 'pending'" class="cancel-btn" ng-click="c.cancelOrder(order.sys_id, $event)">Cancel</button>
+          </div>
+        </div>
+        
+        <div class="order-arrow">›</div>
+      </div>
+      
+      <div ng-if="c.data.pendingCount === 0" class="empty-state">
+        <div class="empty-icon">]]>📭<![CDATA[</div>
+        <p>No pending orders</p>
+      </div>
+    </div>
+
+    <!-- WORK IN PROGRESS -->
+    <div ng-if="c.page === 'wip'" class="orders-section">
+      <div class="section-header">
+        <h2>]]>🔄<![CDATA[ Work in Progress</h2>
+      </div>
+      
+      <div class="order-card"
+           ng-repeat="order in c.data.wipOrders"
+           ng-click="c.viewOrder(order.sys_id)">
+        
+        <div class="order-status-indicator status-wip"></div>
+        
+        <div class="order-content">
+          <div class="order-header">
+            <div class="order-number">
+              <span class="label">Order #</span>
+              <strong>{{order.number}}</strong>
+            </div>
+            <div class="order-date">{{order.created_on}}</div>
+          </div>
+          
+          <p class="order-description">{{order.short_description}}</p>
+          
+          <div class="order-footer">
+            <div class="order-amount">
+              <span class="currency-icon">₱</span>
+              <strong>{{order.total_amount | number:2}}</strong>
+            </div>
+            <div class="order-badge badge-wip">{{order.state}}</div>
+            <!-- NO CANCEL BUTTON FOR WIP -->
+          </div>
+        </div>
+        
+        <div class="order-arrow">›</div>
+      </div>
+      
+      <div ng-if="c.data.wipCount === 0" class="empty-state">
+        <div class="empty-icon">]]>📭<![CDATA[</div>
+        <p>No orders in progress</p>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- EMPTY STATE (NO ORDERS AT ALL) -->
+  <div class="global-empty-state" ng-if="!c.data.hasOrders">
+    <div class="empty-illustration">]]>🐾<![CDATA[</div>
+    <h3>No Orders Yet</h3>
+    <p>Start shopping for your furry friends!</p>
+    <button class="primary-btn" ng-click="c.goBack()">
+      <span>Browse Pet Shop</span>
+    </button>
+  </div>
+  
+</div>
+
+<!-- CSS TEMPLATE -->
+<style>
+/* --- Full CSS is the same as your previous widget --- */
+
+/* CANCEL BUTTON */
+.cancel-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+</style>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>c80efc53c349fe10c7e81d12b401310a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-11 16:56:47</sys_created_on>
+        <sys_id>8d6e3c53c349fe10c7e81d12b40131f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-11 16:56:47</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

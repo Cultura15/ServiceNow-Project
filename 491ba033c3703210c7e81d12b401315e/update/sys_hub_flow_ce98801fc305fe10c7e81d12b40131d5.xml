@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=6822000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Notification for rejecting a record</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>pet_shop_order__rejected_approval1</internal_name>
+        <label_cache>[{"name":"Updated_1.current.approval","label":"Trigger - Record Updated➛Pet Shop Order Record➛Approval","reference":"","reference_display":"Approval","type":"choice","base_type":"choice","parent_table_name":"x_1607167_pet_shop_pet_shop_order","column_name":"approval","choices":[{"used":false,"image":"","label":"Not Yet Requested","reference":false,"rawLabel":"Not Yet Requested","selected":false,"missing":false,"value":"not requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Requested","reference":false,"rawLabel":"Requested","selected":false,"missing":false,"value":"requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Approved","reference":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"approved","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Rejected","reference":false,"rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"task","dependent_values":[""]}}],"usedInstances":{"d856b5ff-4b7e-4f58-937b-61fa912fa9ef":["condition"]}},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Pet Shop Order Record","reference":"x_1607167_pet_shop_pet_shop_order","reference_display":"Pet Shop Order","type":"reference","base_type":"reference","usedInstances":{"8cfd7893-8722-41ce-a072-1ae3032d5700":["condition"],"08b1671d-1284-4a8b-a1b9-7468bcb47d43":["condition"],"26f63ede-b693-4b7c-bd97-6c046f8b8632":["record"],"22e0bfb2-ebbc-4c61-a57f-b58401e0a794":["record"],"ea9f6e54-fb25-424f-a635-81674f77f87c":["record"]},"attributes":{}}]</label_cache>
+        <master_snapshot>d4c79813c385fe10c7e81d12b4013199</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Pet Shop Order - Rejected Approval</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>0fede056c3c9ba10c7e81d12b4013195</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 13:01:44</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ce98801fc305fe10c7e81d12b40131d5</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>Pet Shop Order - Rejected Approval</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_hub_flow_ce98801fc305fe10c7e81d12b40131d5</sys_update_name>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:10:44</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=ce98801fc305fe10c7e81d12b40131d5"/>
+    <sys_variable_value action="delete_multiple" query="document_key=ce98801fc305fe10c7e81d12b40131d5"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_1607167_pet_shop_pet_shop_order">approval=rejected<item display_value="Rejected" endquery="false" field="approval" goto="false" newquery="false" operator="=" or="false" value="rejected"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>false</on_insert>
+        <on_update>true</on_update>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-08 13:10:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0fede056c3c9ba10c7e81d12b4013195</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-08 13:10:54</sys_updated_on>
+        <table>x_1607167_pet_shop_pet_shop_order</table>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
+        <identifier>ce98801fc305fe10c7e81d12b40131d5</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:55:28</sys_created_on>
+        <sys_id>80a2a0dfc385fe10c7e81d12b401313a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:10:45</sys_updated_on>
+        <trigger display_value="">0fede056c3c9ba10c7e81d12b4013195</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=ce98801fc305fe10c7e81d12b40131d5^sys_idNOT IN80a2a0dfc385fe10c7e81d12b401313a"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=ce98801fc305fe10c7e81d12b40131d5"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=ce98801fc305fe10c7e81d12b40131d5^sys_idNOT IN8e98801fc305fe10c7e81d12b40131d6"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>ce98801fc305fe10c7e81d12b40131d5</id>
+        <name>Pet Shop Order - Rejected Approval1</name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 13:01:44</sys_created_on>
+        <sys_id>8e98801fc305fe10c7e81d12b40131d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 13:01:44</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=8e98801fc305fe10c7e81d12b40131d6"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=ce98801fc305fe10c7e81d12b40131d5^sys_idNOT INb2b75813c385fe10c7e81d12b40131a9,f2b71cdfc345fe10c7e81d12b401315e,feb75813c385fe10c7e81d12b40131a5"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Pet Shop Order - Rejected Approval">ce98801fc305fe10c7e81d12b40131d5</model>
+        <model_id>ce98801fc305fe10c7e81d12b40131d5</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_ce98801fc305fe10c7e81d12b40131d5</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:52</sys_created_on>
+        <sys_id>b2b75813c385fe10c7e81d12b40131a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:07:52</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=b2b75813c385fe10c7e81d12b40131a9"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Pet Shop Order - Rejected Approval">ce98801fc305fe10c7e81d12b40131d5</model>
+        <model_id>ce98801fc305fe10c7e81d12b40131d5</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_ce98801fc305fe10c7e81d12b40131d5</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:51</sys_created_on>
+        <sys_id>f2b71cdfc345fe10c7e81d12b401315e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:07:51</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=f2b71cdfc345fe10c7e81d12b401315e"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Pet Shop Order - Rejected Approval">ce98801fc305fe10c7e81d12b40131d5</model>
+        <model_id>ce98801fc305fe10c7e81d12b40131d5</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_ce98801fc305fe10c7e81d12b40131d5</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:52</sys_created_on>
+        <sys_id>feb75813c385fe10c7e81d12b40131a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:07:52</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=feb75813c385fe10c7e81d12b40131a5"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=ce98801fc305fe10c7e81d12b40131d5"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ce98801fc305fe10c7e81d12b40131d5"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=ce98801fc305fe10c7e81d12b40131d5^sys_idNOT IN832b5057c385fe10c7e81d12b4013177"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Pet Shop Order - Rejected Approval">ce98801fc305fe10c7e81d12b40131d5</flow>
+        <name>Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:22:54</sys_created_on>
+        <sys_id>832b5057c385fe10c7e81d12b4013177</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:55:03</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=ce98801fc305fe10c7e81d12b40131d5^sys_idNOT IN432b5057c385fe10c7e81d12b401317b,849e945bc385fe10c7e81d12b401312c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pet Shop Order - Rejected Approval">ce98801fc305fe10c7e81d12b40131d5</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>d856b5ff-4b7e-4f58-937b-61fa912fa9ef</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:22:54</sys_created_on>
+        <sys_id>432b5057c385fe10c7e81d12b401317b</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:55:03</sys_updated_on>
+        <ui_id>26f63ede-b693-4b7c-bd97-6c046f8b8632</ui_id>
+        <values>H4sIAAAAAAAA/+1UXWvbMBT9K8HPxthxmrZ5K4TAHtaMbutLV4QsXScC2dJkOU0W8t93JctJ2m5dKIExmJ+s+3nOvYf7sI0EjybRCHiaXWdjlmd5PkzT4dUoK8Z5kQ15TgGyKI5qWgFGGmDKcHyvqGydYbv9qjm1wEmWsNYYqO1uh34uGi3p5j6EoYUtheTojyYPj3GkqcGKFkw02b5w2Y0GImkBEhOnirUVFh18mGKNU9H22Xc93JfwXQ9881CdCGdEl8OTpXEEaws1B2xXUtlAHFW0RprKbKKJNS0aDFA+r+VmH7EUte2YVnTdiB9Yf5S6uBKQGgtT2D9JmFA/HCUYzLUVqu4slhayn5ySbVXfdhTcbKGkrbRHs20brAfaQXYgOoTl56V6uuv7zUTt2QW0UjEq9y9qrRFFa6Fx6wAJfigV1VrUC6KNWgmfjFCqZCHxkZRSPWHPRizqhDKHO8EB0WSG9qk331MjHImPWAaTd548+d66vh2NAJh4zp4w8YvC0IYZoe0NFl5BgLmLg1yLi7cEwK4P+z6qeZDsmmTj9DIbXxINljRLpQ8/nQReyfcT2AFOUw/mwf8+MX9xcAa3HZxTqTxL/g21IOdntqDmi7Op+eovqTkg+sfk/CcRp8M3r9jRpr1umyMB+80iWEuFbAhw4af7rU3TnPsmrwV8Sso7NQ0VNrIw6FrFJ7PrC8wESN78gm4v6tCArEKD/Zk+m7LxHvjv/7U+47V+/AmQW2DWXggAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=432b5057c385fe10c7e81d12b401317b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pet Shop Order - Rejected Approval">ce98801fc305fe10c7e81d12b40131d5</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>d856b5ff-4b7e-4f58-937b-61fa912fa9ef</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:37:43</sys_created_on>
+        <sys_id>849e945bc385fe10c7e81d12b401312c</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:55:03</sys_updated_on>
+        <ui_id>ea9f6e54-fb25-424f-a635-81674f77f87c</ui_id>
+        <values>H4sIAAAAAAAA/8VV207bQBD9lcjPceS1ndjhrRJFQmqhotAXhKy9zJKt1hfsdSCNIvUf+of9ks7azhUSEKVUecnO7s6ec2aO53ruKOEcOaGIhRhL4klCiEe8IfFJDDEwHo0i8GOn72Q0BTxZAs9Lgesp1bUNzOdXhaAGREIGvC5LyMxigftCVYWms2/dMYzwidIC952j65u+U9ASMxoonaP5zpaZFZBoykDjxeOc1ykm7Z0eY46Xol3evljC3YVv38C16LInygZxy+IhfQceDGQC8DVJdQV9J6UZsszL2SpSAhXnmV4HJiozLdOUPlTqB+YPfHtOAlLjnQqrZdIptBQnVxzOC6PyrI0YyvRSuVzXaXbWUrDagqS1Nhva1hXmg8JitiBMWSMg+XWS318s3ztRWcOuQ6tzTvVqRY0pFasNVLYctbp8Sp42/OnJwoCG5mBKi0Jlt0lR5lPVvIfo08GtxsVA6vweYVbqNhtQbqkOUFQ6OMH4cRP+RktleX/GNHjZvnmVqbsaTm3hBfGiYOxxN/KHgRt6nLosFsylzJfDMBzFI0acRaNxcldbeq1anS5JI22ja9L0Ax6teKkK8wHBTKFTY9HvXBGTQ30W+Ou22si5dsZDQkZeREZRUoBJqklerP+0nfbIJV/A9LBoRe+823+dZy4tnN5ZC+elVLYu76HWuWYr1pnGfzPTxN7/MU2H6O9dsyXPtmm2KvMunuGMMclg7BLGuRtGELuxTyMXhh4PpB94XiSf9cxzTgkPt9fG/Mhyo6TitCnZ2iss5P6Qj30ehGNGiccRJxHEZ6FHAvwdsMrvn79au/Q+CmV6F/AdOI6jV5tnVfrVuHme3PLu2Ta7pzl3Jio33uk8FBz2UPtVf83cqWYVTG01IaVKJ20f7fHVDof9HtuXdMt4VMqmHIlUoAV2U9LceYchtqU6mhKzPbLjZq3/nRsvHxe8wkHQCZDYBInMy5TaMjZcdk0cjglEgR+745GPJoZg6DIRBC5BUwNQkL54i8F38wfJca75EAoAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=849e945bc385fe10c7e81d12b401312c"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=ce98801fc305fe10c7e81d12b40131d5"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=ce98801fc305fe10c7e81d12b40131d5^sys_idNOT INc72b5057c385fe10c7e81d12b4013179"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">cf2b5057c385fe10c7e81d12b4013178</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Pet Shop Order - Rejected Approval">ce98801fc305fe10c7e81d12b40131d5</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:22:54</sys_created_on>
+        <sys_id>c72b5057c385fe10c7e81d12b4013179</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:55:26</sys_updated_on>
+        <ui_id>d856b5ff-4b7e-4f58-937b-61fa912fa9ef</ui_id>
+        <values>H4sIAAAAAAAA/+1Uy27bMBD8FUNnQdAjNhrfjBQBArQNkKS5tIGwIlc2W4pkSSqOa/jfu9TDMVobaYIee9POvmaWA20j3XrTenenF86JpYrmXx7iSKiA0fc2UtBgNI+YVlx4oVXZAXH0CLINiat6sjDGaoonwk1u8Bsyj5wquHBGwub+xUK2EpJbHHYbsLTBo43m299SfmOwlFChpHm33gq1pHbBKapTqLNzlrEinxV5mubvzrJqVlRZzgtAKKhubLwYpUw+dEh8UmPYR7gbN2nLA60sjSN88qg40Z/XIB3GUQOKg9d2s0csAr9W8hlYCeVpXBSKn5z4SbPz6TQU1kgaGfbJfVgOF+xhttKC4bUJBHvEQyWHHqZl26hPvY5we6yhlX68PSGto3loAunAYqBU3670+mZceClUJ3BISs1A7iPwdIaq9ejCw6DEhgaVDRhDxynDw4qumbg0yVJSkNRSr2lp8FUCLBBP6EaQXBL+voPvwYqg4iONoeaeZgVOsLLzII3zliTsurOUP9pAqBc4SCn7a1CBY1YYv6A9jziw3sV/GvjAu9vtZ0OEkJdZwlpLN/AJDB7d7b62aVqQ+U4Z+pXd/8Ll5zCtp1k6Pe7ys9kxlx/x92lr5y9YOzzGXzo7TdP/1j60tnBlb9FBW7f8zc5+CDbuN7jeNxyZcETkLmBX4x88JDZkAMEOobW234OEZ2z3C0+UUXwLBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=ce98801fc305fe10c7e81d12b40131d5"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=ce98801fc305fe10c7e81d12b40131d5"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_ce98801fc305fe10c7e81d12b40131d5^sys_idNOT IN76b75813c385fe10c7e81d12b40131a8,b2b75813c385fe10c7e81d12b40131a5,f2b75813c385fe10c7e81d12b40131ab"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_ce98801fc305fe10c7e81d12b40131d5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:52</sys_created_on>
+        <sys_id>76b75813c385fe10c7e81d12b40131a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:07:52</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_ce98801fc305fe10c7e81d12b40131d5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:52</sys_created_on>
+        <sys_id>b2b75813c385fe10c7e81d12b40131a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:07:52</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_ce98801fc305fe10c7e81d12b40131d5</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:52</sys_created_on>
+        <sys_id>f2b75813c385fe10c7e81d12b40131ab</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:07:52</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_ce98801fc305fe10c7e81d12b40131d5"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_ce98801fc305fe10c7e81d12b40131d5"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_ce98801fc305fe10c7e81d12b40131d5"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Notification for rejecting a record</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>pet_shop_order__rejected_approval1</internal_name>
+        <label_cache>[{"name":"Updated_1.current.approval","label":"Trigger - Record Updated➛Pet Shop Order Record➛Approval","reference":"","reference_display":"Approval","type":"choice","base_type":"choice","parent_table_name":"x_1607167_pet_shop_pet_shop_order","column_name":"approval","choices":[{"used":false,"image":"","label":"Not Yet Requested","reference":false,"rawLabel":"Not Yet Requested","selected":false,"missing":false,"value":"not requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Requested","reference":false,"rawLabel":"Requested","selected":false,"missing":false,"value":"requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Approved","reference":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"approved","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Rejected","reference":false,"rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"task","dependent_values":[""]}}],"usedInstances":{"d856b5ff-4b7e-4f58-937b-61fa912fa9ef":["condition"]}},{"name":"Updated_1.current","label":"Trigger - Record Updated➛Pet Shop Order Record","reference":"x_1607167_pet_shop_pet_shop_order","reference_display":"Pet Shop Order","type":"reference","base_type":"reference","usedInstances":{"8cfd7893-8722-41ce-a072-1ae3032d5700":["condition"],"08b1671d-1284-4a8b-a1b9-7468bcb47d43":["condition"],"26f63ede-b693-4b7c-bd97-6c046f8b8632":["record"],"22e0bfb2-ebbc-4c61-a57f-b58401e0a794":["record"],"ea9f6e54-fb25-424f-a635-81674f77f87c":["record"]},"attributes":{}}]</label_cache>
+        <master>true</master>
+        <name>Pet Shop Order - Rejected Approval</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Pet Shop Order - Rejected Approval">ce98801fc305fe10c7e81d12b40131d5</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d4c79813c385fe10c7e81d12b4013199</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:55:27</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=d4c79813c385fe10c7e81d12b4013199"/>
+    <sys_variable_value action="delete_multiple" query="document_key=d4c79813c385fe10c7e81d12b4013199"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=d4c79813c385fe10c7e81d12b4013199"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=d4c79813c385fe10c7e81d12b4013199^sys_idNOT INd4c79813c385fe10c7e81d12b401319a"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>d4c79813c385fe10c7e81d12b4013199</id>
+        <name>Pet Shop Order - Rejected Approval</name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:58</sys_created_on>
+        <sys_id>d4c79813c385fe10c7e81d12b401319a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:07:58</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=d4c79813c385fe10c7e81d12b401319a"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=d4c79813c385fe10c7e81d12b4013199^sys_idNOT IN18c79813c385fe10c7e81d12b40131a8,54c79813c385fe10c7e81d12b40131af,98c79813c385fe10c7e81d12b401319b"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>child_label=FDChangeDetails,child_name=FDChangeDetails,child_type=object,child_type_label=Object,co_type_name=FDCollection,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,pwd2droppable=true,uiType=array.object,uiTypeLabel=Array.Object</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>changed_fields</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Changed Fields</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Pet Shop Order - Rejected Approval">d4c79813c385fe10c7e81d12b4013199</model>
+        <model_id>d4c79813c385fe10c7e81d12b4013199</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_d4c79813c385fe10c7e81d12b4013199</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:58</sys_created_on>
+        <sys_id>18c79813c385fe10c7e81d12b40131a8</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:23:02</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=18c79813c385fe10c7e81d12b40131a8"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Pet Shop Order - Rejected Approval">d4c79813c385fe10c7e81d12b4013199</model>
+        <model_id>d4c79813c385fe10c7e81d12b4013199</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_d4c79813c385fe10c7e81d12b4013199</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:58</sys_created_on>
+        <sys_id>54c79813c385fe10c7e81d12b40131af</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:55:27</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=54c79813c385fe10c7e81d12b40131af"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Pet Shop Order - Rejected Approval">d4c79813c385fe10c7e81d12b4013199</model>
+        <model_id>d4c79813c385fe10c7e81d12b4013199</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_d4c79813c385fe10c7e81d12b4013199</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:58</sys_created_on>
+        <sys_id>98c79813c385fe10c7e81d12b401319b</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:55:27</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=98c79813c385fe10c7e81d12b401319b"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=d4c79813c385fe10c7e81d12b4013199"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=d4c79813c385fe10c7e81d12b4013199"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=d4c79813c385fe10c7e81d12b4013199^sys_idNOT IN14c79813c385fe10c7e81d12b40131be"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Pet Shop Order - Rejected Approval">d4c79813c385fe10c7e81d12b4013199</flow>
+        <name>Updated</name>
+        <remote_sys_id/>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:58</sys_created_on>
+        <sys_id>14c79813c385fe10c7e81d12b40131be</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:55:27</sys_updated_on>
+        <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
+        <trigger_inputs>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</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_update</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=d4c79813c385fe10c7e81d12b4013199^sys_idNOT IN413b9057c385fe10c7e81d12b40131b2,e59ed45bc385fe10c7e81d12b4013110"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pet Shop Order - Rejected Approval">d4c79813c385fe10c7e81d12b4013199</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id>d856b5ff-4b7e-4f58-937b-61fa912fa9ef</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:23:02</sys_created_on>
+        <sys_id>413b9057c385fe10c7e81d12b40131b2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:23:02</sys_updated_on>
+        <ui_id>26f63ede-b693-4b7c-bd97-6c046f8b8632</ui_id>
+        <values>H4sIAAAAAAAA/+VVXW/aMBT9K8jPUZQQSlvepiKkSV2Z2o2Xroqc+AYsOYlnOxSG+O+7cZwQQdVRqS9oPOV+2ecc7kmed4QzMiEjYEF4G47TKIyiYRAMb0ZhMo6ScMgiChASjxQ0B+xUkJaKYbymoqoTu91PyagBFod+WikFhdnvsc64loJuF64NM+mKC4Z1Mnl+8YikCk80oMhkd1Q6F5KgCQhsfWwxHWM0W1nHrEyrHHHFvE3eu8mpqwy+TrGCQzWcMPAIbAwUDBBIRoUGj+S0QJal2pKJURUmFFA2L8S261jxwjREc7rR/A/ePArqvgyQWepE6MLYCdSksyk19AlPTk2lOr1KnoJuNGGQ0UqYu36uaZhLw8uiGTE0Ee10Kaq8eGgUId0Bvf+j0ggCZM2zRt7Qyp5W5etjC3LGCyuJoyjKlIouosYonlSmhrMjIMBqnFMpebGMpSrX3A4jlNxfCgz8TJSveKfmy8KnaY3bR1WpP8P81KYXVPGaxDc8Bof3HtFbfSeo1gcqqGH8u6qRNMQchdiqYCWI7SbUw6ni0nzBq9bggO89t/TJ1Xsblt4eFqp35mHxN3E4Dq7D8XUswcR6VcrDQ7NJJyb4DmaA+srB3NU/ZokzALeW+GEX4W0CzhUnufv+7OChKThPXH2aJ24uyROOxsWb4l9WCIbvvmx7m2S3X/dsYBcE4RvKhY6Bcav3ryoIImYvObXBOSMfc8YZ+FtnzDgIpt8g1NoCcsRqIG4IHlnDFQcLV+w+GZ/mD3yp2N8FueS/+XK8/AVj9LFaMAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=413b9057c385fe10c7e81d12b40131b2"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pet Shop Order - Rejected Approval">d4c79813c385fe10c7e81d12b4013199</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>d856b5ff-4b7e-4f58-937b-61fa912fa9ef</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:37:49</sys_created_on>
+        <sys_id>e59ed45bc385fe10c7e81d12b4013110</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:37:49</sys_updated_on>
+        <ui_id>ea9f6e54-fb25-424f-a635-81674f77f87c</ui_id>
+        <values>H4sIAAAAAAAA/9WVyW7bMBCGX8XQ2TJESbbk3Iq4AQKkSZHtEgQCl2HMgloiUVlqBOg79A37JB1K8pY4ztKmQOGLOdzm/2c+8WLmKOHsOKGIhRhL4klCiEe8IfFJDDEwHo0i8GOn72Q0BVxZAs9LgeMbqmsbmM3OCkENiIQMeF2WkJmHB5wXqio0vT/vlmGET5UWOO/sXFz2nYKWeKKB0tmZPZp6bUqaMtC49Hie0+MczX1hxyLndYp5JWoePOh2TrqZ3v4EZ3CTTYf0HbgzkAnAPCTVFfSdlGYoMi/vF5ESqDjK9DIwVZlphab0rlLf8ebAt+skoDLembAYJp1BbVhOqKEnpqy5qcuFX7niULWeCJC01mZ3NdYuOCqMyrN2i6FMz3fnuk6zw9YRZ3HASj3qCpOAwgq1mePlqEKeTPPb43mSeyprLOkk6pxTvRhRY0rFamPTmTm1Ot3kdhve7DdoaBamtChUdpUUZX6jmvsw+3RwpXEwkDq/xTQrdZUNKLdSB1gJOtjD+KQJn9NSWd1f8BjcbO88y9R1Dfu2jwTxomDscTfyh4Ebepy6LBbMpcyXwzAcxSNGnIe+U91Xu5pW1dIxLFVyXVvBrX+dU0ljduN00jSc3cxLVZhPmN4NdP489Du2YrKtkQN/2bcrZy75ukvIyIvIKEoKMEk1zYvln7Zhn7D2FUwPy1j0jrr5t5H3ioTn5J02/bZZQAffk9jB6t7eYTvRoee/Eb22ZzeQF3v/EXmdrD9Hb83rdfLW3P4n4HHGmGQwdgnj3A0jiN3Yp5ELQ48H0g88L5LvAO8l3MLt3bvylGW5UVJx2hRxCRwLuT/kY58H4ZhR4nHMnAjis9AjAf628Pbrx8+Wud5noUzvGL4Bx5fx7W/fyxrmBB6ui9gsrUNxCcQ6iccr8Q7EYDuILXfveQKx2nBjiwkpVTppG+sZOh9p+8ukPpfJGr5UyqaEiVSgBXZg0uz5kPdUngAt+XTP3mRr2LK6jvpaYRF4vOMJ6qvl/DjST5/2VIXvUmdLYg9IZF6m1HZEo/DxByIcE4gCP3bHIx8/EBAMXSaCwCX4wQCgIH3xMS/z5W8n/zFI9woAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e59ed45bc385fe10c7e81d12b4013110"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=d4c79813c385fe10c7e81d12b4013199"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=d4c79813c385fe10c7e81d12b4013199^sys_idNOT IN0d3b9057c385fe10c7e81d12b40131b3"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">cf2b5057c385fe10c7e81d12b4013178</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Pet Shop Order - Rejected Approval">d4c79813c385fe10c7e81d12b4013199</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>1</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:23:02</sys_created_on>
+        <sys_id>0d3b9057c385fe10c7e81d12b40131b3</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:55:27</sys_updated_on>
+        <ui_id>d856b5ff-4b7e-4f58-937b-61fa912fa9ef</ui_id>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8FYNnQdAjNhrfAgcBAqQNkKS5tIGwoiibLUWyfMRxBf97l3rYRuogNdpjb+ZwuTsz2oFborzT3tkHdWEtX0oy//IUES4Dhr9bIqFhZE6okhV3XMmiAyLyDMKHi+t6cqG1UXiecDu5Y98YdazCiopbLWDz+G4hXXFRGTbM1mBwgmOGzNtXV7zCPnUCdXpOU5pnszxLkuzDWVrO8jLNqhwY5NhQQMkEli5G0pObDoneVOM2OuDWGS6Xw/lm6HI/gspUgVWaRIS9OCYrZD+vQVgWkQZkBU6ZzQ4xDKpbKfbAikuH7UgofrH8Jw7MptNQWDOUSFl/uTsWg4E9XF+CA6TiqfNmKKUrxSmzvTkVq8ELtzjE+oJbHaT2TxyUYnythG/kp94Rsmswfi9EvEUSTAelgfqgo75fqfXdyPKKy86V4VIoCmJ3Aofeld4FPi1hgjXYqGhAa3S0CMvAu8fIpYmXAg9xLdQah4ZdjIEG4jEaC/EV4pcd/AiGBxUfsQ0+7mmWYDktur3FdmgTI9uI2I1dCLB2LxLdLX74QLGXPIgren/CE2q4dhc4+ZkNOrbR7zE4SEDbftZIkVVFGlNv0BUXw7Dp2+1XnyQ5rvBbsTjx9WlZOYdpPU2T6fGsnM2OZeVISk4MSPZOQMLX+cN8JEnyPyB/HRBui36tB23d8H+Yj6cQhn7mzmvKLVJ7CNj1+G8SLja4XJweQmtlvgdRe2z7CzhKhiaXBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=d4c79813c385fe10c7e81d12b4013199"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=d4c79813c385fe10c7e81d12b4013199"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_d4c79813c385fe10c7e81d12b4013199^sys_idNOT IN50c79813c385fe10c7e81d12b40131a6,58c79813c385fe10c7e81d12b40131b3,9cc79813c385fe10c7e81d12b40131ac"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_d4c79813c385fe10c7e81d12b4013199</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:58</sys_created_on>
+        <sys_id>50c79813c385fe10c7e81d12b40131a6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:07:58</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_d4c79813c385fe10c7e81d12b4013199</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:58</sys_created_on>
+        <sys_id>58c79813c385fe10c7e81d12b40131b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:07:58</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>changed_fields</element>
+        <help/>
+        <hint/>
+        <label>Changed Fields</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_d4c79813c385fe10c7e81d12b4013199</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:58</sys_created_on>
+        <sys_id>9cc79813c385fe10c7e81d12b40131ac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:07:58</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_d4c79813c385fe10c7e81d12b4013199"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_d4c79813c385fe10c7e81d12b4013199"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_d4c79813c385fe10c7e81d12b4013199"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>ce98801fc305fe10c7e81d12b40131d5</sys_id>
+        <latest_snapshot>d4c79813c385fe10c7e81d12b4013199</latest_snapshot>
+        <compiler_build>glide-xanadu-07-02-2024__patch10-08-08-2025_08-21-2025_1913.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=ce98801fc305fe10c7e81d12b40131d5^sys_idNOT IN58c79813c385fe10c7e81d12b40131d0"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"58c79813c385fe10c7e81d12b40131d0","name":"plan","plan_signature":null}}</plan>
+        <plan_id>ce98801fc305fe10c7e81d12b40131d5</plan_id>
+        <snapshot>d4c79813c385fe10c7e81d12b4013199</snapshot>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 14:07:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>58c79813c385fe10c7e81d12b40131d0</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 14:55:28</sys_updated_on>
+        <trigger display_value="">0fede056c3c9ba10c7e81d12b4013195</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=ce98801fc305fe10c7e81d12b40131d5"/>
+</record_update>

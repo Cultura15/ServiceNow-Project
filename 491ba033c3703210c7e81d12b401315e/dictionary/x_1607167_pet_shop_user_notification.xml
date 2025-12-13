@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="82defe39c3ed3210c7e81d12b4013181" label="User Notification" max_length="40" name="x_1607167_pet_shop_user_notification" type="collection">
+        <element label="Message" max_length="100" name="message" type="string"/>
+        <element label="Order" max_length="32" name="order" reference="x_1607167_pet_shop_pet_shop_order" type="reference"/>
+        <element label="Read" max_length="40" name="read" type="boolean"/>
+        <element label="User" max_length="32" name="user" reference="x_1607167_pet_shop_sys_user" type="reference"/>
+        <index name="index">
+            <element name="order"/>
+        </index>
+        <index name="index2">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_app_config">
+    <sys_ux_app_config action="DELETE">
+        <active>true</active>
+        <custom_icon/>
+        <default_route_type/>
+        <description/>
+        <disable_auto_reflow>false</disable_auto_reflow>
+        <encode_query_string>false</encode_query_string>
+        <icon/>
+        <landing_path>home</landing_path>
+        <name>Pet Shop Items Management</name>
+        <prefetch_limits/>
+        <sys_class_name>sys_ux_app_config</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-01 18:50:52</sys_created_on>
+        <sys_id>53489c3dc3a13210c7e81d12b401314f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Pet Shop Items Management</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_ux_app_config_53489c3dc3a13210c7e81d12b401314f</sys_update_name>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-01 18:50:52</sys_updated_on>
+    </sys_ux_app_config>
+    <sys_translated_text action="DELETE" query="documentkey=53489c3dc3a13210c7e81d12b401314f"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</application>
+        <file_path/>
+        <instance_id>97197bfedbca025002022a5913961906</instance_id>
+        <instance_name>dev269232</instance_name>
+        <name>sys_ux_app_config_53489c3dc3a13210c7e81d12b401314f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_app_config"><sys_ux_app_config action="INSERT_OR_UPDATE"><active>true</active><custom_icon/><default_route_type/><description/><disable_auto_reflow>false</disable_auto_reflow><encode_query_string>false</encode_query_string><icon/><landing_path>home</landing_path><name>Pet Shop Items Management</name><prefetch_limits/><sys_class_name>sys_ux_app_config</sys_class_name><sys_created_by>harold.destura</sys_created_by><sys_created_on>2025-12-01 18:50:52</sys_created_on><sys_id>53489c3dc3a13210c7e81d12b401314f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Pet Shop Items Management</sys_name><sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package><sys_policy/><sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope><sys_update_name>sys_ux_app_config_53489c3dc3a13210c7e81d12b401314f</sys_update_name><sys_updated_by>harold.destura</sys_updated_by><sys_updated_on>2025-12-01 18:50:52</sys_updated_on></sys_ux_app_config><sys_translated_text action="delete_multiple" query="documentkey=53489c3dc3a13210c7e81d12b401314f"/></record_update>]]></payload>
+        <payload_hash>-1705979463</payload_hash>
+        <record_name>Pet Shop Items Management</record_name>
+        <reverted_from/>
+        <source>5641fdeac3e13610c7e81d12b40131f9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-01 18:50:53</sys_created_on>
+        <sys_id>6f48d8b1c3e13210c7e81d12b4013174</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_recorded_at>19adb40df320000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-04 09:15:07</sys_updated_on>
+        <type>UX App Configuration</type>
+        <update_guid>6348d8b10ee132109100e918618e2c74</update_guid>
+        <update_guid_history>6348d8b10ee132109100e918618e2c74:-1705979463</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-01 19:00:17</sys_created_on>
+        <sys_db_object display_value="" name="sys_ux_app_config">sys_ux_app_config</sys_db_object>
+        <sys_id>40134ca3b38f4fc0880981a53d47ec40</sys_id>
+        <sys_metadata>53489c3dc3a13210c7e81d12b401314f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Pet Shop Items Management</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_scope_delete display_value="">6345f443edcf4520bbffdf937b8ec400</sys_scope_delete>
+        <sys_update_name>sys_ux_app_config_53489c3dc3a13210c7e81d12b401314f</sys_update_name>
+        <sys_update_version display_value="sys_ux_app_config_53489c3dc3a13210c7e81d12b401314f">6f48d8b1c3e13210c7e81d12b4013174</sys_update_version>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-01 19:00:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

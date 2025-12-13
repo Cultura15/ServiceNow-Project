@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>* {&#13;
+    margin: 0;&#13;
+    padding: 0;&#13;
+    box-sizing: border-box;&#13;
+}&#13;
+&#13;
+.offers-section {&#13;
+    width: 100%;&#13;
+    padding: 40px 20px;&#13;
+    background-color: #fafafa;&#13;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;&#13;
+}&#13;
+&#13;
+.offers-container {&#13;
+    max-width: 1400px;&#13;
+    margin: 0 auto;&#13;
+}&#13;
+&#13;
+.section-header {&#13;
+    display: flex;&#13;
+    justify-content: space-between;&#13;
+    align-items: center;&#13;
+    margin-bottom: 30px;&#13;
+}&#13;
+&#13;
+.section-title {&#13;
+    font-size: 32px;&#13;
+    font-weight: 800;&#13;
+    color: #1a1a1a;&#13;
+    display: flex;&#13;
+    align-items: center;&#13;
+    gap: 8px;&#13;
+}&#13;
+&#13;
+.paw-icon {&#13;
+    color: #ff8c42;&#13;
+    font-size: 28px;&#13;
+}&#13;
+&#13;
+.carousel-controls {&#13;
+    display: flex;&#13;
+    gap: 12px;&#13;
+}&#13;
+&#13;
+.carousel-btn {&#13;
+    width: 40px;&#13;
+    height: 40px;&#13;
+    border-radius: 50%;&#13;
+    border: 2px solid #e0e0e0;&#13;
+    background: white;&#13;
+    cursor: pointer;&#13;
+    display: flex;&#13;
+    align-items: center;&#13;
+    justify-content: center;&#13;
+    transition: all 0.3s ease;&#13;
+}&#13;
+&#13;
+.carousel-btn:hover {&#13;
+    background: #ff8c42;&#13;
+    border-color: #ff8c42;&#13;
+}&#13;
+&#13;
+.carousel-btn:hover svg {&#13;
+    stroke: white;&#13;
+}&#13;
+&#13;
+.carousel-btn svg {&#13;
+    width: 20px;&#13;
+    height: 20px;&#13;
+    stroke: #666;&#13;
+    stroke-width: 2;&#13;
+    transition: stroke 0.3s ease;&#13;
+}&#13;
+&#13;
+/* Grid layout adjusted so 4 cards fit per row on desktop */&#13;
+.offers-grid {&#13;
+    display: grid;&#13;
+    grid-template-columns: repeat(4, 1fr);&#13;
+    gap: 20px;&#13;
+}&#13;
+&#13;
+.offer-card {&#13;
+    position: relative;&#13;
+    border-radius: 16px;&#13;
+    overflow: hidden;&#13;
+    height: 300px;&#13;
+    cursor: pointer;&#13;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;&#13;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);&#13;
+}&#13;
+&#13;
+.offer-card:hover {&#13;
+    transform: translateY(-8px);&#13;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);&#13;
+}&#13;
+&#13;
+.offer-card-content {&#13;
+    position: relative;&#13;
+    height: 100%;&#13;
+    padding: 28px;&#13;
+    display: flex;&#13;
+    flex-direction: column;&#13;
+    justify-content: space-between;&#13;
+    color: white;&#13;
+}&#13;
+&#13;
+.card-purple {&#13;
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);&#13;
+}&#13;
+&#13;
+.card-teal {&#13;
+    background: linear-gradient(135deg, #5ebbcd 0%, #3b9fb0 100%);&#13;
+}&#13;
+&#13;
+.card-yellow {&#13;
+    background: linear-gradient(135deg, #f5c563 0%, #e5a840 100%);&#13;
+}&#13;
+&#13;
+.card-gray {&#13;
+    background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);&#13;
+}&#13;
+&#13;
+/* Full Background Image Card */&#13;
+.card-image-bg {&#13;
+    background: none !important;&#13;
+    padding: 0 !important;&#13;
+}&#13;
+&#13;
+.offer-full-bg {&#13;
+    position: absolute;&#13;
+    top: 0;&#13;
+    left: 0;&#13;
+    width: 100%;&#13;
+    height: 100%;&#13;
+    object-fit: cover;&#13;
+    z-index: 0;&#13;
+}&#13;
+&#13;
+.offer-badge {&#13;
+    font-size: 13px;&#13;
+    font-weight: 600;&#13;
+    text-transform: uppercase;&#13;
+    letter-spacing: 1px;&#13;
+    margin-bottom: 8px;&#13;
+    opacity: 0.95;&#13;
+}&#13;
+&#13;
+.offer-title {&#13;
+    font-size: 42px;&#13;
+    font-weight: 800;&#13;
+    line-height: 1.1;&#13;
+    margin-bottom: 8px;&#13;
+}&#13;
+&#13;
+.offer-subtitle {&#13;
+    font-size: 16px;&#13;
+    font-weight: 600;&#13;
+    margin-bottom: 4px;&#13;
+}&#13;
+&#13;
+.offer-description {&#13;
+    font-size: 14px;&#13;
+    opacity: 0.9;&#13;
+    margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+.offer-price {&#13;
+    font-size: 32px;&#13;
+    font-weight: 800;&#13;
+    margin-bottom: 4px;&#13;
+}&#13;
+&#13;
+.offer-price-old {&#13;
+    font-size: 16px;&#13;
+    text-decoration: line-through;&#13;
+    opacity: 0.7;&#13;
+}&#13;
+&#13;
+.shop-now-btn {&#13;
+    display: inline-flex;&#13;
+    align-items: center;&#13;
+    gap: 8px;&#13;
+    padding: 10px 20px;&#13;
+    background: rgba(255, 255, 255, 0.25);&#13;
+    backdrop-filter: blur(10px);&#13;
+    border: 2px solid rgba(255, 255, 255, 0.3);&#13;
+    border-radius: 50px;&#13;
+    color: white;&#13;
+    font-size: 14px;&#13;
+    font-weight: 700;&#13;
+    text-decoration: none;&#13;
+    transition: all 0.3s ease;&#13;
+    cursor: pointer;&#13;
+    width: fit-content;&#13;
+}&#13;
+&#13;
+.shop-now-btn:hover {&#13;
+    background: rgba(255, 255, 255, 0.35);&#13;
+    transform: translateX(4px);&#13;
+}&#13;
+&#13;
+.shop-now-overlay {&#13;
+    position: absolute;&#13;
+    bottom: 28px;&#13;
+    left: 28px;&#13;
+    z-index: 2;&#13;
+    background: rgba(255, 255, 255, 0.9);&#13;
+    backdrop-filter: blur(10px);&#13;
+    border: 2px solid rgba(255, 255, 255, 0.5);&#13;
+    color: #8b5cf6;&#13;
+    font-weight: 700;&#13;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);&#13;
+}&#13;
+&#13;
+.shop-now-overlay:hover {&#13;
+    background: rgba(255, 255, 255, 1);&#13;
+    transform: translateY(-2px);&#13;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);&#13;
+}&#13;
+&#13;
+.shop-now-overlay .btn-icon {&#13;
+    background: rgba(139, 92, 246, 0.2);&#13;
+    color: #8b5cf6;&#13;
+}&#13;
+&#13;
+.btn-icon {&#13;
+    width: 18px;&#13;
+    height: 18px;&#13;
+    background: rgba(255, 255, 255, 0.3);&#13;
+    border-radius: 50%;&#13;
+    display: flex;&#13;
+    align-items: center;&#13;
+    justify-content: center;&#13;
+}&#13;
+&#13;
+/* Slightly smaller mock images so all fit in one line */&#13;
+.mock-image {&#13;
+    position: absolute;&#13;
+    right: -15px;&#13;
+    bottom: -15px;&#13;
+    width: 160px;&#13;
+    height: 160px;&#13;
+    background: rgba(255, 255, 255, 0.1);&#13;
+    border-radius: 50%;&#13;
+    display: flex;&#13;
+    align-items: center;&#13;
+    justify-content: center;&#13;
+    font-size: 60px;&#13;
+    opacity: 0.3;&#13;
+}&#13;
+&#13;
+.use-code {&#13;
+    font-size: 13px;&#13;
+    font-weight: 600;&#13;
+    opacity: 0.9;&#13;
+}&#13;
+&#13;
+/* Responsive Design */&#13;
+@media (max-width: 1200px) {&#13;
+    .offers-grid {&#13;
+        grid-template-columns: repeat(3, 1fr);&#13;
+    }&#13;
+}&#13;
+&#13;
+@media (max-width: 900px) {&#13;
+    .offers-grid {&#13;
+        grid-template-columns: repeat(2, 1fr);&#13;
+    }&#13;
+}&#13;
+&#13;
+@media (max-width: 600px) {&#13;
+    .section-title {&#13;
+        font-size: 24px;&#13;
+    }&#13;
+&#13;
+    .offers-grid {&#13;
+        grid-template-columns: 1fr;&#13;
+    }&#13;
+&#13;
+    .offer-card {&#13;
+        height: 260px;&#13;
+    }&#13;
+&#13;
+    .offer-card-content {&#13;
+        padding: 20px;&#13;
+    }&#13;
+&#13;
+    .offer-title {&#13;
+        font-size: 32px;&#13;
+    }&#13;
+&#13;
+    .mock-image {&#13;
+        width: 120px;&#13;
+        height: 120px;&#13;
+        font-size: 50px;&#13;
+    }&#13;
+    &#13;
+    .shop-now-overlay {&#13;
+        bottom: 20px;&#13;
+        left: 20px;&#13;
+    }&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>trending_this_week</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>trending this week</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>johngabriel.canal</sys_created_by>
+        <sys_created_on>2025-11-11 11:05:04</sys_created_on>
+        <sys_id>f349e343c381fe10c7e81d12b40131ec</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>trending this week</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sp_widget_f349e343c381fe10c7e81d12b40131ec</sys_update_name>
+        <sys_updated_by>johngabriel.canal</sys_updated_by>
+        <sys_updated_on>2025-11-11 11:38:02</sys_updated_on>
+        <template><![CDATA[<div class="offers-section">
+  <div class="offers-container">
+    <div class="section-header">
+      <h2 class="section-title">
+        Trending This Week
+        <span class="paw-icon">]]>🐾<![CDATA[</span>
+      </h2>
+    </div>
+
+    <div class="offers-grid">
+      <!-- Offer Card 1 -->
+      <div class="offer-card">
+        <div class="offer-card-content card-image-bg">
+          <img
+            src="https://dev269232.service-now.com/cfee278bc381fe10c7e81d12b4013114.iix"
+            class="offer-full-bg"
+            alt="dog leash"
+          />
+        </div>
+      </div>
+
+      <!-- Offer Card 2 -->
+      <div class="offer-card">
+        <div class="offer-card-content card-image-bg">
+          <img
+            src="https://dev269232.service-now.com/8611370fc381fe10c7e81d12b4013144.iix"
+            class="offer-full-bg"
+            alt="Grooming Brush"
+          />
+        </div>
+      </div>
+
+      <!-- Offer Card 3 -->
+      <div class="offer-card">
+        <div class="offer-card-content card-image-bg">
+          <img
+            src="https://dev269232.service-now.com/fdf273cfc381fe10c7e81d12b40131ac.iix"
+            class="offer-full-bg"
+            alt="Pet Water Dispenser"
+          />
+        </div>
+      </div>
+
+      <!-- ✅ Offer Card 4 (now inside grid and matching layout) -->
+      <div class="offer-card">
+        <div class="offer-card-content card-image-bg">
+          <img
+            src="https://dev269232.service-now.com/77d4338fc381fe10c7e81d12b4013199.iix"
+            class="offer-full-bg"
+            alt="Squeaky Toy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>f349e343c381fe10c7e81d12b40131ec</id>
+        <sys_created_by>johngabriel.canal</sys_created_by>
+        <sys_created_on>2025-11-11 11:05:03</sys_created_on>
+        <sys_id>b8eda70bc381fe10c7e81d12b40131dc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>johngabriel.canal</sys_updated_by>
+        <sys_updated_on>2025-11-11 11:05:03</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

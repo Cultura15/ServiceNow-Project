@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category/>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_1607167_pet_shop_pet_shop_import_modal.do</endpoint>
+        <html><![CDATA[<j:jelly xmlns:j="jelly:core" xmlns:g="glide">
+    <g:form table="x_1607167_pet_shop_pet_items_import" sys_id="">
+        <g:field name="attachments"/>
+        <g:submit>Upload Excel</g:submit>
+    </g:form>
+</j:jelly>
+]]></html>
+        <name>pet_shop_import_modal</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-02 08:04:50</sys_created_on>
+        <sys_id>5fdc0331c3617210c7e81d12b4013125</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>pet_shop_import_modal</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_ui_page_5fdc0331c3617210c7e81d12b4013125</sys_update_name>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-02 08:27:52</sys_updated_on>
+    </sys_ui_page>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>5fdc0331c3617210c7e81d12b4013125</id>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-02 08:04:49</sys_created_on>
+        <sys_id>e50e87b1c3617210c7e81d12b401314c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-02 08:04:49</sys_updated_on>
+        <table>sys_ui_page</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

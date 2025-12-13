@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_application">
+    <sys_ui_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <hint/>
+        <name>Pet Shop </name>
+        <order/>
+        <roles>x_1607167_pet_shop.Pet Shop User</roles>
+        <sys_class_name>sys_ui_application</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-02 13:28:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cf18dccac3a57210c7e81d12b401316c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Pet Shop </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_ui_application_cf18dccac3a57210c7e81d12b401316c</sys_update_name>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-02 13:28:31</sys_updated_on>
+    </sys_ui_application>
+</record_update>

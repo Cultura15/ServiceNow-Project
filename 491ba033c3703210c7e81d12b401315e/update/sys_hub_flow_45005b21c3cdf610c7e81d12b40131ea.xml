@@ -4,7 +4,7 @@
         <acls/>
         <active>true</active>
         <annotation/>
-        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=159097000,viewActivatedIn=naturalLanguage</attributes>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=426330000,viewActivatedIn=naturalLanguage</attributes>
         <authored_on_release_version>26000</authored_on_release_version>
         <callable_by_client_api>false</callable_by_client_api>
         <category/>
@@ -15,14 +15,14 @@
         <flow_priority>MEDIUM</flow_priority>
         <generation_source/>
         <internal_name>pet_shop_order__manager_approval_flow</internal_name>
-        <label_cache>[{"name":"Updated_1.current","label":"Trigger - Record Updated➛Pet Shop Order Record","reference":"x_1607167_pet_shop_pet_shop_order","reference_display":"Pet Shop Order","type":"reference","base_type":"reference","usedInstances":{"3d1a8542-c00d-4cab-b104-7f098276d329":["record"],"916a1010-bcce-4379-8e97-69adb01f2b08":["record"],"83c8770e-8f06-4b08-954f-693bd1aa60de":["record"],"a6a01852-8249-42d0-9e41-72fcb3f4cf0e":["record"]},"attributes":{}},{"name":"Updated_1.current.approval","label":"Trigger - Record Updated➛Pet Shop Order Record➛Approval","reference":"","reference_display":"Approval","type":"choice","base_type":"choice","parent_table_name":"x_1607167_pet_shop_pet_shop_order","column_name":"approval","choices":[{"used":false,"image":"","label":"Not Yet Requested","reference":false,"rawLabel":"Not Yet Requested","selected":false,"missing":false,"value":"not requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Requested","reference":false,"rawLabel":"Requested","selected":false,"missing":false,"value":"requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Approved","reference":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"approved","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Rejected","reference":false,"rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"task","dependent_values":[""]}}],"usedInstances":{"4f9a03b5-cef1-486d-a445-5ee43e66f77c":["condition"],"30eb66d9-c102-42f7-ad73-f72078a5ccd2":["condition"],"fd618448-eee9-47b0-8a7f-b87debfac2c0":["condition"],"88a6fe6d-359a-43fa-afea-b2eac3f0adbd":["condition"]}}]</label_cache>
+        <label_cache>[{"name":"Updated_1.current","label":"Trigger - Record Updated➛Pet Shop Order Record","reference":"x_1607167_pet_shop_pet_shop_order","reference_display":"Pet Shop Order","type":"reference","base_type":"reference","usedInstances":{"3d1a8542-c00d-4cab-b104-7f098276d329":["record"],"916a1010-bcce-4379-8e97-69adb01f2b08":["record"],"83c8770e-8f06-4b08-954f-693bd1aa60de":["record"],"a6a01852-8249-42d0-9e41-72fcb3f4cf0e":["record"],"c1224f0f-6ebb-4e18-8e65-25707e1ac3c5":["record"],"195250c4-f0e4-4413-adde-d0b0894762e3":["record"]},"attributes":{}},{"name":"Updated_1.current.approval","label":"Trigger - Record Updated➛Pet Shop Order Record➛Approval","reference":"","reference_display":"Approval","type":"choice","base_type":"choice","parent_table_name":"x_1607167_pet_shop_pet_shop_order","column_name":"approval","choices":[{"used":false,"image":"","label":"Not Yet Requested","reference":false,"rawLabel":"Not Yet Requested","selected":false,"missing":false,"value":"not requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Requested","reference":false,"rawLabel":"Requested","selected":false,"missing":false,"value":"requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Approved","reference":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"approved","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Rejected","reference":false,"rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"task","dependent_values":[""]}}],"usedInstances":{"4f9a03b5-cef1-486d-a445-5ee43e66f77c":["condition"],"30eb66d9-c102-42f7-ad73-f72078a5ccd2":["condition"],"fd618448-eee9-47b0-8a7f-b87debfac2c0":["condition"],"88a6fe6d-359a-43fa-afea-b2eac3f0adbd":["condition"],"ba8afe70-482d-45dc-934e-1b47aae4c1fb":["condition"]}}]</label_cache>
         <master_snapshot>36439f25c3cdf610c7e81d12b40131ae</master_snapshot>
         <master_snapshot_digest/>
         <name>Pet Shop Order – Accepted Approval</name>
         <natlang/>
         <outputs/>
         <pre_compiled>false</pre_compiled>
-        <remote_trigger_id>0aa35016c349ba10c7e81d12b4013177</remote_trigger_id>
+        <remote_trigger_id>d8b62417c3c5fe10c7e81d12b4013130</remote_trigger_id>
         <run_as>user</run_as>
         <run_with_roles/>
         <sc_callable>false</sc_callable>
@@ -36,15 +36,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>45005b21c3cdf610c7e81d12b40131ea</sys_id>
-        <sys_mod_count>23</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>Pet Shop Order – Accepted Approval</sys_name>
         <sys_overrides/>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name>sys_hub_flow_45005b21c3cdf610c7e81d12b40131ea</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-08 13:15:18</sys_updated_on>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:29:11</sys_updated_on>
         <type>flow</type>
         <version>2</version>
     </sys_hub_flow>
@@ -52,7 +52,7 @@
     <sys_variable_value action="delete_multiple" query="document_key=45005b21c3cdf610c7e81d12b40131ea"/>
     <sys_flow_record_trigger action="INSERT_OR_UPDATE">
         <active>true</active>
-        <condition table="x_1607167_pet_shop_pet_shop_order">approval=approved<item display_value="Approved" endquery="false" field="approval" goto="false" newquery="false" operator="=" or="false" value="approved"/>
+        <condition table="x_1607167_pet_shop_pet_shop_order">approvalVALCHANGES<item endquery="false" field="approval" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
         </condition>
         <name/>
         <on_delete>false</on_delete>
@@ -64,16 +64,16 @@
         <run_when_user_list/>
         <run_when_user_setting>any</run_when_user_setting>
         <sys_class_name>sys_flow_record_trigger</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-11-08 11:16:08</sys_created_on>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 15:13:14</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>0aa35016c349ba10c7e81d12b4013177</sys_id>
+        <sys_id>d8b62417c3c5fe10c7e81d12b4013130</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_overrides/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-08 11:16:08</sys_updated_on>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:13:14</sys_updated_on>
         <table>x_1607167_pet_shop_pet_shop_order</table>
     </sys_flow_record_trigger>
     <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
@@ -81,15 +81,15 @@
         <data>{"run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any","run_on_extended":"false"}</data>
         <identifier>45005b21c3cdf610c7e81d12b40131ea</identifier>
         <runner>FDTriggerRunner</runner>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-11-08 13:15:18</sys_created_on>
-        <sys_id>a3ee20d6c3c9ba10c7e81d12b4013144</sys_id>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 15:29:11</sys_created_on>
+        <sys_id>ca5a205bc3c5fe10c7e81d12b401319b</sys_id>
         <sys_mod_count>2</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-08 13:15:18</sys_updated_on>
-        <trigger display_value="">0aa35016c349ba10c7e81d12b4013177</trigger>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:29:11</sys_updated_on>
+        <trigger display_value="">d8b62417c3c5fe10c7e81d12b4013130</trigger>
     </sys_trigger_runner_mapping>
-    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=45005b21c3cdf610c7e81d12b40131ea^sys_idNOT INa3ee20d6c3c9ba10c7e81d12b4013144"/>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=45005b21c3cdf610c7e81d12b40131ea^sys_idNOT INca5a205bc3c5fe10c7e81d12b401319b"/>
     <sys_hub_flow_stage action="delete_multiple" query="flow=45005b21c3cdf610c7e81d12b40131ea"/>
     <sys_flow_cat_variable_model action="delete_multiple" query="id=45005b21c3cdf610c7e81d12b40131ea^sys_idNOT IN49009f21c3cdf610c7e81d12b401317e"/>
     <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
@@ -369,16 +369,16 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-06 17:17:51</sys_created_on>
         <sys_id>c1435f25c3cdf610c7e81d12b40131d0</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_scope/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-08 11:04:48</sys_updated_on>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:13:07</sys_updated_on>
         <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
-        <trigger_inputs>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</trigger_inputs>
+        <trigger_inputs>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</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>record_update</trigger_type>
     </sys_hub_trigger_instance_v2>
-    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=45005b21c3cdf610c7e81d12b40131ea^sys_idNOT IN01435f25c3cdf610c7e81d12b40131d2,89435f25c3cdf610c7e81d12b40131d3"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=45005b21c3cdf610c7e81d12b40131ea^sys_idNOT IN01435f25c3cdf610c7e81d12b40131d2,445aec1bc3c5fe10c7e81d12b401312c,6ea6a017c3c5fe10c7e81d12b40131cb,89435f25c3cdf610c7e81d12b40131d3,eea6a017c3c5fe10c7e81d12b40131ca"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
@@ -394,14 +394,60 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-06 17:17:51</sys_created_on>
         <sys_id>01435f25c3cdf610c7e81d12b40131d2</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
-        <sys_updated_by>pet_shop_manager</sys_updated_by>
-        <sys_updated_on>2025-11-08 13:24:52</sys_updated_on>
+        <sys_updated_by>pet_shop_clerk2</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:30:02</sys_updated_on>
         <ui_id>3d1a8542-c00d-4cab-b104-7f098276d329</ui_id>
         <values>H4sIAAAAAAAA/+VVXW+bMBT9K5GfIwQhTdu8TY0iTeqaqd360lXI4EtiyYBnmzRZxH/fNRiCkqxKpb5E4wnfD/ucwz3mZUc4I1MyBuYHt8EkCYMwHPn+6GYcxJMwDkYspAABGZKcZoCVCpJCMVyvqShtYLf7KRk1wKLAS0qlIDdVhXnGtRR0++zKMJKsuGCYJ9OX1yGRVOGOBhSZ7g5S50ISNAaBpY8tpkOMZivtmhVJmSGuiLfBe9c5c5nB1xlmsMnCCfwhgY2BnAECSanQMCQZzZFlobZkalSJAQWULXKx7SpWPDcN0YxuNP+DJ499W5cCMkucCN0ycgI14XRGDX3CnRNTqk6vgiegG00YpLQU5q4fawoW0vAib1oMjUXbXYgyyx8aRUi3Qe97lBpBgLQ8LfKGVvq0Kt4eW5BznteSOIqiSKjoVtQYxePSWDg7AgJqjTMqJc+XkVTFmtfNCCXzlgIXXiqKNzxT82Xu0cTi9lBV6s0xPqvDz1RxS+IbboPN1ZDorb4TVOs9FdQw+l1aJA0xRyGqVagliOpJsM2J4tJ8waPW0AFvgha0mxR8O1FYVdXQ+SO+em8Yk9v97PWO33tkEwUT/zqYXEcSTKRXhdy/NEN35JfvYAb4KeRg4fIfc88ZgFv3/Khn5jQBZ6Cj2H2/d/DQJJx9rj7NPjeXZB9H4+L98w/XdFbwR+/ey71Jqqdf92xQDwjCN5QLHQHjtd6/St8PmZ2KYxec0fExX5yBvvXFnINg+gSd1hSQIVQDUUPvwBguOXh2ye7f8mnuwCulfi7II//LL6Z6/QuetTquWQkAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=01435f25c3cdf610c7e81d12b40131d2"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Log">5bc1bcc6531003003bf1d9109ec587d4</action_type>
+        <action_type_parent display_value="Log">0e0ae8c2531003003bf1d9109ec587c8</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>5bc1bcc6531003003bf1d9109ec587d4</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pet Shop Order – Accepted Approval">45005b21c3cdf610c7e81d12b40131ea</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 15:29:03</sys_created_on>
+        <sys_id>445aec1bc3c5fe10c7e81d12b401312c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>pet_shop_clerk2</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:30:02</sys_updated_on>
+        <ui_id>30e8e39e-e7ea-4187-a496-bcd4d264ddd1</ui_id>
+        <values>H4sIAAAAAAAA/+VUXW/aMBT9K8jaY0AEmnXlrYJVmtQPaUjsoaoix7kBS46d2Q6UIf77rhMnZBStIPWtUl7uybF9zvW5ft4RnpIJiRIWJox9jcbhcDjGL8nC9CYc3gCLvl2n1yQgkuaATKGWsYA1CITWVJQO4zJTWKbcFIJuFx79UaNsxUWqQZLJ80tACqpxHwuaTHZHv84VImiCp0/IvVdxQpjdFg5iK8UZ+PreL5s2oNKpkzEMCLxakCng+RkVBgKSU5lSq/S2RTTQ9EmKA7Di0uJuxJFfDf+D510NHS8DdMSg/teWsW9ODWczaunc6pLZUntqLdZgL3atxX6/96gk9Pr9Trc70vfBgevbfXQnnhl2mb+ollwuO+QNIgfyqEv+rrXSHSr42nPHe7y5FDJaCju93EF4toPRJQ7GFzi4cg7q5j8VlitMIwldZmgimqtRoszlY50z0vpdHMW/Rmcnp6A0GAEoXMxcbnyIsvlKbX42GbnjslLkfwrFqGgraq3mSWldf3cEBOS4UZzTosBGxIVWa14tRrH5YCmwGGRCbfBQw5dyQJmzNsBU08Ed4rMKXlDNnc0H3AYX7wNitmYqqDEHsxjh+HfplNTWvYe4alS1hGle2Fs8YA1ermt/Nc6j8f/GGaJ/xzcHY+gSOnd1WzhnVPQqoMfNpPdl14D7t2/Ou/zLXqMz5Dcpe2i1nzTkXySDl1jltvsizRuwGYoPe5FGUfQxT9KpIX87NhdNzecbipe/Jq5Xv24HAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=445aec1bc3c5fe10c7e81d12b401312c"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pet Shop Order – Accepted Approval">45005b21c3cdf610c7e81d12b40131ea</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>ba8afe70-482d-45dc-934e-1b47aae4c1fb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 15:13:07</sys_created_on>
+        <sys_id>6ea6a017c3c5fe10c7e81d12b40131cb</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>pet_shop_clerk2</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:30:02</sys_updated_on>
+        <ui_id>195250c4-f0e4-4413-adde-d0b0894762e3</ui_id>
+        <values>H4sIAAAAAAAA/9WVyW7bMBCGX8XQ2TJESbbk3Iq4AQKkSZHtEgQCl2HMgloiUVlqBOg79A37JB1K8pY4ztKmQOGLOdzm/2c+8WLmKOHsOKGIhRhL4klCiEe8IfFJDDEwHo0i8GOn72Q0BVxZAs9LgeMbqmsbmM3OCkENiIQMeF2WkJmHB5wXqio0vT/vlmGET5UWOO/sXFz2nYKWeKKB0tmZPZp6bUqaMtC49Hie0+MczX1hxyLndYp5JWoePOh2TrqZ3v4EZ3CTTYf0HbgzkAnAPCTVFfSdlGYoMi/vF5ESqDjK9DIwVZlphab0rlLf8ebAt+skoDLembAYJp1BbVhOqKEnpqy5qcuFX7niULWeCJC01mZ3NdYuOCqMyrN2i6FMz3fnuk6zw9YRZ3HASj3qCpOAwgq1mePlqEKeTPPb43mSeyprLOkk6pxTvRhRY0rFamPTmTm1Ot3kdhve7DdoaBamtChUdpUUZX6jmvsw+3RwpXEwkDq/xTQrdZUNKLdSB1gJOtjD+KQJn9NSWd1f8BjcbO88y9R1Dfu2jwTxomDscTfyh4Ebepy6LBbMpcyXwzAcxSNGnIe+U91Xu5pW1dIxLFVyXVvBrX+dU0ljduN00jSc3cxLVZhPmN4NdP489Du2YrKtkQN/2bcrZy75ukvIyIvIKEoKMEk1zYvln7Zhn7D2FUwPy1j0jrr5t5H3ioTn5J02/bZZQAffk9jB6t7eYTvRoee/Eb22ZzeQF3v/EXmdrD9Hb83rdfLW3P4n4HHGmGQwdgnj3A0jiN3Yp5ELQ48H0g88L5LvAO8l3MLt3bvylGW5UVJx2hRxCRwLuT/kY58H4ZhR4nHMnAjis9AjAf628Pbrx8+Wud5noUzvGL4Bx5fx7W/fyxrmBB6ui9gsrUNxCcQ6iccr8Q7EYDuILXfveQKx2nBjiwkpVTppG+sZOh9p+8ukPpfJGr5UyqaEiVSgBXZg0uz5kPdUngAt+XTP3mRr2LK6jvpaYRF4vOMJ6qvl/DjST5/2VIXvUmdLYg9IZF6m1HZEo/DxByIcE4gCP3bHIx8/EBAMXSaCwCX4wQCgIH3xMS/z5W8n/zFI9woAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6ea6a017c3c5fe10c7e81d12b40131cb"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
         <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
         <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
@@ -417,16 +463,39 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-06 17:17:51</sys_created_on>
         <sys_id>89435f25c3cdf610c7e81d12b40131d3</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
-        <sys_updated_by>pet_shop_manager</sys_updated_by>
-        <sys_updated_on>2025-11-08 13:24:52</sys_updated_on>
+        <sys_updated_by>pet_shop_clerk2</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:30:02</sys_updated_on>
         <ui_id>916a1010-bcce-4379-8e97-69adb01f2b08</ui_id>
         <values>H4sIAAAAAAAA/9WWyW7bMBCGX8XQ2TJESbbk3IK4AQKkSZHtEgQCl2FMgFoiUVlqBOg79A37JB1K8pY4ztKmQG/mcPvnn/lEX84cJZwdJxSxEGNJPEkI8Yg3JD6JIQbGo1EEfuz0nYymgCtL4HkpcHxLdW0Ds9l5IagBkZABr8sSMvP4iPNCVYWmDxfdMozwqdIC552dy6u+U9ASTzRQOjuzJ1NvlaQpA41LT+aanmo0D4Udi5zXKepK1Dx42O2cdDO9gwnO4CYrh/QduDeQCUAdkuoK+k5KM0wyLx8WkRKoOM70MjBVmWkTTel9pb7jzYFv10nAzHhnwmKYdAa1YTmhhp6asuamLhd+5YpD1XoiQNJam73VWLvguDAqz9othjI9353rOs2OWkecxQEr9agrFAGFTdQqx8sxC3k6ze9O5iL3VdZY0qWoc071YkSNKRWrjZUzc2p1tsntNrzZb9DQLExpUajsOinK/FY196H6dHCtcTCQOr9DmZW6zgaU21QHWAk62Mf4pAlf0FLZvL/iMbjZ3nmeqZsaDmwfCeJFwdjjbuQPAzf0OHVZLJhLmS+HYTiKR4w4j32neqj2NK2qpWNYquSmtgm3/nVOJY3ZjdNJ03B2My9VYXZR3i10/jz2O7Zisq2RA3/ZtytnLvm6T8jIi8goSgowSTXNi+WPtmGfsfYNTA/LWPSOu/n3kfcGwXPyzpp+25xAB9+z2OHq3t5RO9Gh578TvbZnN5AXe/8ReV1af47emtfr5K25/U/A44wxyWDsEsa5G0YQu7FPIxeGHg+kH3heJD8A3mu4hdu7d+Upy3KjpOK0KeISOJ+M4zgcj3jgjRklHkflRBCfhR4JCIu28Pbrx8+Wud4XoUxvt7DGgnj/2/d6DnMCj9aT2Jxah+ISiHUST1biHYjBdhBb7j7yBGK14dYWE1KqdNI21gt0PsntL5P6kpI1fKmUwO2fG6lAC+zApNnzKe+pPAVa8um+vcnWsGV1HfW1wiLweMcz1FfL+Xmknz3vqQrfpc6WxB6QyLxMqe2IJsOnH4hwTCAK/Ngdj3z8QEAwdJkIApfgBwOAgvTF57zMV78BwwPXkPcKAAA=</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=89435f25c3cdf610c7e81d12b40131d3"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pet Shop Order – Accepted Approval">45005b21c3cdf610c7e81d12b40131ea</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>ba8afe70-482d-45dc-934e-1b47aae4c1fb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 15:13:07</sys_created_on>
+        <sys_id>eea6a017c3c5fe10c7e81d12b40131ca</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>pet_shop_clerk2</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:30:02</sys_updated_on>
+        <ui_id>c1224f0f-6ebb-4e18-8e65-25707e1ac3c5</ui_id>
+        <values>H4sIAAAAAAAA/+VVXW/aMBT9K8jPUZQQSlvepiKkSV2Z2o2Xroqc+AYsOYlnOxSG+O+7cZwQQdVRqS9oPOV+2ecc7kmed4QzMiEjYEF4G47TKIyiYRAMb0ZhMo6ScMgiChASjxQ0B+xUkJaKYbymoqoTu91PyagBFod+WikFhdnvsc64loJuF64NM+mKC4Z1Mnl+8YikCk80oMhkd1Q6F5KgCQhsfWwxHWM0W1nHrEyrHHHFvE3eu8mpqwy+TrGCQzWcMPAIbAwUDBBIRoUGj+S0QJal2pKJURUmFFA2L8S261jxwjREc7rR/A/ePArqvgyQWepE6MLYCdSksyk19AlPTk2lOr1KnoJuNGGQ0UqYu36uaZhLw8uiGTE0Ee10Kaq8eGgUId0Bvf+j0ggCZM2zRt7Qyp5W5etjC3LGCyuJoyjKlIouosYonlSmhrMjIMBqnFMpebGMpSrX3A4jlNxfCgz8TJSveKfmy8KnaY3bR1WpP8P81KYXVPGaxDc8Bof3HtFbfSeo1gcqqGH8u6qRNMQchdiqYCWI7SbUw6ni0nzBq9bggO89t/TJ1Xsblt4eFqp35mHxN3E4Dq7D8XUswcR6VcrDQ7NJJyb4DmaA+srB3NU/ZokzALeW+GEX4W0CzhUnufv+7OChKThPXH2aJ24uyROOxsWb4l9WCIbvvmx7m2S3X/dsYBcE4RvKhY6Bcav3ryoIImYvObXBOSMfc8YZ+FtnzDgIpt8g1NoCcsRqIG4IHlnDFQcLV+w+GZ/mD3yp2N8FueS/+XK8/AVj9LFaMAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=eea6a017c3c5fe10c7e81d12b40131ca"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=45005b21c3cdf610c7e81d12b40131ea"/>
-    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=45005b21c3cdf610c7e81d12b40131ea^sys_idNOT IN2c2314d2c349ba10c7e81d12b4013161"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=45005b21c3cdf610c7e81d12b40131ea^sys_idNOT IN2c2314d2c349ba10c7e81d12b4013161,62a6a017c3c5fe10c7e81d12b40131ca"/>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
         <block display_value="">202314d2c349ba10c7e81d12b4013161</block>
@@ -445,12 +514,38 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-08 11:13:52</sys_created_on>
         <sys_id>2c2314d2c349ba10c7e81d12b4013161</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-08 13:15:16</sys_updated_on>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:29:08</sys_updated_on>
         <ui_id>4f9a03b5-cef1-486d-a445-5ee43e66f77c</ui_id>
         <values>H4sIAAAAAAAA/+1Uy27bMBD8FUNnQdAjNhrfjBYBCrQN0KS5tIGwIlc2UYpkSSqOa/jfuxQlx2idvtBjb9rZ18xyoH2ie2967271yjmxVsny432aCBUw+t4nCjpMlgnTigsvtKoHIE0eQPYhsTLGagpmws1WjKHxyCnNhTMSdnc/r2IbIbnFcasBS7M92mS5/y7ldwZrCQ1KGnbjrVBrahecojaHtrhkBavKRVXmefniomgWVVOUvAKEiuqmxpeTiNmbAUmfVRf2Ee6mTdryQKvI0wQfPSpO9JctSIdp0oHi4LXdHRGLwK+VfAI2Qnkal4TiRye+0uxyPg+FLZJGhjF5DOvxfBFmGy0YXptAMCIeGjn2MC37Tr2LOsLhsYVe+unwhPSO5qEJpAOLkVJ7s9Hb99PCK6EGgWNSagbyGIGnMzS9RxceBiV2NKjuwBg6Th0eVgzNxKXL1pKCrJV6S0uDozJggXhGN4LsivBXA3wHVgQVb2kMNUeaDTjB6sF9NM5bknAYzlJ/6QOhKHCUUsdrUIFjVhi/oj0POLI+pD9a98S1+/0HQ4SQ10XGeks38BmMHj0cPvV5XvEYn3PzH3b/C5dfwrydF/n8vMsvFudcfsbfz1u7/IW1w2P8prPzPP9v7VNrC1dHi47ahuV/7ez7YOO4wUXfcGTCEZHbgL2e/t0hsSMDCHYKbbX9HCQ8YYdvprzIrQUGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6aa6a017c3c5fe10c7e81d12b40131c9</block>
+        <comment/>
+        <connected_to>4f9a03b5-cef1-486d-a445-5ee43e66f77c</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Pet Shop Order – Accepted Approval">45005b21c3cdf610c7e81d12b40131ea</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 15:13:07</sys_created_on>
+        <sys_id>62a6a017c3c5fe10c7e81d12b40131ca</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:29:08</sys_updated_on>
+        <ui_id>ba8afe70-482d-45dc-934e-1b47aae4c1fb</ui_id>
+        <values>H4sIAAAAAAAA/+1Uy27UMBT9lZHXUZQHrWB2I1AlJKBSW7qBKrqxb2YMjm1sp9Mhmn/nOo/pCDq8FqzY5Z77Ouf6KD0zXbBd8Ddm5b1ca7b8cJcwqSNG3z3T0CJbMm60kEEaXQ1Awu5BdTGxstYZChbSL67wE/KAgtJCeqtgd/vzKr6RSjictlpwNDugY8v+u1TYWawU1Kho2HVwUq+pXQqKmgya/AXPeVmcl0WWFc+f5fV5WeeFKAGhoLq58eUsYvFmQJKT6uI+wv28yTgRaeVZwvAhoBZEf9mA8piwFrSAYNzugDgEcanVI7CROtA4FosfvPxKs4uzs1jYIGnkOCYPYTWdb4T5xkiOlzYSHJEAtZp6uFFdq9+NOuLhsYFOhfnwhHSe5qGNpCOLiVJzvTHbq3nhhdSDwCmpDAd1iCDQGeouoI8PgwpbGlS1YC0dp4oPK4dm4tKma0VB2iizpaXRUSnwSDylG0F6QfirAb4FJ6OKtzSGmkeaNXjJq8F9NC44krAfzlJ96SKhUeAkpRqvQQWeO2nDivbc48R6n/xo3SPX9v17S4RQVHnKO0c3CClMHt3vP3ZZVpL5Trn5D7v/gcvzp1z+hL9PW7v4hbXjY/yms7Ms+2/tY2tLX40WnbQNy//a2XfRxuMGP/pGIJeeiNxE7PX8746JHRlA8mNoa9znKOER238DlEuIwQUGAAA=</values>
         <workflow_reference/>
     </sys_hub_flow_logic_instance_v2>
     <sys_hub_pill_compound action="delete_multiple" query="attached_to=45005b21c3cdf610c7e81d12b40131ea"/>
@@ -542,7 +637,7 @@
         <description/>
         <flow_priority>MEDIUM</flow_priority>
         <internal_name>pet_shop_order__manager_approval_flow</internal_name>
-        <label_cache>[{"name":"Updated_1.current","label":"Trigger - Record Updated➛Pet Shop Order Record","reference":"x_1607167_pet_shop_pet_shop_order","reference_display":"Pet Shop Order","type":"reference","base_type":"reference","usedInstances":{"3d1a8542-c00d-4cab-b104-7f098276d329":["record"],"916a1010-bcce-4379-8e97-69adb01f2b08":["record"],"83c8770e-8f06-4b08-954f-693bd1aa60de":["record"],"a6a01852-8249-42d0-9e41-72fcb3f4cf0e":["record"]},"attributes":{}},{"name":"Updated_1.current.approval","label":"Trigger - Record Updated➛Pet Shop Order Record➛Approval","reference":"","reference_display":"Approval","type":"choice","base_type":"choice","parent_table_name":"x_1607167_pet_shop_pet_shop_order","column_name":"approval","choices":[{"used":false,"image":"","label":"Not Yet Requested","reference":false,"rawLabel":"Not Yet Requested","selected":false,"missing":false,"value":"not requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Requested","reference":false,"rawLabel":"Requested","selected":false,"missing":false,"value":"requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Approved","reference":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"approved","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Rejected","reference":false,"rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"task","dependent_values":[""]}}],"usedInstances":{"4f9a03b5-cef1-486d-a445-5ee43e66f77c":["condition"],"30eb66d9-c102-42f7-ad73-f72078a5ccd2":["condition"],"fd618448-eee9-47b0-8a7f-b87debfac2c0":["condition"],"88a6fe6d-359a-43fa-afea-b2eac3f0adbd":["condition"]}}]</label_cache>
+        <label_cache>[{"name":"Updated_1.current","label":"Trigger - Record Updated➛Pet Shop Order Record","reference":"x_1607167_pet_shop_pet_shop_order","reference_display":"Pet Shop Order","type":"reference","base_type":"reference","usedInstances":{"3d1a8542-c00d-4cab-b104-7f098276d329":["record"],"916a1010-bcce-4379-8e97-69adb01f2b08":["record"],"83c8770e-8f06-4b08-954f-693bd1aa60de":["record"],"a6a01852-8249-42d0-9e41-72fcb3f4cf0e":["record"],"c1224f0f-6ebb-4e18-8e65-25707e1ac3c5":["record"],"195250c4-f0e4-4413-adde-d0b0894762e3":["record"]},"attributes":{}},{"name":"Updated_1.current.approval","label":"Trigger - Record Updated➛Pet Shop Order Record➛Approval","reference":"","reference_display":"Approval","type":"choice","base_type":"choice","parent_table_name":"x_1607167_pet_shop_pet_shop_order","column_name":"approval","choices":[{"used":false,"image":"","label":"Not Yet Requested","reference":false,"rawLabel":"Not Yet Requested","selected":false,"missing":false,"value":"not requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Requested","reference":false,"rawLabel":"Requested","selected":false,"missing":false,"value":"requested","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Approved","reference":false,"rawLabel":"Approved","selected":false,"missing":false,"value":"approved","parameters":{"name":"task","dependent_values":[""]}},{"used":false,"image":"","label":"Rejected","reference":false,"rawLabel":"Rejected","selected":false,"missing":false,"value":"rejected","parameters":{"name":"task","dependent_values":[""]}}],"usedInstances":{"4f9a03b5-cef1-486d-a445-5ee43e66f77c":["condition"],"30eb66d9-c102-42f7-ad73-f72078a5ccd2":["condition"],"fd618448-eee9-47b0-8a7f-b87debfac2c0":["condition"],"88a6fe6d-359a-43fa-afea-b2eac3f0adbd":["condition"],"ba8afe70-482d-45dc-934e-1b47aae4c1fb":["condition"]}}]</label_cache>
         <master>true</master>
         <name>Pet Shop Order – Accepted Approval</name>
         <natlang/>
@@ -559,15 +654,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>36439f25c3cdf610c7e81d12b40131ae</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name/>
         <sys_overrides/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-08 13:15:18</sys_updated_on>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:29:10</sys_updated_on>
         <type>flow</type>
         <version>2</version>
     </sys_hub_flow_snapshot>
@@ -735,14 +830,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-06 17:17:59</sys_created_on>
         <sys_id>ba439f25c3cdf610c7e81d12b40131b0</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-08 13:15:17</sys_updated_on>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:29:10</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -819,14 +914,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-06 17:17:59</sys_created_on>
         <sys_id>cb439f25c3cdf610c7e81d12b40131c3</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name/>
         <sys_package/>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-08 13:15:17</sys_updated_on>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:29:10</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
@@ -852,16 +947,39 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-06 17:17:59</sys_created_on>
         <sys_id>0b439f25c3cdf610c7e81d12b40131ea</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_scope/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-08 11:16:07</sys_updated_on>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:13:13</sys_updated_on>
         <trigger_definition display_value="Updated">bb695e60c31322002841b63b12d3aea5</trigger_definition>
-        <trigger_inputs>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</trigger_inputs>
+        <trigger_inputs>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</trigger_inputs>
         <trigger_outputs/>
         <trigger_type>record_update</trigger_type>
     </sys_hub_trigger_instance_v2>
-    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=36439f25c3cdf610c7e81d12b40131ae^sys_idNOT IN43439f25c3cdf610c7e81d12b40131e9,83439f25c3cdf610c7e81d12b40131e8"/>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=36439f25c3cdf610c7e81d12b40131ae^sys_idNOT IN315a205bc3c5fe10c7e81d12b4013156,43439f25c3cdf610c7e81d12b40131e9,48b6e017c3c5fe10c7e81d12b40131f0,83439f25c3cdf610c7e81d12b40131e8,88b6e017c3c5fe10c7e81d12b40131ef"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Log">5bc1bcc6531003003bf1d9109ec587d4</action_type>
+        <action_type_parent display_value="Log">0e0ae8c2531003003bf1d9109ec587c8</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>5bc1bcc6531003003bf1d9109ec587d4</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pet Shop Order – Accepted Approval">36439f25c3cdf610c7e81d12b40131ae</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 15:29:10</sys_created_on>
+        <sys_id>315a205bc3c5fe10c7e81d12b4013156</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:29:10</sys_updated_on>
+        <ui_id>30e8e39e-e7ea-4187-a496-bcd4d264ddd1</ui_id>
+        <values>H4sIAAAAAAAA/+VUXW/aMBT9K8jaY0AEmnXlrYJVmtQPaUjsoaoix7kBS46d2Q6UIf77rhMnZBStIPWtUl7uybF9zvW5ft4RnpIJiRIWJox9jcbhcDjGL8nC9CYc3gCLvl2n1yQgkuaATKGWsYA1CITWVJQO4zJTWKbcFIJuFx79UaNsxUWqQZLJ80tACqpxHwuaTHZHv84VImiCp0/IvVdxQpjdFg5iK8UZ+PreL5s2oNKpkzEMCLxakCng+RkVBgKSU5lSq/S2RTTQ9EmKA7Di0uJuxJFfDf+D510NHS8DdMSg/teWsW9ODWczaunc6pLZUntqLdZgL3atxX6/96gk9Pr9Trc70vfBgevbfXQnnhl2mb+ollwuO+QNIgfyqEv+rrXSHSr42nPHe7y5FDJaCju93EF4toPRJQ7GFzi4cg7q5j8VlitMIwldZmgimqtRoszlY50z0vpdHMW/Rmcnp6A0GAEoXMxcbnyIsvlKbX42GbnjslLkfwrFqGgraq3mSWldf3cEBOS4UZzTosBGxIVWa14tRrH5YCmwGGRCbfBQw5dyQJmzNsBU08Ed4rMKXlDNnc0H3AYX7wNitmYqqDEHsxjh+HfplNTWvYe4alS1hGle2Fs8YA1ermt/Nc6j8f/GGaJ/xzcHY+gSOnd1WzhnVPQqoMfNpPdl14D7t2/Ou/zLXqMz5Dcpe2i1nzTkXySDl1jltvsizRuwGYoPe5FGUfQxT9KpIX87NhdNzecbipe/Jq5Xv24HAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=315a205bc3c5fe10c7e81d12b4013156"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
         <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
         <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
@@ -886,6 +1004,29 @@
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=43439f25c3cdf610c7e81d12b40131e9"/>
     <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Notification">0d8dd9f10f11101051218e8ebc767e27</action_type>
+        <action_type_parent display_value="Send Notification">7eda5d710f11101051218e8ebc767ec1</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>0d8dd9f10f11101051218e8ebc767e27</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pet Shop Order – Accepted Approval">36439f25c3cdf610c7e81d12b40131ae</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>ba8afe70-482d-45dc-934e-1b47aae4c1fb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 15:13:13</sys_created_on>
+        <sys_id>48b6e017c3c5fe10c7e81d12b40131f0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:13:13</sys_updated_on>
+        <ui_id>195250c4-f0e4-4413-adde-d0b0894762e3</ui_id>
+        <values>H4sIAAAAAAAA/9WVyW7bMBCGX8XQ2TJESbbk3Iq4AQKkSZHtEgQCl2HMgloiUVlqBOg79A37JB1K8pY4ztKmQOGLOdzm/2c+8WLmKOHsOKGIhRhL4klCiEe8IfFJDDEwHo0i8GOn72Q0BVxZAs9LgeMbqmsbmM3OCkENiIQMeF2WkJmHB5wXqio0vT/vlmGET5UWOO/sXFz2nYKWeKKB0tmZPZp6bUqaMtC49Hie0+MczX1hxyLndYp5JWoePOh2TrqZ3v4EZ3CTTYf0HbgzkAnAPCTVFfSdlGYoMi/vF5ESqDjK9DIwVZlphab0rlLf8ebAt+skoDLembAYJp1BbVhOqKEnpqy5qcuFX7niULWeCJC01mZ3NdYuOCqMyrN2i6FMz3fnuk6zw9YRZ3HASj3qCpOAwgq1mePlqEKeTPPb43mSeyprLOkk6pxTvRhRY0rFamPTmTm1Ot3kdhve7DdoaBamtChUdpUUZX6jmvsw+3RwpXEwkDq/xTQrdZUNKLdSB1gJOtjD+KQJn9NSWd1f8BjcbO88y9R1Dfu2jwTxomDscTfyh4Ebepy6LBbMpcyXwzAcxSNGnIe+U91Xu5pW1dIxLFVyXVvBrX+dU0ljduN00jSc3cxLVZhPmN4NdP489Du2YrKtkQN/2bcrZy75ukvIyIvIKEoKMEk1zYvln7Zhn7D2FUwPy1j0jrr5t5H3ioTn5J02/bZZQAffk9jB6t7eYTvRoee/Eb22ZzeQF3v/EXmdrD9Hb83rdfLW3P4n4HHGmGQwdgnj3A0jiN3Yp5ELQ48H0g88L5LvAO8l3MLt3bvylGW5UVJx2hRxCRwLuT/kY58H4ZhR4nHMnAjis9AjAf628Pbrx8+Wud5noUzvGL4Bx5fx7W/fyxrmBB6ui9gsrUNxCcQ6iccr8Q7EYDuILXfveQKx2nBjiwkpVTppG+sZOh9p+8ukPpfJGr5UyqaEiVSgBXZg0uz5kPdUngAt+XTP3mRr2LK6jvpaYRF4vOMJ6qvl/DjST5/2VIXvUmdLYg9IZF6m1HZEo/DxByIcE4gCP3bHIx8/EBAMXSaCwCX4wQCgIH3xMS/z5W8n/zFI9woAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=48b6e017c3c5fe10c7e81d12b40131f0"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
         <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
         <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
         <attributes/>
@@ -908,8 +1049,57 @@
         <values>H4sIAAAAAAAA/+VVXW+bMBT9K5GfIwQhTdu8TY0iTeqaqd360lXI4EtiyYBnmzRZxH/fNRiCkqxKpb5E4wnfD/ucwz3mZUc4I1MyBuYHt8EkCYMwHPn+6GYcxJMwDkYspAABGZKcZoCVCpJCMVyvqShtYLf7KRk1wKLAS0qlIDdVhXnGtRR0++zKMJKsuGCYJ9OX1yGRVOGOBhSZ7g5S50ISNAaBpY8tpkOMZivtmhVJmSGuiLfBe9c5c5nB1xlmsMnCCfwhgY2BnAECSanQMCQZzZFlobZkalSJAQWULXKx7SpWPDcN0YxuNP+DJ499W5cCMkucCN0ycgI14XRGDX3CnRNTqk6vgiegG00YpLQU5q4fawoW0vAib1oMjUXbXYgyyx8aRUi3Qe97lBpBgLQ8LfKGVvq0Kt4eW5BznteSOIqiSKjoVtQYxePSWDg7AgJqjTMqJc+XkVTFmtfNCCXzlgIXXiqKNzxT82Xu0cTi9lBV6s0xPqvDz1RxS+IbboPN1ZDorb4TVOs9FdQw+l1aJA0xRyGqVagliOpJsM2J4tJ8waPW0AFvgha0mxR8O1FYVdXQ+SO+em8Yk9v97PWO33tkEwUT/zqYXEcSTKRXhdy/NEN35JfvYAb4KeRg4fIfc88ZgFv3/Khn5jQBZ6Cj2H2/d/DQJJx9rj7NPjeXZB9H4+L98w/XdFbwR+/ey71Jqqdf92xQDwjCN5QLHQHjtd6/St8PmZ2KYxec0fExX5yBvvXFnINg+gSd1hSQIVQDUUPvwBguOXh2ye7f8mnuwCulfi7II//LL6Z6/QuetTquWQkAAA==</values>
     </sys_hub_action_instance_v2>
     <sys_hub_alias_mapping action="delete_multiple" query="source_id=83439f25c3cdf610c7e81d12b40131e8"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Pet Shop Order – Accepted Approval">36439f25c3cdf610c7e81d12b40131ae</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>ba8afe70-482d-45dc-934e-1b47aae4c1fb</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 15:13:13</sys_created_on>
+        <sys_id>88b6e017c3c5fe10c7e81d12b40131ef</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:13:13</sys_updated_on>
+        <ui_id>c1224f0f-6ebb-4e18-8e65-25707e1ac3c5</ui_id>
+        <values>H4sIAAAAAAAA/+VVXW/aMBT9K8jPUZQQSlvepiKkSV2Z2o2Xroqc+AYsOYlnOxSG+O+7cZwQQdVRqS9oPOV+2ecc7kmed4QzMiEjYEF4G47TKIyiYRAMb0ZhMo6ScMgiChASjxQ0B+xUkJaKYbymoqoTu91PyagBFod+WikFhdnvsc64loJuF64NM+mKC4Z1Mnl+8YikCk80oMhkd1Q6F5KgCQhsfWwxHWM0W1nHrEyrHHHFvE3eu8mpqwy+TrGCQzWcMPAIbAwUDBBIRoUGj+S0QJal2pKJURUmFFA2L8S261jxwjREc7rR/A/ePArqvgyQWepE6MLYCdSksyk19AlPTk2lOr1KnoJuNGGQ0UqYu36uaZhLw8uiGTE0Ee10Kaq8eGgUId0Bvf+j0ggCZM2zRt7Qyp5W5etjC3LGCyuJoyjKlIouosYonlSmhrMjIMBqnFMpebGMpSrX3A4jlNxfCgz8TJSveKfmy8KnaY3bR1WpP8P81KYXVPGaxDc8Bof3HtFbfSeo1gcqqGH8u6qRNMQchdiqYCWI7SbUw6ni0nzBq9bggO89t/TJ1Xsblt4eFqp35mHxN3E4Dq7D8XUswcR6VcrDQ7NJJyb4DmaA+srB3NU/ZokzALeW+GEX4W0CzhUnufv+7OChKThPXH2aJ24uyROOxsWb4l9WCIbvvmx7m2S3X/dsYBcE4RvKhY6Bcav3ryoIImYvObXBOSMfc8YZ+FtnzDgIpt8g1NoCcsRqIG4IHlnDFQcLV+w+GZ/mD3yp2N8FueS/+XK8/AVj9LFaMAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=88b6e017c3c5fe10c7e81d12b40131ef"/>
     <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=36439f25c3cdf610c7e81d12b40131ae"/>
-    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=36439f25c3cdf610c7e81d12b40131ae^sys_idNOT INf5a35016c349ba10c7e81d12b4013139"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=36439f25c3cdf610c7e81d12b40131ae^sys_idNOT IN00b6e017c3c5fe10c7e81d12b40131f3,f5a35016c349ba10c7e81d12b4013139"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">6aa6a017c3c5fe10c7e81d12b40131c9</block>
+        <comment/>
+        <connected_to>4f9a03b5-cef1-486d-a445-5ee43e66f77c</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Pet Shop Order – Accepted Approval">36439f25c3cdf610c7e81d12b40131ae</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else If">666e5545c3e232002841b63b12d3ae99</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-11 15:13:13</sys_created_on>
+        <sys_id>00b6e017c3c5fe10c7e81d12b40131f3</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:29:10</sys_updated_on>
+        <ui_id>ba8afe70-482d-45dc-934e-1b47aae4c1fb</ui_id>
+        <values>H4sIAAAAAAAA/+1VXW/TMBT9K5WfoyhJ2QR9qzpNQhpM2sZeYIpubKc1OLbxx7oS5b9znY+2GhswsUfe6nO/zj25R22JDt4E72700jmxVmTx+S4hQkUMf7dEQcPJglCtmPBCq7IHEnIPMsTA0hir8TETbnbFv3LqOcMwE85I2N3+PotuhGSWj1MNWOztuSWL9lFIMGxSZ1Dn72hO58XpvMiy4u2bvDqdV3nB5sChwIYSKi4xdTXRnV30SPLsHn5nIu68FWo9vi/GLtcTqC2LrPIsIfzBc8WQ/aIG6XhCGlAMvLa7PWI5sEslD8BGKI/tSEx+cOIHDixOTmJizXFFyofg/lmO6g1wfQYekEqgPtgxlW60oNwN4jBeQ5B+dYwNCZcmrjqUeKjkVK1laNTHQRGybzB9LESCQxLcxE0j9XGP+nqjt1cTy3OhelXGoNQU5P4FHrWrgo98WsIlb7BR2YAxqGgZj0H0xcilSdcSH2kt9RaHxitMgUbiKQoL6TniZz18C1bELT5gGyweaFbgBC37i8V2KBMnXULczq0kOHdYEtUtv4dIcVh5XK4c9Ikl1Arjlzj5no97dMmvBji6/bb9ZJAiZ2We0mBRFZ/CeOld9yVk2RxP+DlPvLD6Vb2SP+WVJ1zyQoMUfzBI/Dp/6Y8sy/4b5J8NIlw5nPW4Wz/8Ff1xF80wzNxrTYVDajcRez/9j8TADo9L0GNoq+23uNQB634CdGbE3ZEGAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
     <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
         <attributes/>
         <block display_value="">202314d2c349ba10c7e81d12b4013161</block>
@@ -928,10 +1118,10 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-08 11:16:07</sys_created_on>
         <sys_id>f5a35016c349ba10c7e81d12b4013139</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-08 13:15:18</sys_updated_on>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:29:10</sys_updated_on>
         <ui_id>4f9a03b5-cef1-486d-a445-5ee43e66f77c</ui_id>
         <values>H4sIAAAAAAAA/+1VTW/bMAz9K4HOhmE7TbDmFqQoMKBbgbXrZSsMWpITYbKl6aNpZuS/j7LsJOiyj2I77hY+UuTjMx/SEeWd9s7eq6W1Yt2SxafHhIg2YPi7Iy00nCwIVS0TTqi27IGEPIH0IbHU2igMJsJOlpRy7TjDNBNWS9g9/LqKboRkhg9TNRjs7bghi+5FSjBsUmdQ55c0p9NiPi2yrHhzkVfzaZUXbAocpthQQsUllq5GupObHkl+uofb6YBbZ0S7HuKbocvdCCrDAqs8Swh/drxlyH5Rg7Q8IQ20DJwyuwNiOLDbVh6BjWgdtiOh+NmKbziwmM1CYc1xRcpj8hCWg3oRrq/AAVLx1HkzlNKNEpTbKA7jNXjpVqdYLLjVYdX4xEElx9dK+qZ9HxUhhwbjx0LEWyTBddg0UB/2qO82avthZHkt2l6VISkVBXmIwKF2lXeBT0e45A02KhvQGhUtwzGI/jFyadK1xCCtpdri0HCFKdBAPEVhIb1G/KqHH8CIsMU7bIOPI80KrKBlf7HYDmXiZJ8Qu7MrCdYel0R1y68+UIwrD8uVUZ/whBqh3RInP/Fhj33yowFObr/rPmqkyFmZp9QbVMWlMFz6fv/ZZ9mUxficJ175+nVeuYRZPcuz2XmvXMzPeeWMS15pkOI3Bglf5w/9kWXZf4P8tUGELeNZD7v1w/+hPx6DGeLMg9ZUWKR2H7C34/9ISOzwuAQ9hbbKfAlLHbH9d2Jw8y2RBgAA</values>
         <workflow_reference/>
@@ -1018,21 +1208,21 @@
     </sys_hub_flow>
     <sys_flow_trigger_plan action="delete_multiple" query="plan_id=45005b21c3cdf610c7e81d12b40131ea^sys_idNOT IN0f439f25c3cdf610c7e81d12b40131f6"/>
     <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
-        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <binding_strategy>com.snc.process_flow.engine.binding.Every</binding_strategy>
         <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"0f439f25c3cdf610c7e81d12b40131f6","name":"plan","plan_signature":null}}</plan>
         <plan_id>45005b21c3cdf610c7e81d12b40131ea</plan_id>
-        <snapshot>b311fc5ac3c9ba10c7e81d12b401319c</snapshot>
+        <snapshot>e68a645bc3c5fe10c7e81d12b4013176</snapshot>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-06 17:17:59</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0f439f25c3cdf610c7e81d12b40131f6</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_overrides/>
         <sys_scope/>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-08 13:11:29</sys_updated_on>
-        <trigger display_value="">0aa35016c349ba10c7e81d12b4013177</trigger>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-11 15:29:11</sys_updated_on>
+        <trigger display_value="">d8b62417c3c5fe10c7e81d12b4013130</trigger>
     </sys_flow_trigger_plan>
     <sys_flow_subflow_plan action="delete_multiple" query="plan_id=45005b21c3cdf610c7e81d12b40131ea"/>
 </record_update>
