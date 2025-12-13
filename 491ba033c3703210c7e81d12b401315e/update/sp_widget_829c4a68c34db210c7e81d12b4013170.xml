@@ -128,6 +128,22 @@
     background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);&#13;
 }&#13;
 &#13;
+/* Full Background Image Card */&#13;
+.card-image-bg {&#13;
+    background: none !important;&#13;
+    padding: 0 !important;&#13;
+}&#13;
+&#13;
+.offer-full-bg {&#13;
+    position: absolute;&#13;
+    top: 0;&#13;
+    left: 0;&#13;
+    width: 100%;&#13;
+    height: 100%;&#13;
+    object-fit: cover;&#13;
+    z-index: 0;&#13;
+}&#13;
+&#13;
 .offer-badge {&#13;
     font-size: 13px;&#13;
     font-weight: 600;&#13;
@@ -189,6 +205,30 @@
 .shop-now-btn:hover {&#13;
     background: rgba(255, 255, 255, 0.35);&#13;
     transform: translateX(4px);&#13;
+}&#13;
+&#13;
+.shop-now-overlay {&#13;
+    position: absolute;&#13;
+    bottom: 28px;&#13;
+    left: 28px;&#13;
+    z-index: 2;&#13;
+    background: rgba(255, 255, 255, 0.9);&#13;
+    backdrop-filter: blur(10px);&#13;
+    border: 2px solid rgba(255, 255, 255, 0.5);&#13;
+    color: #8b5cf6;&#13;
+    font-weight: 700;&#13;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);&#13;
+}&#13;
+&#13;
+.shop-now-overlay:hover {&#13;
+    background: rgba(255, 255, 255, 1);&#13;
+    transform: translateY(-2px);&#13;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);&#13;
+}&#13;
+&#13;
+.shop-now-overlay .btn-icon {&#13;
+    background: rgba(139, 92, 246, 0.2);&#13;
+    color: #8b5cf6;&#13;
 }&#13;
 &#13;
 .btn-icon {&#13;
@@ -262,8 +302,12 @@
         height: 120px;&#13;
         font-size: 50px;&#13;
     }&#13;
-}&#13;
-</css>
+    &#13;
+    .shop-now-overlay {&#13;
+        bottom: 20px;&#13;
+        left: 20px;&#13;
+    }&#13;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -289,14 +333,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-03 09:36:04</sys_created_on>
         <sys_id>829c4a68c34db210c7e81d12b4013170</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>Offers on Pet</sys_name>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name>sp_widget_829c4a68c34db210c7e81d12b4013170</sys_update_name>
         <sys_updated_by>emmanuel.dedumo</sys_updated_by>
-        <sys_updated_on>2025-11-11 09:00:42</sys_updated_on>
+        <sys_updated_on>2025-11-11 11:53:04</sys_updated_on>
         <template><![CDATA[<div class="offers-section">
     <div class="offers-container">
         <div class="section-header">
@@ -317,64 +361,37 @@
                 </button>
             </div>
         </div>
-
         <div class="offers-grid">
-            <!-- Offer Card 1 -->
+            <!-- Offer Card 1 - Image Background Only -->
             <div class="offer-card">
-                <div class="offer-card-content card-purple">
-                    <div>
-                        <div class="offer-badge">FREE SHIPPING</div>
-                        <div class="offer-title">30%</div>
-                        <div class="offer-subtitle">Sale Off</div>
-                    </div>
-                    <a href="javascript:void(0)" class="shop-now-btn" ng-click="c.shopOffer(1)">
+                <div class="offer-card-content card-image-bg">
+                    <img src="https://dev269232.service-now.com/eafba707c381fe10c7e81d12b4013100.iix" class="offer-full-bg" alt="Free Shipping Offer">
+                    <a href="javascript:void(0)" class="shop-now-btn shop-now-overlay" ng-click="c.shopOffer(1)">
                         Shop Now
                         <span class="btn-icon">→</span>
                     </a>
-                    <img src="Free.png" class="offer-image" alt="Free Shipping Offer">
                 </div>
             </div>
-
             <!-- Offer Card 2 -->
             <div class="offer-card">
-                <div class="offer-card-content card-teal">
-                    <div>
-                        <div class="offer-price">$79.99</div>
-                        <div class="offer-price-old">$99.00</div>
-                        <div class="offer-subtitle">Best Seller</div>
-                        <div class="offer-subtitle">Dog Shirt</div>
-                        <div class="offer-description">Everything for your pet.</div>
-                    </div>
-                    <div class="mock-image">]]>🐕<![CDATA[</div>
+                <div class="offer-card-content card-image-bg">
+                    <img src="https://dev269232.service-now.com/173927c3c381fe10c7e81d12b4013157.iix" class="offer-full-bg" alt="Dog Shirt Offer">
                 </div>
             </div>
-
             <!-- Offer Card 3 -->
             <div class="offer-card">
-                <div class="offer-card-content card-yellow">
-                    <div>
-                        <div class="offer-badge">UP TO 20% OFF</div>
-                        <div class="offer-subtitle">Food Pet</div>
-                        <div class="offer-description">Only on Sunday!</div>
-                    </div>
-                    <a href="javascript:void(0)" class="shop-now-btn" ng-click="c.shopOffer(3)">
+                <div class="offer-card-content card-image-bg">
+                    <img src="https://dev269232.service-now.com/95173f83c3c1fe10c7e81d12b4013108.iix" class="offer-full-bg" alt="Free Shipping Offer">
+                    <a href="javascript:void(0)" class="shop-now-btn shop-now-overlay" ng-click="c.shopOffer(1)">
                         Shop Now
                         <span class="btn-icon">→</span>
                     </a>
-                    <div class="mock-image">]]>🍖<![CDATA[</div>
                 </div>
             </div>
-
             <!-- Offer Card 4 -->
             <div class="offer-card">
-                <div class="offer-card-content card-gray">
-                    <div>
-                        <div class="offer-badge">DISCOUNT OFF</div>
-                        <div class="offer-title">15%</div>
-                        <div class="offer-subtitle">Gift for Pets</div>
-                        <div class="use-code">Use Code: SALE15</div>
-                    </div>
-                    <div class="mock-image">]]>🎁<![CDATA[</div>
+                <div class="offer-card-content card-image-bg">
+                    <img src="https://dev269232.service-now.com/eaa83f07c3c1fe10c7e81d12b40131eb.iix" class="offer-full-bg" alt="Dog Shirt Offer">
                 </div>
             </div>
         </div>

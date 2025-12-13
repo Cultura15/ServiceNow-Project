@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller = function($scope, $window, spUtil, $log) {
+        <client_script><![CDATA[api.controller = function($scope, $window, spUtil, $log, $timeout) {
   var c = this;
 
   c.cartItems = c.data.cartItems || [];
@@ -41,149 +41,296 @@
 
     $log.info("]]>🧾<![CDATA[ Sending checkout payload:", c.data);
 
+    c.isLoading = true;
     c.server.update(c.data).then(function(response) {
+      c.isLoading = false;
+
       if (response.success) {
-        spUtil.addInfoMessage(response.message || "✅ Checkout successful!");
+        const orderNum = response.order_number || "N/A";
+        spUtil.addInfoMessage("✅ Order #" + orderNum + " placed successfully!");
+
+        // Reset UI
         c.cartItems = [];
         c.totalItems = 0;
         c.grandTotal = 0;
 
-        setTimeout(function() {
+        // Redirect to "My Orders" tracker after 1.5s
+        $timeout(function() {
           $window.location.href = '/psmp?id=psmp_my_orders';
         }, 1500);
       } else {
         spUtil.addErrorMessage("❌ Checkout failed: " + (response.error || "Please try again."));
       }
     }).catch(function(error) {
+      c.isLoading = false;
       $log.error("❌ Checkout error:", error);
       spUtil.addErrorMessage("An unexpected error occurred during checkout.");
     });
   };
 
+  // Open item details
+  c.openItem = function(itemSysId) {
+    if (!itemSysId) {
+      spUtil.addErrorMessage("❌ Item not found!");
+      return;
+    }
+    $window.location.href = '/psmp?id=psmp_order&item_sys_id=' + itemSysId;
+  };
+
+  // Back to shop
   c.goBack = function() {
     $window.location.href = '/psmp?id=psmp_shop';
   };
 };
 
-api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
+api.controller.$inject = ['$scope', '$window', 'spUtil', '$log', '$timeout'];
 ]]></client_script>
         <controller_as>c</controller_as>
-        <css>.cart-widget-container {&#13;
-  padding: 20px;&#13;
-  max-width: 800px;&#13;
+        <css>.sn-cart-container {&#13;
+  max-width: 1200px;&#13;
   margin: 0 auto;&#13;
+  padding: 20px;&#13;
+  font-family: "Segoe UI", Roboto, sans-serif;&#13;
+  color: #333;&#13;
 }&#13;
 &#13;
-.cart-title {&#13;
-  font-size: 1.6rem;&#13;
+/* HEADER */&#13;
+.sn-cart-container .cart-header {&#13;
+  display: flex;&#13;
+  justify-content: space-between;&#13;
+  align-items: center;&#13;
+  margin-bottom: 32px;&#13;
+  padding-bottom: 20px;&#13;
+  border-bottom: 1px solid #eee;&#13;
+}&#13;
+&#13;
+.sn-cart-container .cart-title {&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  gap: 10px;&#13;
+  font-size: 28px;&#13;
+  font-weight: bold;&#13;
+  color: #2c3e50;&#13;
+}&#13;
+&#13;
+.sn-cart-container .item-count-badge {&#13;
+  background: #27ae60;&#13;
+  color: #fff;&#13;
+  padding: 5px 15px;&#13;
+  border-radius: 20px;&#13;
+  font-size: 14px;&#13;
   font-weight: 600;&#13;
+}&#13;
+&#13;
+.sn-cart-container .continue-shopping-btn {&#13;
+  border: 1px solid #bbb;&#13;
+  padding: 8px 20px;&#13;
+  border-radius: 8px;&#13;
+  background: #fff;&#13;
+  font-weight: 600;&#13;
+  transition: 0.2s;&#13;
+}&#13;
+&#13;
+.sn-cart-container .continue-shopping-btn:hover {&#13;
+  background: #f0f0f0;&#13;
+  border-color: #27ae60;&#13;
+  color: #27ae60;&#13;
+}&#13;
+&#13;
+/* LAYOUT */&#13;
+.sn-cart-container .cart-layout {&#13;
+  display: grid;&#13;
+  grid-template-columns: 1fr 380px;&#13;
+  gap: 24px;&#13;
+}&#13;
+&#13;
+/* CART ITEM */&#13;
+.sn-cart-container .cart-item {&#13;
+  background: #fff;&#13;
+  border-radius: 16px;&#13;
+  padding: 20px;&#13;
+  display: flex;&#13;
+  gap: 16px;&#13;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);&#13;
+  transition: transform 0.3s, box-shadow 0.3s;&#13;
+}&#13;
+&#13;
+.sn-cart-container .cart-item:hover {&#13;
+  transform: translateY(-3px);&#13;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);&#13;
+}&#13;
+&#13;
+.sn-cart-container .item-content {&#13;
+  display: flex;&#13;
+  gap: 16px;&#13;
+  flex: 1;&#13;
+  cursor: pointer;&#13;
+}&#13;
+&#13;
+.sn-cart-container .item-image {&#13;
+  width: 120px;&#13;
+  height: 120px;&#13;
+  border-radius: 12px;&#13;
+  object-fit: cover;&#13;
+  transition: transform 0.3s;&#13;
+}&#13;
+&#13;
+.sn-cart-container .item-content:hover .item-image {&#13;
+  transform: scale(1.05);&#13;
+}&#13;
+&#13;
+.sn-cart-container .item-details {&#13;
+  display: flex;&#13;
+  flex-direction: column;&#13;
+  gap: 8px;&#13;
+}&#13;
+&#13;
+.sn-cart-container .item-name {&#13;
+  font-weight: 600;&#13;
+  font-size: 18px;&#13;
+  margin: 0;&#13;
+  color: #2c3e50;&#13;
+}&#13;
+&#13;
+.sn-cart-container .item-meta {&#13;
+  display: flex;&#13;
+  gap: 12px;&#13;
+  font-size: 13px;&#13;
+  color: #7f8c8d;&#13;
+}&#13;
+&#13;
+.sn-cart-container .unit-price,&#13;
+.sn-cart-container .quantity-value,&#13;
+.sn-cart-container .total-price {&#13;
+  font-weight: 600;&#13;
+}&#13;
+&#13;
+.sn-cart-container .item-total {&#13;
+  margin-top: auto;&#13;
+  font-size: 16px;&#13;
+  font-weight: bold;&#13;
+  color: #27ae60;&#13;
+}&#13;
+&#13;
+/* REMOVE BUTTON */&#13;
+.sn-cart-container .remove-item-btn {&#13;
+  background: #ffe6e6;&#13;
+  border: 1px solid #ff4d4d;&#13;
+  padding: 8px 14px;&#13;
+  border-radius: 8px;&#13;
+  color: #c0392b;&#13;
+  font-weight: 600;&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+  gap: 5px;&#13;
+  cursor: pointer;&#13;
+  height: fit-content;&#13;
+  transition: 0.2s;&#13;
+}&#13;
+&#13;
+.sn-cart-container .remove-item-btn:hover {&#13;
+  background: #ffcccc;&#13;
+  transform: translateY(-2px);&#13;
+}&#13;
+&#13;
+/* ORDER SUMMARY */&#13;
+.sn-cart-container .order-summary {&#13;
+  position: sticky;&#13;
+  top: 20px;&#13;
+}&#13;
+&#13;
+.sn-cart-container .summary-card {&#13;
+  background: #fff;&#13;
+  border-radius: 16px;&#13;
+  padding: 24px;&#13;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);&#13;
+}&#13;
+&#13;
+.sn-cart-container .summary-title {&#13;
+  font-weight: bold;&#13;
+  font-size: 20px;&#13;
   margin-bottom: 20px;&#13;
 }&#13;
 &#13;
-.cart-items {&#13;
+.sn-cart-container .summary-details {&#13;
   display: flex;&#13;
   flex-direction: column;&#13;
-  gap: 16px;&#13;
+  gap: 10px;&#13;
 }&#13;
 &#13;
-.cart-item {&#13;
+.sn-cart-container .summary-row {&#13;
   display: flex;&#13;
-  align-items: center;&#13;
-  background: #fff;&#13;
+  justify-content: space-between;&#13;
+}&#13;
+&#13;
+.sn-cart-container .total-amount {&#13;
+  color: #27ae60;&#13;
+  font-size: 22px;&#13;
+  font-weight: bold;&#13;
+}&#13;
+&#13;
+/* CHECKOUT BUTTON */&#13;
+.sn-cart-container .checkout-btn {&#13;
+  width: 100%;&#13;
+  background: #27ae60;&#13;
+  color: #fff;&#13;
+  padding: 14px;&#13;
   border-radius: 12px;&#13;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);&#13;
-  padding: 12px;&#13;
-  transition: transform 0.2s;&#13;
+  margin-top: 20px;&#13;
+  font-weight: bold;&#13;
+  font-size: 16px;&#13;
+  display: flex;&#13;
+  justify-content: center;&#13;
+  gap: 8px;&#13;
+  transition: 0.3s;&#13;
 }&#13;
 &#13;
-.cart-item:hover {&#13;
-  transform: scale(1.01);&#13;
+.sn-cart-container .checkout-btn:hover:not(:disabled) {&#13;
+  background: #2ecc71;&#13;
+  transform: translateY(-2px);&#13;
 }&#13;
 &#13;
-.cart-item-img {&#13;
-  width: 90px;&#13;
-  height: 90px;&#13;
-  object-fit: cover;&#13;
-  border-radius: 10px;&#13;
-  margin-right: 15px;&#13;
+.sn-cart-container .checkout-btn:disabled {&#13;
+  opacity: 0.6;&#13;
+  cursor: not-allowed;&#13;
 }&#13;
 &#13;
-.cart-item-info {&#13;
-  flex: 1;&#13;
-}&#13;
-&#13;
-.cart-item-name {&#13;
-  font-size: 1.1rem;&#13;
-  font-weight: 600;&#13;
-  margin: 0;&#13;
-}&#13;
-&#13;
-.cart-item-brand {&#13;
-  color: #888;&#13;
-  margin: 4px 0;&#13;
-}&#13;
-&#13;
-.cart-item-price,&#13;
-.cart-item-total {&#13;
-  font-size: 0.95rem;&#13;
-  margin: 2px 0;&#13;
-}&#13;
-&#13;
-.remove-btn {&#13;
-  background: #ff5252;&#13;
-  color: white;&#13;
-  border: none;&#13;
-  border-radius: 6px;&#13;
-  padding: 6px 10px;&#13;
-  cursor: pointer;&#13;
-  transition: background 0.2s;&#13;
-}&#13;
-&#13;
-.remove-btn:hover {&#13;
-  background: #ff0000;&#13;
-}&#13;
-&#13;
-.cart-summary {&#13;
-  margin-top: 25px;&#13;
-  background: #f9f9f9;&#13;
-  border-radius: 10px;&#13;
-  padding: 15px;&#13;
-  text-align: right;&#13;
-}&#13;
-&#13;
-.checkout-btn {&#13;
-  background: #28a745;&#13;
-  color: white;&#13;
-  border: none;&#13;
-  border-radius: 8px;&#13;
-  padding: 10px 16px;&#13;
-  margin-top: 10px;&#13;
-  font-size: 1rem;&#13;
-  cursor: pointer;&#13;
-  transition: background 0.2s;&#13;
-}&#13;
-&#13;
-.checkout-btn:hover {&#13;
-  background: #218838;&#13;
-}&#13;
-&#13;
-.empty-cart {&#13;
+/* EMPTY CART */&#13;
+.sn-cart-container .empty-cart-state {&#13;
   text-align: center;&#13;
-  padding: 40px;&#13;
-  font-size: 1.2rem;&#13;
+  padding: 60px 20px;&#13;
 }&#13;
 &#13;
-.back-btn {&#13;
-  background: #007bff;&#13;
-  color: white;&#13;
-  border: none;&#13;
-  border-radius: 8px;&#13;
-  padding: 10px 16px;&#13;
-  cursor: pointer;&#13;
+.sn-cart-container .empty-cart-icon {&#13;
+  font-size: 100px;&#13;
+  opacity: 0.3;&#13;
+  margin-bottom: 20px;&#13;
 }&#13;
 &#13;
-.back-btn:hover {&#13;
-  background: #0069d9;&#13;
+.sn-cart-container .shop-now-btn {&#13;
+  background: #27ae60;&#13;
+  color: #fff;&#13;
+  padding: 14px 36px;&#13;
+  border-radius: 12px;&#13;
+  font-weight: bold;&#13;
+  font-size: 16px;&#13;
+  transition: 0.3s;&#13;
+}&#13;
+&#13;
+.sn-cart-container .shop-now-btn:hover {&#13;
+  background: #2ecc71;&#13;
+  transform: translateY(-2px);&#13;
+}&#13;
+&#13;
+/* RESPONSIVE */&#13;
+@media(max-width: 980px) {&#13;
+  .sn-cart-container .cart-layout {&#13;
+    grid-template-columns: 1fr;&#13;
+  }&#13;
+  .sn-cart-container .order-summary {&#13;
+    position: static;&#13;
+    margin-top: 20px;&#13;
+  }&#13;
 }&#13;
 </css>
         <data_table>sp_instance</data_table>
@@ -218,7 +365,6 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
   cart.query();
 
   while (cart.next()) {
-    // Initialize order_linked if undefined
     if (cart.order_linked === undefined) {
       cart.order_linked = false;
       cart.update();
@@ -227,6 +373,7 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
     data.cartItems.push({
       sys_id: cart.getUniqueValue(),
       item: cart.item.getDisplayValue(),
+      item_sys_id: cart.getValue("item"),
       brand: cart.getValue("brand"),
       category: cart.getValue("category"),
       price: parseFloat(cart.getValue("price") || 0),
@@ -251,7 +398,7 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
       rm.update();
     }
 
-    // Reload remaining cart
+    // Reload cart
     var reload = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
     reload.addQuery("user", currentUser);
     reload.addQuery("active", true);
@@ -282,7 +429,7 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
   }
 
   // ---------------------------------------------
-  // Checkout: Create ONE order per user checkout + order details
+  // Checkout logic
   // ---------------------------------------------
   if (input && input.action === "checkout") {
     if (!data.cartItems || data.cartItems.length === 0) {
@@ -298,7 +445,7 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
       return;
     }
 
-    // ]]>🆕<![CDATA[ Create one parent order
+    // ]]>🆕<![CDATA[ Create order
     order.initialize();
     order.order_for = currentUser;
     order.state = "1"; // Pending
@@ -306,11 +453,10 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
     order.total_amount = data.grandTotal;
 
     var orderSysId = order.insert();
-    gs.info("✅ Created single parent order: " + orderSysId);
+    var orderNumber = order.getDisplayValue("number");
+    gs.info("✅ Created parent order: " + orderNumber);
 
-    // ---------------------------------------------
-    // Mark cart items as ordered and link to this order
-    // ---------------------------------------------
+    // ]]>🧾<![CDATA[ Create order details
     var markCart = new GlideRecord("x_1607167_pet_shop_pet_shop_cart");
     markCart.addQuery("user", currentUser);
     markCart.addQuery("active", true);
@@ -318,21 +464,17 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
     markCart.query();
 
     var createdDetails = 0;
-
     while (markCart.next()) {
       markCart.ordered = true;
       markCart.active = false;
-      markCart.order_linked = true;      // mark as linked
-      markCart.parent_order = orderSysId; // link to this order
+      markCart.order_linked = true;
+      markCart.parent_order = orderSysId;
       markCart.update();
 
-      // ---------------------------------------------
-      // Create corresponding order detail record
-      // ---------------------------------------------
       var detail = new GlideRecord("x_1607167_pet_shop_pet_shop_order_details");
       detail.initialize();
-      detail.pet_shop_order = orderSysId;           // reference to parent order
-      detail.item_name = markCart.item.getDisplayValue(); // string name
+      detail.pet_shop_order = orderSysId;
+      detail.item_name = markCart.item.getDisplayValue();
       detail.brand = markCart.getValue("brand");
       detail.category = markCart.getValue("category");
       detail.quantity = markCart.getValue("quantity");
@@ -343,15 +485,19 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
       createdDetails++;
     }
 
-    gs.info("✅ Created " + createdDetails + " order details for order: " + order.getDisplayValue("number"));
+    gs.info("✅ Created " + createdDetails + " order details for order: " + orderNumber);
 
     data.success = true;
     data.message =
       "✅ Checkout complete! Your order #" +
-      order.getDisplayValue("number") +
+      orderNumber +
       " has been created with " + createdDetails + " items.";
 
-    // Clear cart display after checkout
+    // Send back order info for redirection
+    data.order_number = orderNumber;
+    data.order_sys_id = orderSysId;
+
+    // Clear cart
     data.cartItems = [];
     data.totalItems = 0;
     data.grandTotal = 0;
@@ -365,41 +511,92 @@ api.controller.$inject = ['$scope', '$window', 'spUtil', '$log'];
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-09 10:36:23</sys_created_on>
         <sys_id>f19395eec3013e10c7e81d12b40131ce</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>Pet Shop Cart</sys_name>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
         <sys_update_name>sp_widget_f19395eec3013e10c7e81d12b40131ce</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-11 09:10:01</sys_updated_on>
-        <template><![CDATA[<div class="cart-widget-container" ng-if="c.cartItems.length > 0">
-  <h2 class="cart-title">]]>🛒<![CDATA[ Your Shopping Cart</h2>
+        <sys_updated_on>2025-12-02 17:02:32</sys_updated_on>
+        <template><![CDATA[<div class="sn-cart-container">
 
-  <div class="cart-items">
-    <div class="cart-item" ng-repeat="item in c.cartItems track by item.sys_id">
-      <img ng-if="item.image" ng-src="/sys_attachment.do?sys_id={{item.image}}" alt="{{item.item}}" class="cart-item-img"/>
-      <div class="cart-item-info">
-        <h3 class="cart-item-name">{{item.item}}</h3>
-        <p class="cart-item-brand">{{item.brand}}</p>
-        <p class="cart-item-category">Category: {{item.category}}</p>
-        <p class="cart-item-price">₱{{item.price}} × {{item.quantity}}</p>
-        <p class="cart-item-total">Total: <strong>₱{{item.total_price}}</strong></p>
+  <!-- CART WITH ITEMS -->
+  <div ng-if="c.cartItems.length > 0">
+
+    <!-- HEADER -->
+    <div class="cart-header">
+      <div class="header-content">
+        <h1 class="cart-title">
+          <span class="cart-icon">]]>🛒<![CDATA[</span> Shopping Cart
+        </h1>
+        <div class="item-count-badge">{{c.totalItems}} {{c.totalItems === 1 ? 'item' : 'items'}}</div>
       </div>
-      <button class="remove-btn" ng-click="c.removeFromCart(item.sys_id)">]]>🗑<![CDATA[ Remove</button>
+      <button class="continue-shopping-btn" ng-click="c.goBack()">← Continue Shopping</button>
+    </div>
+
+    <div class="cart-layout">
+
+      <!-- CART ITEMS LIST -->
+      <div class="cart-items-section">
+        <div class="cart-item" ng-repeat="item in c.cartItems track by item.sys_id">
+          <!-- Item Content -->
+          <div class="item-content" ng-click="c.openItem(item.item_sys_id)">
+            <div class="item-image-wrapper">
+              <img ng-if="item.image" ng-src="/sys_attachment.do?sys_id={{item.image}}" alt="{{item.item}}" class="item-image" />
+              <div ng-if="!item.image" class="item-image-placeholder"><span>]]>🐾<![CDATA[</span></div>
+            </div>
+            <div class="item-details">
+              <h3 class="item-name">{{item.item}}</h3>
+              <div class="item-meta">
+                <span class="item-brand" ng-if="item.brand"><span class="meta-icon">]]>🏷<![CDATA[️</span>{{item.brand}}</span>
+                <span class="item-category" ng-if="item.category"><span class="meta-icon">]]>📦<![CDATA[</span>{{item.category}}</span>
+              </div>
+              <div class="item-pricing">
+                <div class="price-row"><span>Unit Price:</span> <span class="unit-price">₱{{item.price | number:2}}</span></div>
+                <div class="quantity-row"><span>Quantity:</span> <span class="quantity-value">×{{item.quantity}}</span></div>
+              </div>
+              <div class="item-total"><span>Subtotal:</span> <span class="total-price">₱{{item.total_price | number:2}}</span></div>
+            </div>
+          </div>
+          <!-- Remove Button -->
+          <button class="remove-item-btn" ng-click="c.removeFromCart(item.sys_id); $event.stopPropagation();" title="Remove item">
+           Remove
+          </button>
+        </div>
+      </div>
+
+      <!-- ORDER SUMMARY -->
+      <div class="order-summary">
+        <div class="summary-card">
+          <h2 class="summary-title">Order Summary</h2>
+          <div class="summary-details">
+            <div class="summary-row"><span>Items ({{c.totalItems}})</span> <span class="summary-value">₱{{c.grandTotal | number:2}}</span></div>
+            <div class="summary-divider"></div>
+            <div class="summary-row total-row"><span>Total</span> <span class="total-amount">₱{{c.grandTotal | number:2}}</span></div>
+          </div>
+          <button class="checkout-btn" ng-click="c.checkout()" ng-disabled="c.isLoading">
+            <span ng-if="!c.isLoading">Proceed to Checkout</span>
+            <span ng-if="c.isLoading"><span class="loading-spinner">⏳</span> Processing...</span>
+          </button>
+         
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="cart-summary">
-    <p><strong>Total Items:</strong> {{c.totalItems}}</p>
-    <p><strong>Grand Total:</strong> ₱{{c.grandTotal}}</p>
-    <button class="checkout-btn" ng-click="c.checkout()">✅ Checkout</button>
+  <!-- EMPTY CART -->
+  <div class="empty-cart-state" ng-if="c.cartItems.length === 0">
+    <div class="empty-illustration">
+      <div class="empty-cart-icon">]]>🛒<![CDATA[</div>
+      <div class="paw-prints"><span>]]>🐾<![CDATA[</span><span>]]>🐾<![CDATA[</span><span>]]>🐾<![CDATA[</span></div>
+    </div>
+    <h2>Your Cart is Empty</h2>
+    <p>Looks like you haven't added any items yet. Start shopping for your furry friends!</p>
+    <button class="shop-now-btn" ng-click="c.goBack()">]]>🐶<![CDATA[ Start Shopping</button>
   </div>
-</div>
 
-<div class="empty-cart" ng-if="c.cartItems.length === 0">
-  <p>Your cart is empty ]]>🐾<![CDATA[</p>
-  <button class="back-btn" ng-click="c.goBack()">⬅ Back to Shop</button>
 </div>
 ]]></template>
     </sp_widget>

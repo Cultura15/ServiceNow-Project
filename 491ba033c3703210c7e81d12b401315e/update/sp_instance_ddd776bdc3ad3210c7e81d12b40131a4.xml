@@ -10,23 +10,23 @@
         <roles/>
         <short_description/>
         <size>md</size>
-        <sp_column display_value="1">47668529c305f610c7e81d12b401318c</sp_column>
-        <sp_widget display_value="Order Details Widget">7f26c169c305f610c7e81d12b40131aa</sp_widget>
+        <sp_column display_value="1">38d7b2fdc3ad3210c7e81d12b401318d</sp_column>
+        <sp_widget display_value="Pet Shop User History">7f5776bdc3ad3210c7e81d12b401319b</sp_widget>
         <sys_class_name>sp_instance</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-11-06 07:02:35</sys_created_on>
-        <sys_id>98760569c305f610c7e81d12b4013197</sys_id>
+        <sys_created_on>2025-12-02 06:27:52</sys_created_on>
+        <sys_id>ddd776bdc3ad3210c7e81d12b40131a4</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name/>
         <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
         <sys_policy/>
         <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
-        <sys_update_name>sp_instance_98760569c305f610c7e81d12b4013197</sys_update_name>
+        <sys_update_name>sp_instance_ddd776bdc3ad3210c7e81d12b40131a4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-06 07:02:35</sys_updated_on>
+        <sys_updated_on>2025-12-02 06:27:52</sys_updated_on>
         <title/>
         <url/>
         <widget_parameters/>
     </sp_instance>
-    <sys_translated_text action="delete_multiple" query="documentkey=98760569c305f610c7e81d12b4013197"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=ddd776bdc3ad3210c7e81d12b40131a4"/>
 </record_update>

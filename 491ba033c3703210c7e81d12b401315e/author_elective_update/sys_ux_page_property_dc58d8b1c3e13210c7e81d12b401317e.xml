@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_page_property">
+    <sys_ux_page_property action="DELETE">
+        <choices/>
+        <description/>
+        <name>chrome_footer</name>
+        <page display_value="Pet Shop Items Management">6748d8b1c3e13210c7e81d12b4013175</page>
+        <required_translations>[ ]</required_translations>
+        <route/>
+        <suffix/>
+        <sys_class_name>sys_ux_page_property</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-01 18:50:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>global</sys_domain_path>
+        <sys_id>dc58d8b1c3e13210c7e81d12b401317e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>chrome_footer</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_ux_page_property_dc58d8b1c3e13210c7e81d12b401317e</sys_update_name>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-01 18:50:56</sys_updated_on>
+        <type>json</type>
+        <unique_name>x_1607167_pet_shop.6748d8b1c3e13210c7e81d12b4013175.root.global.chrome_footer</unique_name>
+        <value>{
+    "public_page": {
+        "enable_footer_topbar": false,
+        "footer_topbar_options": {},
+        "enable_footer_bar": false,
+        "footer_bar_options": {}
+    }
+}</value>
+    </sys_ux_page_property>
+    <sys_translated_text action="DELETE" query="documentkey=dc58d8b1c3e13210c7e81d12b401317e"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</application>
+        <file_path/>
+        <instance_id>97197bfedbca025002022a5913961906</instance_id>
+        <instance_name>dev269232</instance_name>
+        <name>sys_ux_page_property_dc58d8b1c3e13210c7e81d12b401317e</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_page_property"><sys_ux_page_property action="INSERT_OR_UPDATE"><choices/><description/><name>chrome_footer</name><page display_value="Pet Shop Items Management">6748d8b1c3e13210c7e81d12b4013175</page><required_translations>[ ]</required_translations><route/><suffix/><sys_class_name>sys_ux_page_property</sys_class_name><sys_created_by>harold.destura</sys_created_by><sys_created_on>2025-12-01 18:50:56</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>global</sys_domain_path><sys_id>dc58d8b1c3e13210c7e81d12b401317e</sys_id><sys_mod_count>0</sys_mod_count><sys_name>chrome_footer</sys_name><sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package><sys_policy/><sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope><sys_update_name>sys_ux_page_property_dc58d8b1c3e13210c7e81d12b401317e</sys_update_name><sys_updated_by>harold.destura</sys_updated_by><sys_updated_on>2025-12-01 18:50:56</sys_updated_on><type>json</type><unique_name>x_1607167_pet_shop.6748d8b1c3e13210c7e81d12b4013175.root.global.chrome_footer</unique_name><value>{
+    "public_page": {
+        "enable_footer_topbar": false,
+        "footer_topbar_options": {},
+        "enable_footer_bar": false,
+        "footer_bar_options": {}
+    }
+}</value></sys_ux_page_property><sys_translated_text action="delete_multiple" query="documentkey=dc58d8b1c3e13210c7e81d12b401317e"/></record_update>]]></payload>
+        <payload_hash>-1917464329</payload_hash>
+        <record_name>chrome_footer</record_name>
+        <reverted_from/>
+        <source>5641fdeac3e13610c7e81d12b40131f9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-01 18:50:56</sys_created_on>
+        <sys_id>d4581cb1c3e13210c7e81d12b4013116</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_recorded_at>19adb40eca80000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-04 09:15:07</sys_updated_on>
+        <type>UX Page Property</type>
+        <update_guid>d8581cb1e4e1321098665f05db38cc15</update_guid>
+        <update_guid_history>d8581cb1e4e1321098665f05db38cc15:-1917464329</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-12-01 19:00:18</sys_created_on>
+        <sys_db_object display_value="" name="sys_ux_page_property">sys_ux_page_property</sys_db_object>
+        <sys_id>2a0bc9b309574aa88f39c30f0aec5e10</sys_id>
+        <sys_metadata>dc58d8b1c3e13210c7e81d12b401317e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>chrome_footer</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_scope_delete display_value="">6345f443edcf4520bbffdf937b8ec400</sys_scope_delete>
+        <sys_update_name>sys_ux_page_property_dc58d8b1c3e13210c7e81d12b401317e</sys_update_name>
+        <sys_update_version display_value="sys_ux_page_property_dc58d8b1c3e13210c7e81d12b401317e">d4581cb1c3e13210c7e81d12b4013116</sys_update_version>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-12-01 19:00:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

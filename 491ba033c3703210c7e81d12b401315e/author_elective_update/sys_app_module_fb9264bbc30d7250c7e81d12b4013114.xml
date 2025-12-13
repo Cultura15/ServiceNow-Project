@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="d">fb92283bc30d7250c7e81d12b40131c9</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>ds</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_1607167_pet_shop_d</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles>x_1607167_pet_shop.Pet Shop User</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-13 04:12:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fb9264bbc30d7250c7e81d12b4013114</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ds</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_app_module_fb9264bbc30d7250c7e81d12b4013114</sys_update_name>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-13 04:12:25</sys_updated_on>
+        <timeline_page/>
+        <title>ds</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</application>
+        <file_path/>
+        <instance_id>97197bfedbca025002022a5913961906</instance_id>
+        <instance_name>dev269232</instance_name>
+        <name>sys_app_module_fb9264bbc30d7250c7e81d12b4013114</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="d">fb92283bc30d7250c7e81d12b40131c9</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_title>ds</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_1607167_pet_shop_d</name><order/><override_menu_roles>false</override_menu_roles><query/><report/><require_confirmation>true</require_confirmation><roles>x_1607167_pet_shop.Pet Shop User</roles><sys_class_name>sys_app_module</sys_class_name><sys_created_by>harold.destura</sys_created_by><sys_created_on>2025-11-13 04:12:25</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>fb9264bbc30d7250c7e81d12b4013114</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ds</sys_name><sys_overrides/><sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package><sys_policy/><sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope><sys_update_name>sys_app_module_fb9264bbc30d7250c7e81d12b4013114</sys_update_name><sys_updated_by>harold.destura</sys_updated_by><sys_updated_on>2025-11-13 04:12:25</sys_updated_on><timeline_page/><title>ds</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>-1249915598</payload_hash>
+        <record_name>ds</record_name>
+        <reverted_from/>
+        <source>5641fdeac3e13610c7e81d12b40131f9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-13 04:12:25</sys_created_on>
+        <sys_id>379264bbc30d7250c7e81d12b4013118</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_recorded_at>19a7b6a25c80000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-12-04 09:15:07</sys_updated_on>
+        <type>Module</type>
+        <update_guid>f79264bb790d7250481381f0c43b8417</update_guid>
+        <update_guid_history>f79264bb790d7250481381f0c43b8417:-1249915598</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="ds">b044283fc30d7250c7e81d12b401316b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-13 04:19:35</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>afcb53a49aaf419c94999a34025bf310</sys_id>
+        <sys_metadata>fb9264bbc30d7250c7e81d12b4013114</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ds</sys_name>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_scope_delete display_value="">6345f443edcf4520bbffdf937b8ec400</sys_scope_delete>
+        <sys_update_name>sys_app_module_fb9264bbc30d7250c7e81d12b4013114</sys_update_name>
+        <sys_update_version display_value="sys_app_module_fb9264bbc30d7250c7e81d12b4013114">379264bbc30d7250c7e81d12b4013118</sys_update_version>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-13 04:19:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

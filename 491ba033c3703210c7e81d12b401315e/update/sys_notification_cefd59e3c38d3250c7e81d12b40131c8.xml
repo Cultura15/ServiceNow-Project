@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_notification">
+    <sys_notification action="INSERT_OR_UPDATE">
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_update>true</action_update>
+        <active>true</active>
+        <advanced_event_condition>true</advanced_event_condition>
+        <category display_value="Pet Shop" name="Pet Shop">a2d44852c309ba10c7e81d12b4013196</category>
+        <condition/>
+        <description/>
+        <event display_value="x_1607167_pet_shop.low_stock_alert">5d9951efc34d3250c7e81d12b40131c5</event>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_1_table>sys_user</event_parm_1_table>
+        <event_parm_2>false</event_parm_2>
+        <event_parm_2_table>sys_user</event_parm_2_table>
+        <include_originator>true</include_originator>
+        <name>Low Stock Alert</name>
+        <order>100</order>
+        <recipient_fields/>
+        <recipient_users>1aa6bef3c3f83210c7e81d12b4013183</recipient_users>
+        <script><![CDATA[(function runNotificationScript(current, event, parm1, parm2, template, language) {
+    var message = "Low Stock Alert: " + current.name + "\n" +
+                  "The item '" + current.name + "' in category '" + current.category +
+                  "' now has only " + current.stocks + " left. Please restock immediately.";
+
+    return message;
+})(current, event, parm1, parm2, template, language);
+]]></script>
+        <sys_class_name>sys_notification</sys_class_name>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:01:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cefd59e3c38d3250c7e81d12b40131c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Low Stock Alert</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Pet Shop Needs Management" source="x_1607167_pet_shop">491ba033c3703210c7e81d12b401315e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pet Shop Needs Management">491ba033c3703210c7e81d12b401315e</sys_scope>
+        <sys_update_name>sys_notification_cefd59e3c38d3250c7e81d12b40131c8</sys_update_name>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:01:12</sys_updated_on>
+        <table>x_1607167_pet_shop_pet_shop_item</table>
+        <triggered_by>event</triggered_by>
+    </sys_notification>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>cefd59e3c38d3250c7e81d12b40131c8</id>
+        <sys_created_by>harold.destura</sys_created_by>
+        <sys_created_on>2025-11-12 14:01:12</sys_created_on>
+        <sys_id>03cfd167c38d3250c7e81d12b401313c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>harold.destura</sys_updated_by>
+        <sys_updated_on>2025-11-12 14:01:12</sys_updated_on>
+        <table>sys_notification</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
